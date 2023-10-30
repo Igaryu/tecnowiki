@@ -1,0 +1,112 @@
+
+<h1 class="sectionedit1" id="come_aggiustare_tabella_con_campo_chiave_incrementale_contenente_salti_nella_progressione">Come aggiustare tabella con campo chiave incrementale contenente salti nella progressione.</h1>
+<div class="level1">
+
+
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come aggiustare tabella con campo chiave incrementale contenente salti nella progressione.&quot;,&quot;hid&quot;:&quot;come_aggiustare_tabella_con_campo_chiave_incrementale_contenente_salti_nella_progressione&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;0-108&quot;} -->
+<h2 class="sectionedit2" id="situazione_di_partenza">Situazione di partenza:</h2>
+<div class="level2">
+
+<p>
+Tavola iniziale con idPersona = 1,2,9,11,12,13,19 <br/>
+
+Tavola finale con idPersona = 1,2,3,4,5,6,7
+</p>
+<pre class="code">
+Explain table Persone;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| idPersona     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Nome          | varchar(45)  | NO   |     | NULL    |                |
+| Cognome       | varchar(45)  | NO   | MUL | NULL    |                |
+| Email         | varchar(45)  | YES  |     | NULL    |                |
+| Indirizzo     | varchar(150) | YES  |     | NULL    |                |
+| DDN           | varchar(45)  | YES  |     | NULL    |                |
+| Paese         | varchar(45)  | YES  |     | NULL    |                |
+| IP            | varchar(15)  | YES  |     | NULL    |                |
+| Dominio       | varchar(45)  | YES  |     | NULL    |                |
+| Provider      | varchar(45)  | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+</pre>
+
+<p>
+Dopo l’inserimento con la procedura Genera.py, non esistono chiavi doppie, ma esistono buchi nella sequenza di <code>idPersona</code> per risolvere, stando almeno a <a href="https://openai.com" class="urlextern" title="https://openai.com" rel="ugc nofollow">#ChatGPT</a>, la soluzione è la seguente:
+</p>
+
+<p>
+Creare una tabella temporanea escludendo il campo <code>idPersona</code> e creandone uno nuovo, in questo esempio <code>nuovo_id</code> con il seguente comando:
+</p>
+<pre class="code">
+create table New_Persone as SELECT ROW_NUMBER() OVER (ORDER BY idPersona) as nuovo_id, Nome, Cognome, Email, Indirizzo, DDN, Paese, Dominio Provider from Persone;</pre>
+
+<p>
+In questo modo avrò creato una tabella di nome <code>New_Persone</code> con la seguente struttura:
+</p>
+<pre class="code">
+Explain Table New_Persone;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| nuovo_id      | bigint(21)   | NO   |     | NULL    |       |
+| Nome          | varchar(45)  | NO   |     | NULL    |       |
+| Cognome       | varchar(45)  | NO   |     | NULL    |       |
+| Email         | varchar(45)  | YES  |     | NULL    |       |
+| Indirizzo     | varchar(150) | YES  |     | NULL    |       |
+| DDN           | varchar(45)  | YES  |     | NULL    |       |
+| Paese         | varchar(45)  | YES  |     | NULL    |       |
+| Provider      | varchar(45)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+</pre>
+
+<p>
+Il cui nuovo campo <code>nuovo_id</code> avrà la numerazione della riga in modo progressivo senza interruzioni dovute alle chiavi doppie create originalmente. A questo punto droppare, <strong>o salvare con altro nome</strong>, la tavola originale Persone e rinominare la temporanea :
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>drop table Persone</code> oppure <code>RENAME TABLE Persone TO Persone_Backup</code> <br/>
+</div>
+</li>
+</ul>
+
+<p>
+e successivamente rinominare la tabella temporanea in quella originale con
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>RENAME TABLE New_Persone TO Persone;</code></div>
+</li>
+</ul>
+
+<p>
+e concludiamo riportando il nome colonna originale nella nuova tabella
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>ALTER TABLE Persone RENAME COLUMN nuovo_id TO idPersona;</code>
+## Considerazioni</div>
+</li>
+</ul>
+
+<p>
+Probabilmente ci sono anche altri modi che voglio sperimentare, tipo cambiare tipo di chiave, riassegnare i valori corretti progressive e poi rimettere il campo a tipologia incrementale.
+</p>
+
+<p>
+Ma alla fine, tutto sto casino servirà davvero al mio progetto? Probabilmente no, ma almeno avrò imparato una cosa nuova, nel caso dovesse mai servirmi per qualche motivo vitale davvero per una applicazione!!
+</p>
+<hr />
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=sql:istruzioni_varie" class="wikilink1" title="sql:istruzioni_varie" data-wiki-id="sql:istruzioni_varie">Torna a radice docs di SQL</a><br/>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Torna alla home del Wiki</a><br/>
+</div>
+</li>
+</ul>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 24/07/2023 15:27</em> - Ultima modifica: 03/08/2023 12:13
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Situazione di partenza:&quot;,&quot;hid&quot;:&quot;situazione_di_partenza&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;109-&quot;} -->

@@ -1,0 +1,329 @@
+
+<h1 class="sectionedit1" id="gestione_certificati_apache2">Gestione Certificati Apache2</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Gestione Certificati Apache2&quot;,&quot;hid&quot;:&quot;gestione_certificati_apache2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-43&quot;} -->
+<h2 class="sectionedit2" id="creare_configurare_e_pubblicare_siti_in_https">Creare, configurare e pubblicare siti in https://</h2>
+<div class="level2">
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Creare, configurare e pubblicare siti in https:\/\/&quot;,&quot;hid&quot;:&quot;creare_configurare_e_pubblicare_siti_in_https&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;44-109&quot;} -->
+<h3 class="sectionedit3" id="situazione_di_partenza">Situazione di partenza:</h3>
+<div class="level3">
+
+<p>
+Abbiamo un server personale che sfrutta una connessione domestica, quindi con un solo IP statico, che arriva al nostro modem/router ed attraverso le sue regole del firewall reindirizza le chiamate sulle porte 80 (HTTP) e 443 (HTTPS) verso il nostro server in casa.
+</p>
+
+<p>
+Quindi la situazione è circa questa:
+</p>
+<pre class="code">Nostro-Dominio → nostro IP statico → Nostro Router → firewall → nostro server con IP locale.</pre>
+
+<p>
+Trattandosi di un server web, vogliamo fornire il nostro dominio di un certificato in modo da rendere le connessioni verso di noi codificate e quindi sicure.
+</p>
+
+<p>
+La soluzione migliore sarebbe usare LetsEncrypt<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> che fornisce gratuitamente certificati <strong>validi</strong> a livello mondiale su internet. 
+</p>
+
+<p>
+Sfortunatamente nel nostro caso LetsEncrypt non può aiutarci: dovendo fornire certificati validi le sue funzioni di generazione certificati <strong>non funzionano</strong> se stiamo usando un IP locale, per capirci un classico <code>192.168.1.1</code> oppure un <code>10.0.0.1</code>.
+</p>
+
+<p>
+Se provate ad eseguire la funzione di generazione certificati di LetsEncrypt da una macchina con un IP locale, arrivato alla fase di verifica del certificato fallirà ed interromperà la generazione del certificato, proprio in virtù del fatto che l&#039;IP <strong>non è pubblico</strong>!
+</p>
+
+<p>
+Ci restano due possibili soluzioni al problema:
+</p>
+<ol>
+<li class="level1"><div class="li">ci facciamo assegnare un secondo IP pubblico dal nostro provider, che può avere un costo variabile da 5 si dieci euro al mese circa;</div>
+</li>
+<li class="level0"><div class="li">usiamo gli ormai snobbati certificati auto-generati.</div>
+</li>
+</ol>
+
+<p>
+<strong>La prima soluzione</strong>, va da sé, dipende dal valore che diamo ai nostri siti: se ne vale la pena si affronta la spesa, assegnamo al nostro server il secondo IP pubblico che ci hanno assegnato e procediamo con solito sistema di generazione certificati di LetsEncrypt. La decisione è chiaramente personale.
+</p>
+
+<p>
+<strong>La seconda ha</strong> un costo zero in denaro, ma ha il contro che qualsiasi browser contatterà il nostro server, segnalerà al proprio operatore che il certificato <strong>non è valido</strong>, quanto meno non lo è per quanto riguarda la definizione di <strong>certificato valido</strong> inteso per un sito.
+</p>
+
+<p>
+In passato i browser avevano la decenza, se non altro, di specificare che il certificato <strong>non è falso</strong>, ma auto generato dal gestore del server. Al giorno d&#039;oggi questa distinzione non viene più fatta dai browser: viene semplicemente segnalato che il certificato non è valido… punto!
+</p>
+
+<p>
+Chiaramente sta a chi sta cercando di raggiungere il nostro sito, a questo punto, decidere se fidarsi o meno, e proseguire: se accetteranno il nostro certificato, comunque le comunicazioni tra il browser ed il nostro server saranno protette, nel senso di essere codificate come se usassimo un certificato generato da LetsEncrypt, ma serve un atto di fiducia, da parte del visitatore, nell&#039;accettare il nostro certificato, <strong>tecnicamente valido ed in grado di proteggere il trasferimento dei dati</strong>, ma non <code>valido</code> a livello di <em>definizione di protocollo di sicurezza</em>.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Situazione di partenza:&quot;,&quot;hid&quot;:&quot;situazione_di_partenza&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;110-3109&quot;} -->
+<h2 class="sectionedit4" id="come_generare_certificati_auto-firmati_per_apache2">Come generare certificati auto-firmati per Apache2.</h2>
+<div class="level2">
+<hr />
+
+<p>
+Esistono diversi modi, e programmi, per generare certificati, per le più disparate necessità, nel mio caso mi sono appoggiato al tool OpenSSL<sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup>.
+</p>
+
+<p>
+Partiamo dal comando necessario per generare il certificato:
+</p>
+<pre class="code">
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt</pre>
+
+<p>
+Vediamo ora i vari parametri che vanno utilizzati:
+</p>
+<ul>
+<li class="level1"><div class="li"><strong>openssl</strong>: Questo è il comando di base, dalla riga di comando, per la creazione e la gestione di certificati, chiavi e altri file OpenSSL;<br/>
+<br/>
+
+</div>
+</li>
+<li class="level1"><div class="li"><strong>req</strong>: questo sotto comando specifica che vogliamo utilizzare la <strong>richiesta di firma</strong> del certificato X.509 ( CSR );
+  <code>X.509</code> è uno standard di infrastruttura, a chiave pubblica, a cui SSL e TLS aderiscono per la gestione delle chiavi e dei certificati. Vogliamo creare un nuovo certificato <code>X.509</code>, quindi stiamo usando questo sotto comando;<br/>
+<br/>
+
+</div>
+</li>
+<li class="level1"><div class="li"><strong>-x509</strong>: questo modifica ulteriormente il sotto comando precedente, dicendo al programma che vogliamo generare un certificato <strong>auto-firmato</strong> invece di generare una richiesta di firma del certificato, come accadrebbe normalmente;<br/>
+<br/>
+
+</div>
+</li>
+<li class="level1"><div class="li"><strong>-nodes</strong>: questo parametro impone, ad OpenSSL, di saltare l&#039;opzione per proteggere il nostro certificato con una passphrase: abbiamo bisogno che Apache sia in grado di leggere il file, <strong>senza l&#039;intervento dell&#039;utente</strong>, all&#039;avvio del server. Una passphrase impedirebbe che ciò accada, perché dovremmo inserirla <strong>dopo ogni riavvio</strong>;<br/>
+<br/>
+
+</div>
+</li>
+<li class="level1"><div class="li"><strong>-days 365</strong>: questa opzione imposta il periodo di tempo in cui il certificato sarà considerato valido. L&#039;abbiamo impostato per un anno qui. Quindi l&#039;unita utilizzabile è il numero di giorni;<br/>
+<br/>
+
+</div>
+</li>
+<li class="level1"><div class="li"><strong>-newkey rsa:2048</strong>: questo specifica che vogliamo generare contemporaneamente <strong>un nuovo certificato</strong> e <strong>una nuova chiave</strong>. Non abbiamo creato la chiave necessaria per firmare il certificato in una fase precedente, quindi dobbiamo crearlo insieme al certificato. Il <code>rsa:2048</code>   dice al programma di creare una chiave RSA lunga <strong>2048</strong> bit, che al giorno d&#039;oggi è il <em>minimo sindacale</em>;<br/>
+<br/>
+
+</div>
+</li>
+<li class="level1"><div class="li"><strong>-keyout</strong>: questo parametro indica dove scrivere, e come chiamare, il file della chiave privata che stiamo generando;<br/>
+<br/>
+
+</div>
+</li>
+<li class="level1"><div class="li"><strong>-out</strong>: questo indica, ad OpenSSL, dove posizionare, e come chiamare, il certificato che stiamo creando.<br/>
+<br/>
+</div>
+</li>
+</ul>
+
+<p>
+Nonostante la massa di parametri inviati al comando durante l&#039;esecuzione dello stesso ci verranno poste alcune domande a cui dobbiamo rispondere, segue un esempio:
+</p>
+<pre class="code">
+
+Country Name (2 letter code) [XX]:IT
+State or Province Name (full name) []:Nome Regione
+Locality Name (eg, city) [Default City]:Nome Città 
+Organization Name (eg, company) [Default Company Ltd]:MiaDitta SRL
+Organizational Unit Name (eg, section) []: Ufficio di competenza 
+Common Name (eg, your name or your server&#039;s hostname) []: mio.sito.it
+Email Address []:mia.mail@per.comunicazioni.
+</pre>
+
+<p>
+Fare attenzione a ricordarsi bene cosa rispondiamo alla voce <strong>Common Name</strong>: il valore che inseriamo servirà successivamente, per configurare correttamente il file di configurazione del dominio virtuale di Apache2.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come generare certificati auto-firmati per Apache2.&quot;,&quot;hid&quot;:&quot;come_generare_certificati_auto-firmati_per_apache2&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:4,&quot;range&quot;:&quot;3110-6352&quot;} -->
+<h2 class="sectionedit5" id="come_configurare_file_sito_virtuale_con_certificato_in_apache2">Come configurare file sito virtuale con certificato in Apache2.</h2>
+<div class="level2">
+<hr />
+
+<p>
+A questo punto abbiamo il nostro certificato <strong>auto-firmato</strong> e dobbiamo configurare Apache affinché pubblici correttamente il nostro sito.
+</p>
+
+<p>
+Utilizzerò nell&#039;esempio il dominio <strong>mio.sito.it</strong> come ho usato nell&#039;esempio precedente alla voce <strong>Common Name</strong>.
+</p>
+
+<p>
+Ci spostiamo nella cartella <code>/etc/apache/sites-available</code>. Questa cartella contiene i file di configurazione per ogni sito che pubblicheremo con il nostro server Apache. Convenzione vuole: <strong>un file = un sito</strong>. I files <strong>DEVONO</strong> terminare con l&#039;estensione <code>.conf</code> o non verranno riconosciuti. Altra convensione: il nome file di configurazione di solito è composto dal nome dominio + l&#039;estensione <code>.conf</code> Quindi nel nostro esempio il nome file sarà: <code>/etc/apache/sites-available/mio.sito.it.conf</code> per l&#039;accesso senza certificato, mentre <code>/etc/apache/sites-available/mio.sito.it.ssl.conf</code> per l&#039;accesso <strong>con</strong> certificato
+</p>
+
+<p>
+Ricordo velocemente: se chiamate un sito usando la formula <code>http://mio.sito.it</code> il browser farà in realtà la chiamata verso la porta 80 quindi come se aveste scrittp  <code>http://mio.sito.it:80</code> mentre, se chiamate un sito usando la formula <code>https://mio.sito.it</code> il browser invierà in rete la richiesta <code>http://mio.sito.it:443</code>.
+</p>
+
+<p>
+Praticamente <strong>tutti i server web</strong>  <em>offrono</em> i siti <strong>senza protezione</strong> alla porta <code>80</code>, mentre quelli <strong>protetti da certificato</strong> alla porta <code>443</code>. Dal lato opposto, il server attenderà chiamate sulla porta <code>80</code> per siti con <em>colloquio in chiaro</em> mentre attenderà chiamate sulla porta <code>443</code> chiamate per colloqui protetti e di conseguenza crittografati.
+</p>
+
+<p>
+Segue un esempio di configurazione di sito web offerto da Apache in modalità sicura. Il file, come spiegato prima sarà: <code>/etc/apache/sites-available/mio.sito.it.ssl.conf</code>. Questo il contenuto:
+</p>
+<pre class="code">
+
+&lt;VirtualHost *:443&gt;
+   ServerName mio.sito.it
+   DocumentRoot /var/www/mio.sito.it
+
+   SSLEngine on
+   SSLCertificateFile /etc/ssl/certs/mio.sito.it-selfsigned.crt
+   SSLCertificateKeyFile /etc/ssl/private/mio.sito.it-selfsigned.key
+&lt;/VirtualHost&gt;
+</pre>
+
+<p>
+Con questa configurazione il demone di Apache risponderà alla richieste di connessioni sicure verso  sito <code>mio.sito.it</code> <strong>SOLO SE</strong> chiamato via <code>https</code>. 
+</p>
+
+<p>
+Ormai, la stragrande maggioranza di browser, correggono in automatico il protocollo di chiamata, trasformando  chiamate del tipo  <code>http://</code> in <code>httpS://</code> senza richiesta specifica dell&#039;operatore.
+</p>
+
+<p>
+Una volta creato il file di configurazione, dobbiamo dire a Apache di rendere attivo l&#039;ascolto per quello specifico nome di dominio e lo facciamo con il comando:
+</p>
+
+<p>
+<code>a2ensite mio.sito.it.ssl.conf</code>
+</p>
+
+<p>
+e per verificare che sia tutto ok, eseguiamo il comando di verfica delle configurazioni di Apache, con:
+</p>
+
+<p>
+<code>apache2ctl configtest</code>
+</p>
+
+<p>
+Se non si cono errori non avremo alcun messaggio, in caso di errori si avrà una segnalazione di questo tipo:
+</p>
+<pre class="code">
+Action &#039;config&#039; failed.
+The Apache error log may have more information.
+root@jcsh:/etc/apache2/sites-enabled# apache2ctl configtest
+AH00526: Syntax error on line 11 of /etc/apache2/sites-enabled/mio.dominio.it.ssl.conf:
+SSLCertificateFile: file &#039;/etc/ssl/rts/mio.dominio.it.selfsigned.crt&#039; does not exist or is empty
+Action &#039;configtest&#039; failed
+
+Se ci fossero errori nel file di configurazione, otterremo una segnalazione di errore con suggerimenti sul come verificare quali.
+</pre>
+
+<p>
+In questo caso ho inserito, volutamente, un errore nel percorso dei file di certificato, ed in effetti il messaggio di errore è piuttosto chiaro su questo:
+</p>
+
+<p>
+<code>SSLCertificateFile: file &#039;/etc/ssl/rts/mio.dominio.it.selfsigned.crt&#039; does not exist or is empty</code>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come configurare file sito virtuale con certificato in Apache2.&quot;,&quot;hid&quot;:&quot;come_configurare_file_sito_virtuale_con_certificato_in_apache2&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:5,&quot;range&quot;:&quot;6353-9988&quot;} -->
+<h2 class="sectionedit6" id="redirigere_chiamate_httpverso_sito_in_https">Redirigere chiamate http:// verso sito in https://</h2>
+<div class="level2">
+<hr />
+
+<p>
+Con gli anni tutti i siti maggiori hanno implementato la sicurezza passando dal protollo in chiaro http:<em> all&#039;https:</em> Restava solo un problema da risolvere: come <em>costringere</em> gli utenti ad usare un protocollo più sicuro? 
+</p>
+
+<p>
+Coloro i quali hano avuto accesso per anni ad un sito via <code>http://</code> di certo non avrebbero cambiato abitudini, per cui sono state implementate diverse metodologie:
+</p>
+<ol>
+<li class="level1"><div class="li">reindirizzamento forzato via server;</div>
+</li>
+<li class="level0"><div class="li">reindirizzamento forzato via pagina web.</div>
+</li>
+</ol>
+
+<p>
+Sono entrambi metodi efficaci e facilmente implementabili. Nel primo caso il file di configurazione del server virtuale di Apache va configuato in modo adeguato usando l&#039;esempio finora seguito editiamo il file <code>/etc/apache2/sites-available/mio.dominio.it.conf</code>:
+</p>
+<pre class="code">&lt;VirtualHost *:80&gt;
+    ServerName mio.dominio.it
+    Redirect / https://mio.dominio.it
+&lt;/VirtualHost&gt;</pre>
+
+<p>
+Praticamente la prima riga dichiara per quale dominio stiamo configurando, la seconda dice da dove a dove.
+il carattere / sta ad indicare che l&#039;intero sito va rediretto, la parte successiva indica dove, ossia nella versione protetta dello stesso sito, ossia <code>https://mio.dominio.it</code>: veloce, pulito ed efficiente.
+</p>
+
+<p>
+Il secondo metodo viene applicato quando chi programma il sito non ha accesso al lato server della configurazione di Apache: il meccanismo è simile, ma avviene a livello di pagina html, e non a livello di server.
+</p>
+<pre class="code">
+&lt;html&gt;
+  &lt;head&gt;  
+    &lt;title&gt;Titolo della pagina: di solito descrive il reindirizzamento&lt;/title&gt;    
+    &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; URL=https://mio.dominio.it&quot;&gt;    
+  &lt;/head&gt;  
+&lt;/html&gt;
+</pre>
+
+<p>
+I primi due tag <code>&lt;HTML&gt;</code> e <code>&lt;HEAD&gt;</code> sono parti integranti di una pagina web nel linguaggio <abbr title="HyperText Markup Language">HTML</abbr>.
+</p>
+
+<p>
+Il comando che fa il reindirizzamento e la riga con il tag <code>&lt;META&gt;</code>: il comando eseguito è il <code>refresh</code> della pagina mentre <code>content</code> indica quanto tempo attendere, in questo caso non attendere, il valore è 0 secondi, il secondo indica dove andare, ossia <code>URL=https://mio.dominio.it</code>.
+</p>
+
+<p>
+Quale dei due metodi utilizzare dipende solo dal fatto che si abbia accesso, o meno al lato server di Apache. Tra i due è qello che preferisco: si presta meno ad attacchi sulle pagine web. Chiarmaente se operiamo su un serve non nostro, allora il secondo metodo resta l&#039;unico disponibile.
+</p>
+
+<p>
+Ripeto: entrambi i metodi ottengono lo stesso risultato.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Redirigere chiamate http:\/\/ verso sito in https:\/\/&quot;,&quot;hid&quot;:&quot;redirigere_chiamate_httpverso_sito_in_https&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:6,&quot;range&quot;:&quot;9989-12385&quot;} -->
+<h2 class="sectionedit7" id="firewall">Firewall</h2>
+<div class="level2">
+<hr />
+
+<p>
+Questo discorso non dovrebbe essere nemmeno da scrivere, ma un ripasso non fa mai male: se siete voi i gestori del server, ed avete un Firewall attivo<sup><a href="#fn__3" id="fnt__3" class="fn_top">3)</a></sup> <strong>e spero bene sia così se state gestendo un server che si affaccia direttamente su Internet</strong>, ricordatevi di aprire il transito alle due porte usate dai server web: ossia la <code>porta 80</code> per il protocollo http:<em> e la <code>porta 443</code> per il protocollo sicuro https:</em>
+</p>
+
+<p>
+Se ve lo scorderete, non riuscrete mai a collegare il server web e di conseguenza il vostro sito web.
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:tips-triks" class="wikilink1" title="tecno:tips-triks" data-wiki-id="tecno:tips-triks">Clicca qui</a> per tornare alla pagina Trcks &amp; Trips<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla pagina home del Wiki
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 09/08/2023 10:42</em> — Ultima modifica: 09/08/2023 15:17 <em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Firewall&quot;,&quot;hid&quot;:&quot;firewall&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:7,&quot;range&quot;:&quot;12386-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content"><a href="https://letsencrypt.org/it/" class="urlextern" title="https://letsencrypt.org/it/" rel="ugc nofollow">https://letsencrypt.org/it/</a></div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content"><a href="https://it.wikipedia.org/wiki/OpenSSL" class="urlextern" title="https://it.wikipedia.org/wiki/OpenSSL" rel="ugc nofollow">https://it.wikipedia.org/wiki/OpenSSL</a></div></div>
+<div class="fn"><sup><a href="#fnt__3" id="fn__3" class="fn_bot">3)</a></sup> 
+<div class="content"><a href="https://it.wikipedia.org/wiki/Firewall" class="urlextern" title="https://it.wikipedia.org/wiki/Firewall" rel="ugc nofollow">https://it.wikipedia.org/wiki/Firewall</a></div></div>
+</div>

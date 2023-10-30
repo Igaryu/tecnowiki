@@ -1,0 +1,28 @@
+====== Configurazioni varie in ambiente linux. ======
+
+----
+
+==== In questa sezione ci sono riportate varie configurazioni utili in Linux ====
+
+----
+
+
+
+  - [[xrdp | Cosa è, come installare e come usare XRDP ]]
+  - [[Net-Man|NetworkManager: configurare IP statico]]
+  - [[apache2-gestcert | Generare certificati auto-firmati e configurare file definizione siti in Apache2]]
+  - [[ProbelmaConfRete|Problema Configurazione rete a cavallo della versione 17/18 di Ubuntu.]]
+  - [[firewall|Configurazione firewall per server di posta.]]
+  - [[MailConfig|Configurazione client di posta.]]
+  - [[conf-ftp-sftp-no-cond|Configurazione di una macchina con servizi ftp ed sftp con utenti ed aree dati DIVERSE.]]
+  - [[conf-ftp-sftp-cond|Configurazione di una macchina con servizi ftp ed sftp con utenti comuni ed aree dati CONDIVISE.]]
+
+
+----
+
+[[tecno:start|Clicca qui per tornare alla home page del Wiki]]
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 21/03/2021 14:47// - Ultima modifica 05/08/2023 17:08
+

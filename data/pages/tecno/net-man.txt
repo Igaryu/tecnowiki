@@ -1,0 +1,58 @@
+====== Sistema gestione rete: Networkmanager ======
+~~NOTOC~~
+===== Configurazione di un IP statico =====
+
+----
+### Nel caso la nostra installazione sia per un server, sarà più conveniente avere un IP statico e non uno generato da DHCP: avere un IP che varia, ad ogni ravvio, renderebbe poco pratico raggiungere il server stesso.
+
+***
+In caso si voglia usare il vecchio `/etc/network/interfaces` quando, sul sistema, la rete viene gestita da `NetworkManager`, eseguire quanto segue:
+
+Preparare il file `/etc/network/interface` con i dati per la configurazione: nell’esempio che segue la scheda di rete usata è `eno1:`
+
+<code> 
+allow-hotplug eth1 
+iface eth1 inet static 
+  address 192.168.1.130 
+  netmask 255.255.255.0 
+  gateway 192.168.1.254 
+  dns-nameserver 127.0.0.1
+  # Per i DNS elencare uno, o piu, IP separati dal caratere spazio 
+  # per esempio: dns-nameservers 127.0.0.1 192.168.1.254 1.0.0.1 
+</code>
+
+Editare il file `/etc/NetworkManager/NetworkManager.conf` modificando il valore del settaggio di `managed`:
+
+DA
+
+<code>
+ [ifupdown]
+ managed=false
+</code>
+
+A
+
+<code>
+ [ifupdown]
+ managed=true
+</code>
+
+Riavviare il servizio di rete.
+
+__**NOTA:**__
+
+Visto le diverse possibilità di tool di gestione rete, a seconda dello specifico OS, **consiglio di riavviare la macchina** che è più sicuro.
+
+
+
+----
+
+[[tips-triks|Clicca qui]] per tornare alla pagina Trcks & Trips\\
+[[start|Clicca qui]] per tornare alla pagina home del Wiki]]
+
+----
+
+
+— //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/025 15:05 — Ultima modifica: 2023/08/01 11:03 //
+
+

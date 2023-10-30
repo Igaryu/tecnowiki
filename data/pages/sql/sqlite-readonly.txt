@@ -1,0 +1,20 @@
+====== SQLite3  ======
+***
+===== Collegare database in sola lettura. =====
+***
+
+<fs large>Può capitare di avere la necessità di aprire un database in sola lettura, per poter essere sicuri di non modificarlo accidentalmente: pur essendo una gestione RDBMS stand alone è possibile farlo: dato un database chiamato ''MioDB.sqlite''… </fs>
+
+```
+sqlite3 MioDB.sqlite?mode=ro
+```
+
+<fs large>Tra il punto di domanda e la lettera o finale **non devono essere presenti caratteri spazio.**
+</fs>
+
+***
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+***
+-  --- //[[jcurto@joe.vr.it|Joseph Curto]] 31/07/2023 15:55// Ultima modifica: 31/07/2023 16:01

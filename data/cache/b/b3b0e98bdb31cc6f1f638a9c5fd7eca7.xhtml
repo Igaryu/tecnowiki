@@ -1,0 +1,246 @@
+
+<h1 class="sectionedit1" id="come_impedire_il_mount_automatico_delle_partizioni_all_avvio_al_login_o_al_collegamento_di_unita_usb_al_tuo_mac">Come impedire il mount automatico delle partizioni all&#039;avvio, al login o al collegamento di unità USB al tuo Mac.</h1>
+<div class="level1">
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come impedire il mount automatico delle partizioni all&#039;avvio, al login o al collegamento di unit\u00e0 USB al tuo Mac.&quot;,&quot;hid&quot;:&quot;come_impedire_il_mount_automatico_delle_partizioni_all_avvio_al_login_o_al_collegamento_di_unita_usb_al_tuo_mac&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;0-121&quot;} -->
+<h2 class="sectionedit2" id="montaggio_partizioni_solo_quando_desiderato">Montaggio partizioni solo quando desiderato.</h2>
+<div class="level2">
+
+<p>
+Oltre alle partizioni illeggibili e a quelle nascoste come EFI e Recovery HD, di default macOS monta tutte le partizioni di un&#039;unità all&#039;avvio, al login o al <strong>collegamento di un&#039;unità USB esterna</strong>.
+</p>
+
+<p>
+Per quanto questa funzionalità sia utile per i principianti o per chi collega una sola chiavetta USB per copiare alcuni file, può diventare scomoda e fastidiosa se si hanno molte unità con più partizioni collegate al Mac.
+</p>
+
+<p>
+Ad esempio, il mio MacMini ha una unità esterna con un set di quattro dischi: 2 unità raggruppate in un RAID0 e due dischi individuali usati per i backup. I due dischi del backup inoltre sono crittografati, per cui ad ogni boot, o login, mi compaiono due popup dove mi si chiedono le password per ogni disco.
+</p>
+
+<p>
+Non volendo io i dischi di backup perennemente in linea, ma solo al momento di esecuzione del backup, che faccio manualmente quando mi serve, una volta montati i dischi con la corretta password, devo smontarli appena finito la procedura di auto mount.
+</p>
+
+<p>
+Chiaramente stando così le cose, l&#039;auto mount di quegli specifici dischi non solo è inutile, ma anche fastidioso perché mi propone due popup in sequenza in cui mi si chiede la password.
+</p>
+
+<p>
+Dopo una lettura approfondita del man di mount e di man fstab ho trovato la soluzione che mi sta più comoda. Quindi ti mostrerò come creare una lista di unità che <strong>non subiranno</strong> la procedura di automount una volta collegate al Mac.
+</p>
+
+<p>
+<span style="font-size:x-large;"><strong>Primo:</strong></span>
+</p>
+
+<p>
+Per evitare che le partizioni si montino automaticamente, aggiungeremo i loro UUID a una lista tramite il Terminale. Prima di tutto, collega le unità e monta le partizioni che non desideri più montare automaticamente in futuro.
+</p>
+
+<p>
+<span style="font-size:x-large;"><strong>Secondo:</strong></span>
+</p>
+
+<p>
+Avvia il Terminale (lo trovi in /Applicazioni/Utility o tramite Spotlight). Al prompt, incolla il comando:
+</p>
+
+<p>
+<code>diskutil info /Volumes/&quot;Nome Volume&quot; | grep UUID</code>
+</p>
+
+<p>
+Sostituisci “Nome Volume” con il nome della partizione che desideri evitare di montare, facendo attenzione a mantenere le virgolette se il nome del volume contiene spazi o punteggiatura.
+</p>
+
+<p>
+Nel mio caso visto che il disco in RADI 0 si chiama Lavoro il comando sarà:
+</p>
+
+<p>
+<code>diskutil info /Volumes/Lavoro | grep UUID</code>
+</p>
+
+<p>
+che produrrà in risposta:
+</p>
+
+<p>
+<code>   Volume UUID:               645AE6BB-82C0-429A-8C08-13381C265E03</code>
+</p>
+
+<p>
+<strong>Terzo:</strong>
+</p>
+
+<p>
+Copia la stringa esadecimale e incollala da qualche parte, quindi ripeti il comando per tutti gli altri nomi di dischi che desideri escludere dall&#039;auto mount, incollando i loro UUID nella stessa nota in cui avete messo il primo UUID.
+</p>
+
+<p>
+!<a href="https://media.idownloadblog.com/wp-content/uploads/2016/11/volume-UUID-strings.png" class="urlextern" title="https://media.idownloadblog.com/wp-content/uploads/2016/11/volume-UUID-strings.png" rel="ugc nofollow">https://media.idownloadblog.com/wp-content/uploads/2016/11/volume-UUID-strings.png</a>
+</p>
+
+<p>
+<span style="font-size:x-large;"><strong>Quarto:</strong></span>
+</p>
+
+<p>
+Una volta completato, nel Terminale digita:
+</p>
+
+<p>
+<code>sudo vifs</code>
+</p>
+
+<p>
+Inserisci la password di amministratore quando richiesto. Comparirà un documento con questa intestazione:
+</p>
+<pre class="code">
+#
+# Warning - this file should only be modified with vifs(8)
+#
+# Failure to do so is unsupported and may be destructive.
+#</pre>
+
+<p>
+nel Terminale. Premi il tasto “A” per visualizzare il cursore e, utilizzando il tasto “Freccia in giù” e premendo infine il tasto “Invio”, spostati nel documento sotto le righe contrassegnate dal simbolo # e sopra le righe contrassegnate dal simbolo ~.
+</p>
+
+<p>
+Ora copia e incolla la seguente riga nel documento:
+</p>
+
+<p>
+<code>UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX none apfs rw,noauto</code>
+</p>
+
+<p>
+Sostituisci la stringa di XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX con il tuo UUID <strong>annotato in precedenza</strong>. Aggiungi eventuali altre partizioni sulle righe sottostanti, ripetendo l&#039;intera frase ma cambiando XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX con il corretto UUID ogni volta.
+</p>
+
+<p>
+!<a href="https://media.idownloadblog.com/wp-content/uploads/2016/11/prevent-drives-from-mounting-on-mac.png" class="urlextern" title="https://media.idownloadblog.com/wp-content/uploads/2016/11/prevent-drives-from-mounting-on-mac.png" rel="ugc nofollow">https://media.idownloadblog.com/wp-content/uploads/2016/11/prevent-drives-from-mounting-on-mac.png</a>
+</p>
+
+<p>
+<strong>Sesto:</strong>
+</p>
+
+<p>
+Quando hai finito, premi il tasto “esc” per uscire dalla modalità cursore, quindi digita “:x” e premi il tasto “Invio” per salvare le modifiche ed uscire dal documento.
+</p>
+
+<p>
+Dopo un riavvio o un logout/login o un disconnetti/collega dell&#039;unità, le unità, i cui UUID hai aggiunto al documento non si dovrebbero montare automaticamente. 
+</p>
+
+<p>
+Se desideri montare tali partizioni in futuro, puoi farlo manualmente utilizzando l&#039;app <code>Utility Disco</code> o il <code>Terminale</code>.
+</p>
+
+<p>
+Per eventualmente ripristinare le modifiche descritte qui, devi semplicemente cancellare, o commentare, le righe con gli UUID delle tue unità dal file <code>/etc/fstab</code> a cui li abbiamo aggiunti, utilizzando un processo simile a quello descritto in precedenza: 
+</p>
+<ol>
+<li class="level1"><div class="li">Apri prima il Terminale e digita il comando “sudo vifs”</div>
+</li>
+<li class="level1"><div class="li">inserisci la password per visualizzare /etc/fstab con l&#039;elenco delle tue unità al suo interno. </div>
+</li>
+<li class="level1"><div class="li">Premi “A” per entrare nella modalità di modifica</div>
+</li>
+<li class="level1"><div class="li">spostati verso il basso fino alle righe inserite con il tasto “Freccia in giù” e utilizza il tasto “Cancella” o “Backspace” per rimuoverne quante ne desideri. </div>
+</li>
+<li class="level1"><div class="li">Quando hai finito, premi <code>ESC</code> per uscire dalla modalità di modifica, quindi digita <code>:x</code> e premi il tasto <code>INVIO</code> per salvare le modifiche ed uscire dall&#039;editor.</div>
+</li>
+</ol>
+
+<p>
+Questo metodo funziona con questi tipo di partizioni:
+</p>
+<ol>
+<li class="level1"><div class="li">normali (apfs, hfs, MSDOS, ecc.)</div>
+</li>
+<li class="level1"><div class="li">RAID</div>
+</li>
+<li class="level1"><div class="li">criptate </div>
+</li>
+<li class="level1"><div class="li">CoreStorage. </div>
+</li>
+</ol>
+
+<p>
+Il comando fornito in questa guida assume che la partizione in questione sia formattata come <code>APFS</code> (Che è il default per Mac <abbr title="Operating System">OS</abbr>) e che tu voglia che sia possibile sia leggere che scriverci, al momento in cui decidi di montarla. 
+</p>
+
+<p>
+La maggior parte delle partizioni macOS è formattata in questo modo, ma puoi verificare la formattazione del tuo disco nell&#039;applicazione Utility Disco se non sei sicuro. Se le tue partizioni sono configurate diversamente, devi modificare il comando di conseguenza.
+</p>
+
+<p>
+Ad esempio, se desideri che la partizione si monti automaticamente, ma vuoi che venga montata come sola lettura invece che lettura/scrittura, puoi rimuovere la frase <code>noauto</code> e sostituire <code>rw</code> con <code>ro</code>.
+</p>
+
+<p>
+Per impostare una partizione formattata come FAT per non montarsi automaticamente, sostituisci <code>apfs</code> nel comando precedente con <code>msdos</code>.
+</p>
+
+<p>
+Nota finale: è possibile modificare il file /etc/fstab in molti modi diversi: usando <code>vi</code> usando <code>nano</code> o usando qualsiasi altro editor di testo, che preferiate.
+</p>
+
+<p>
+Anche se ho testato altri editor come <code>nano</code> o <code>TextEdit</code> e funziona bene, Apple non lo segnala come completamente sicuro: Apple consiglia sempre di utilizzare lo strumento <code>vifs</code> al suo posto. 
+</p>
+
+<p>
+Cosa faccia in più <code>vifs</code> rispetto ad un comando <code>vi /etc/fstab</code> non è dato saperlo visto che <code>vifs</code> è un eseguibile. Scavando un po&#039; più a fondo si può scoprire che ci sono altri comandi dedicati a specifiche operazioni come:
+</p>
+<ol>
+<li class="level1"><div class="li">vipw</div>
+</li>
+<li class="level1"><div class="li">visudo</div>
+</li>
+</ol>
+
+<p>
+ed anche questi sembrano semplicemente sostituire comandi come <code>vi /etc/passwd</code> oppure <code>vi /etc/sudoers</code>. In realtà per <code>vipw</code> per esempio, sono certo che fa anche altro, visto che fine editing vi rammenta di dover fare altre operazioni affinché le modifiche eseguite siano validate. 
+</p>
+
+<p>
+Quindi: se proprio non digerite <code>vi</code> come editor usate <code>nano /etc/fstab</code> ma sappiate che Apple lo <strong>sconsiglia</strong>.
+</p>
+
+<p>
+Fatemi sapere se avete trovato qualche errore nella guida utile questa guida. 
+</p>
+
+<p>
+Buon mount manuale!!
+</p>
+
+<p>
+<span style="font-size:x-large;"><strong>P.S.</strong></span>
+</p>
+
+<p>
+In Linux la cosa è simile, ma con qualche diffenza <strong>importante</strong>: vai alla pagina corrispondente nel wiki qui: <a href="/doku.php?id=tecno:linux-no-usb-automount" class="wikilink1" title="tecno:linux-no-usb-automount" data-wiki-id="tecno:linux-no-usb-automount">Come impedire il mount automatico delle partizioni all&#039;avvio, al login o al collegamento di unità USB al tuo Linux.</a>
+</p>
+<hr />
+
+<p>
+Torna alla pagina <a href="/doku.php?id=tecno:tips-triks" class="wikilink1" title="tecno:tips-triks" data-wiki-id="tecno:tips-triks">Trucchi e trucchetti per risolvere problemi vari.</a> <br/>
+
+Torna alla home di <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Tecno Wiki</a>
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 20/09/2023 10:11 - Ultima modifica 20/03/2023 12:22</em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Montaggio partizioni solo quando desiderato.&quot;,&quot;hid&quot;:&quot;montaggio_partizioni_solo_quando_desiderato&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;122-&quot;} -->

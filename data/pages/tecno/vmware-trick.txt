@@ -1,0 +1,17 @@
+====== Trips & Triks in ambiente VMWare ======
+
+  * [[VM-SnapShost-Destination|Modificare destinazione snapshots da posizione di default.]]
+  * Configurare snapshot automatici via cron.
+
+
+\\
+
+----
+
+[[tips-triks|Clicca qui per tornare alla pagina Triks & Trips]]\\
+[[start|Clicca qui per tornare alla pagina iniziale]]
+
+\\
+
+----
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/09/08 08:01//

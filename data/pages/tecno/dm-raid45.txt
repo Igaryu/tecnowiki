@@ -1,0 +1,57 @@
+# Messaggio DM-RAID45 not found in modules.dep.
+
+~~NOTOC~~
+\\
+****
+<fc #ff0000> <fs x-large>__Problema:__</fs></fc>
+## Messaggio "DM-RAID45 not found in modules.dep" segnalato in fase di boot in Debian e quasi tutte le sue derivate.
+\\
+
+<fs large>Da tempo ho notato che dopo l’installazione di Debian, nel mio caso quasi sempre in versione console per server, o LMDE5, la versione di Linux Mint basata su Debian anziché su Ubuntu, al boot mi viene sempre mostrato questo messaggio, direi un warning, e non un errore, perché comunque il boot prosegue regolarmente.</fs>
+
+<fs large>Da buon sistemista compulsivo ^_^, la cosa mi ha dato, e mi da, un fastidio enorme!!!</fs>
+
+<fs large>Quindi mi sono messo a cercare cosa facesse questo modulo in particolare, se mi servisse o meno.</fs>
+
+<fc #9acd32><fs x-large>__Soluzione:__</fs></fc>
+
+D<fs large>alle ricerche fatte, ma anche ad intuito, alla fine il modulo **non è assolutamente necessario** se non gestite un RAID a livello software sul vostro sistema. Per cui la soluzione è abbastanza intuitiva: rimuovere la chiamata al modulo da ''/usr/lib/modules/5.10.0-23-amd64/modules.dep'' e, ovviamente, deinstallare il pacchetto interessato: ''dmraid'' appunto.</fs>
+
+<fs large>Ovviamente il percorso ''/usr/lib/modules/5.10.0-23-amd64/modules.dep'' dipende dalla versione che avete installato del ''Kernel''. Nel mio caso, avendo anche un kernel 5.10.0-12 come backup in caso di problemi di boot con l’ultimo kernel installato, ho modificato anche il file ''/usr/lib/modules/5.10.0-12-amd64/modules.dep''.</fs>
+
+<fs large>La riga cancellata dal file modules.dep è la seguente:</fs>
+<code>
+kernel/drivers/md/dm-raid.ko: kernel/drivers/md/raid456.ko kernel/crypto/async_tx/async_raid6_recov.ko kernel/crypto/async_tx/async_memcpy.ko kernel/crypto/async_tx/async_pq.ko kernel/crypto/async_tx/async_xor.ko kernel/crypto/async_tx/async_tx.ko kernel/drivers/md/dm-mod.ko kernel/drivers/md/md-mod.ko kernel/crypto/xor.ko kernel/lib/raid6/raid6_pq.ko kernel/lib/libcrc32c.ko
+</code>
+
+<fs large>Per identificarla basta una banale ricerca una volta aperto il file ''/usr/lib/modules/5.10.0-23-amd64/modules.dep'' ovviamente nel path corretto del vostro kernel, della stringa ''dm-raid.ko''.</fs>
+
+<fs large>Una volta *pulito* il vostro file ‘’modules.dep’’ procedete alla cancellazione del pacchetto relativo: non ha senso tenerlo a bordo se non lo userete!</fs>
+<code>
+sudo apt purge dmraid
+</code>
+
+<fs large>Di norma il comando ''apt'' provvede da solo alla ricostruzione di ''initramfs'', nel caso per qualsiasi motivo non vediate la sua ricostruzione durante l’esecuzione del comando ''apt'' di pulizia, allora rigeneratelo a mano con:</fs>
+<code>
+sudo update-initramfs -u
+</code>
+
+<fs large>A questo punto, ad ogni riavvio o accensione del sistema **non vedrete più** quel fastidioso (almeno per me lo è tantissimo) di avviso della mancanza di modulo kernel.</fs>
+
+***
+
+<fs large><fc #ff0000>NOTA:</fc></fs> \\
+
+<fs large>Ho anteposto il comando ''sudo'' ad ogni comando da eseguire nel caso vi muoviate, come si dovrebbe, da un  utente standard del vostro sistema. Se, come me, quando lavorate sul sistema operativo accedete come utente ''root'' allora i vari ''sudo'' possono essere omessi tranquillamente.
+</fs>
+
+
+----
+
+[[tips-triks|Clicca qui]] per tornare alla pagina Trcks & Trips\\
+[[start|Clicca qui]] per tornare alla pagina home del Wiki
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 29/07/2023 10:05// — Ultimo aggiornamento: 29/07/2023 10:05
+

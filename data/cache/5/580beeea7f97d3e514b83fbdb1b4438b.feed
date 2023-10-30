@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.8" -->
+<?xml-stylesheet href="http://doku.jcsh.eu/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://doku.jcsh.eu/feed.php">
+        <title>Joe's Experienced Docs diario</title>
+        <description></description>
+        <link>http://doku.jcsh.eu/</link>
+        <image rdf:resource="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico" />
+       <dc:date>2023-08-09T09:19:06+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:01-come-e-nato&amp;rev=1690814470&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-01&amp;rev=1690471980&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-02&amp;rev=1690471845&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-03&amp;rev=1690471680&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-04&amp;rev=1690471642&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-05&amp;rev=1690471603&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-06&amp;rev=1690471549&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-07&amp;rev=1690471486&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-08&amp;rev=1690471425&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-09&amp;rev=1690471343&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-10&amp;rev=1690471253&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-11&amp;rev=1690471198&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-12&amp;rev=1690471150&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-13&amp;rev=1690471117&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-14&amp;rev=1690471040&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-15&amp;rev=1690470982&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-16&amp;rev=1690522055&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-17&amp;rev=1690470596&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-18&amp;rev=1690470728&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:cap-19&amp;rev=1690470831&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:indice&amp;rev=1690473037&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:start&amp;rev=1690814294&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico">
+        <title>Joe's Experienced Docs</title>
+        <link>http://doku.jcsh.eu/</link>
+        <url>http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:01-come-e-nato&amp;rev=1690814470&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:41:10+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:01-come-e-nato</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:01-come-e-nato&amp;rev=1690814470&amp;do=diff</link>
+        <description>Come è nato il Diario di un Occiltista…
+
+
+
+----------
+
+
+Photo by Aaron Burden on Unsplash
+
+----------
+
+Sicuramente mi piace definirmi un lettore seriale aperiodico. Cosa intendo? Beh che leggo molto, ma vado a periodi: in alcuni leggo interi romanzi, da 7/800, pagine nell’arco di una sola giornata, compresa la notte se il romanzo vale. In altri periodi non riesco ad avvicinarmi ad un libro nemmeno se mi pagano bene per farlo!</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-01&amp;rev=1690471980&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:33:00+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-01</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-01&amp;rev=1690471980&amp;do=diff</link>
+        <description>Cap. 1 — CASA NUOVA, VECCHI PROBLEMI
+
+
+
+----------
+
+
+
+----------
+
+Questo fu sicuramente un caso interessante: una casa nuova, ma probabilmente abitata, pur essendo di recente costruzione.
+
+----------
+
+Alessio, nome di fantasia per proteggere la privacy ovviamente, mi ha contattato tramite un conoscente comune, o meglio questo conoscente comune gli ha consigliato di parlarmi del suo problema: come sempre in questi casi, è difficile per chi è coinvolto in queste situazioni trovare il coraggio di p…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-02&amp;rev=1690471845&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:30:45+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-02</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-02&amp;rev=1690471845&amp;do=diff</link>
+        <description>Cap. 02 – La Lavanderia del Quartiere
+
+
+
+----------
+
+
+
+----------
+
+Questo è un caso molto più vecchio, ma molto interessante per le sue implicazioni.
+
+Era una mattina di maggio quando, uscendo di casa, ho notato un drappello di persone ferme davanti al lavasecco del quartiere. Incuriosito, come tutti, mi sono avvicinato per vedere cosa fosse successo. Chiedo ad uno delle persone accalcate li intorno e mi dice che c’è stata una rapina con atti vandalici. La cosa mi suona di per sé un po strana: l…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-03&amp;rev=1690471680&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:28:00+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-03</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-03&amp;rev=1690471680&amp;do=diff</link>
+        <description>Cap. 03 – Non Dire Mai Quella Parola!
+
+
+
+----------
+
+
+
+----------
+
+Questo fu un caso un po’ atipico: un gruppo di amici che voleva iniziare a sondare il mondo del paranormale, che mi chiese una guida nel farlo. Contrariamente al solito, tutto iniziò, già, alla prima seduta. Eravamo a casa di Gianni, un appartamento al 4 piano di una palazzina, delle case popolari, nel quartiere dove abitavo. Ci trovammo un pomeriggio di maggio: io, Gianni, Massimiliano e Fabio; tutti, tranne me, novizi in questo…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-04&amp;rev=1690471642&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:27:22+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-04</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-04&amp;rev=1690471642&amp;do=diff</link>
+        <description>Cap. 04 – Giocaci E Giocaci Ancora E Finirai Per Farti Male !!
+
+
+
+----------
+
+
+
+----------
+
+Conobbi Mara in quanto amica di Sabrina, l’allora fidanzata di un mio carissimo amico; Sabrina era già di suo attratta dal paranormale, ma in modo piuttosto classico: superficiale, senza cognizione di causa e senza la minima idea di in che razza di guai potesse cacciarsi.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-05&amp;rev=1690471603&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:26:43+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-05</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-05&amp;rev=1690471603&amp;do=diff</link>
+        <description>Cap. 05 – L’Inquilino.
+
+
+
+----------
+
+
+
+----------
+
+Era ottobre del 1990 quando un amico si trasferì di casa, e mi introdusse alla sua padrona di casa, per permettermi di subentrare senza grossi problemi come inquilino al suo posto.
+
+Una vecchia casa colonica, su due piani: spogliatoio, cucina vivibile, cucinino, salotto al piano terra, due enormi camere da letto, più il bagno, senza vasca ahimè, al piano di sopra; mezzo piano ancora ed un sotto tetto, che con poco lavoro sarebbe potuto diventar…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-06&amp;rev=1690471549&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:25:49+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-06</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-06&amp;rev=1690471549&amp;do=diff</link>
+        <description>Cap. 06 – Attacco In Famiglia.
+
+
+
+----------
+
+
+
+----------
+
+Questo sicuramente fu il mio primo caso, in cui dovetti affrontare entità aggressive. Parliamo del lontano 1985. Lavoravo ancora in città, a quei tempi, ed i miei contatti con l’esterno del mio ambiente di lavoro erano decisamente pochi. In quel periodo stavo allenando un simpatico rosso di capello delle zone di Bergamo, per cui ero ancora meno incline ad occuparmi di cose che accadessero al di fuori delle mura del posto dove stavo. Com…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-07&amp;rev=1690471486&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:24:46+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-07</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-07&amp;rev=1690471486&amp;do=diff</link>
+        <description>Cap. 07 – Quella Strana Chiesa.
+
+
+
+----------
+
+
+
+----------
+
+Ero in giro per la provincia, in cerca di bei posti per scattare delle foto. Ormai eravamo in primavera inoltrata e gli alberi, a questo punto, erano ben coperti di fogliame fresco, generando un’alternanza sulla strada di macchie di scuro, a punti in cui il sole di maggio già iniziava a fare un minimo di effetto di riverbero sull’asfalto non più ghiacciato.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-08&amp;rev=1690471425&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:23:45+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-08</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-08&amp;rev=1690471425&amp;do=diff</link>
+        <description>Cap. 08 – Quella Strana Creatura della Collina.
+
+
+
+----------
+
+
+
+----------
+
+Uno dei miei passatempi preferiti, da quando ero arrivato a Verona, era di passare almeno un pomeriggio a settimana in biblioteca, cercando in giornali di 20, 30 ed anche 40 anni fa, fatti strani che potessero essere successi e che potevano riguardare i miei specifici interessi. Nel caso ne trovassi uno ripartivo da zero cercando ripetizioni di occorrenze simili per vedere se quell’episodio si fosse riproposto o meno ne…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-09&amp;rev=1690471343&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:22:23+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-09</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-09&amp;rev=1690471343&amp;do=diff</link>
+        <description>Cap. 09 – Tuffo nel Passato
+
+
+
+----------
+
+
+
+----------
+
+«Nonno, perché mi stai insegnando queste cose?» La voce, allora di tredicenne, non tremava, ne aveva un tono sfacciato: era davvero solo curiosità la mia. «In realtà, nipote, non ti sto insegnando nulla che tu già non sappia: ti aiuto solo a ricordare.»</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-10&amp;rev=1690471253&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:20:53+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-10</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-10&amp;rev=1690471253&amp;do=diff</link>
+        <description>Cap. 10 – La Nonna e la Pioggia.
+
+
+
+----------
+
+
+
+----------
+
+Successe poco prima dell’anniversario della morte della nonna materna. Il letto era appoggiato al muro per cui girandomi verso destra mi trovavo il muro di fronte, nulla di che, ma ci volle un po’ ad abituarmici dopo l’arrivo in Italia; dove vivevo prima avevo una camera tutta mia con il letto classicamente con la testata appoggiata ad un muro, alla destra la finestra ed alla sinistra il lato con la libreria ed una piccola scrivania. …</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-11&amp;rev=1690471198&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:19:58+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-11</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-11&amp;rev=1690471198&amp;do=diff</link>
+        <description>Cap. 11 – La Chiesa Sconsacrata
+
+
+
+----------
+
+
+
+----------
+
+Era novembre inoltrato, un novembre di quegli anni in cui, ancora, la nebbia poteva essere definita tale, ossia talmente fitta che se guardavi a terra vedevi si e no le tue ginocchia.
+
+Quel tipo di giornate mi avevano sempre fatto sentire bene: non ho mai capito la gente che si trova a disagio nella nebbia, al di la del senso di protezione che mi da, percepire le persone, più che sentirle o vederle fisicamente, mi ha sempre dato il van…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-12&amp;rev=1690471150&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:19:10+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-12</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-12&amp;rev=1690471150&amp;do=diff</link>
+        <description>Cap. 12 – Mirko, il Sardo.
+
+
+
+----------
+
+
+
+----------
+
+Fu proprio in una di quelle serate, cosiddette mondane, in realtà una sera del fine settimana, in cui ci si trovava con tutta la compagnia, che conobbi Mirko. Si era aggregato al nostro solito gruppo, in quanto cugino di uno degli abituali presenti: il Thomas; Mirco era in vacanza qui in città ed ovviamente il cugino se l’era portato dietro.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-13&amp;rev=1690471117&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:18:37+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-13</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-13&amp;rev=1690471117&amp;do=diff</link>
+        <description>Cap. 13 – La Reliquia.
+
+
+
+----------
+
+
+
+----------
+
+&quot;Mia era, e mia deve tornare&quot;. Quando una reliquia può essere il pegno di un contratto.
+
+----------
+
+Ora di cena: siamo seduti uno di fronte all’altro pronti ad affondare le forchette nei piatto colmo di pasta alla carbonara, fatta con il guanciale portato da un amico della zona di Amatrice!</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-14&amp;rev=1690471040&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:17:20+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-14</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-14&amp;rev=1690471040&amp;do=diff</link>
+        <description>Cap. 14 – La Lama Nera degli Spiriti.
+
+
+
+----------
+
+
+
+----------
+
+Sentii chiamare il mio cognome a voce alta. Stavo rientrando dalla mensa, ed ero quasi arrivato all’ingresso che portava su, al mio ufficio.
+
+Mi domandai chi mi stesse cercando con tanta ansia da strillare il mio cognome in mezzo alla strada. Era uno degli addetti all’ingresso: un omone con il quale, se non lo conoscevi, non ti saresti mai permesso di prenderti nessuna libertà di certo.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-15&amp;rev=1690470982&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:16:22+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-15</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-15&amp;rev=1690470982&amp;do=diff</link>
+        <description>Cap. 15 – L’attacco di Aamon.
+
+
+
+----------
+
+
+
+----------
+
+Era un pomeriggio uggioso di novembre, seduto sul divano con una coperta sulle gambe, stavo leggendo un romanzo di fantasia. Ero in uno di quei periodi, che io classifico di lettura piena. Sono sempre stato così per la lettura, quella generica, chiaramente volumi o tomi per il lavoro li leggevo sempre tutti e subito studiandoli a fondo. Mentre per la lettura tradizionale andavo a periodi: in alcuni non riuscivo a prendere un libro in man…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-16&amp;rev=1690522055&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T07:27:35+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-16</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-16&amp;rev=1690522055&amp;do=diff</link>
+        <description>Cap. 16 – I Vampiri Non Esistono!!!!
+
+
+
+----------
+
+
+
+by Pedro Lastra on Unsplash
+
+----------
+
+Ma altro si aggira dopo il tramonto nelle nostre città.
+
+----------
+
+Stavo cenando e, distrattamente, ascoltavo le notizie del telegiornale locale quando qualcosa attirò la mia attenzione: «Altro caso di giovane trovato in forte stato confusionale nella periferia della città.» Il servizio riportava che, come nei casi precedenti, il ragazzo non sapeva spiegare cosa gli fosse accaduto. Fatti gli esami de…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-17&amp;rev=1690470596&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:09:56+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-17</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-17&amp;rev=1690470596&amp;do=diff</link>
+        <description>Cap. 17 – Il Concilio di Skarsvåg.
+
+
+
+----------
+
+Ogni cinque anni il Consiglio dei Cinque si riunisce con tutti gli stregoni D’Europa.
+
+----------
+
+
+
+Heather Shevlin  on  Unsplash
+
+----------
+
+Si avvicinava marzo, ma nonostante il mese, già quasi primaverile, un’aria fredda sferzava il viso mentre, con passo lento, mi avviavo verso l’albergo presso il quale eravamo, quasi tutti, alloggiati. Quest’anno, il ritrovo quinquennale degli operatori dell’occulto europeo, si teneva a Skarsvåg, in onore …</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-18&amp;rev=1690470728&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:12:08+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-18</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-18&amp;rev=1690470728&amp;do=diff</link>
+        <description>Cap. 18 - Il Convoglio
+
+
+
+----------
+
+
+
+----------
+
+Chiacchieravo con l’autista, mentre il pesante mezzo militare traballava sulle strade, si faceva per dire strade visto come erano conciate, lasciando la E-852 per allungare verso Struga e fare un pezzo di strada costeggiando il lago di Ohrid. Il capo aveva deciso questa deviazione per poter pranzare con del pesce locale, che a detta di suoi colleghi, già passati in questa zona, era sempre freschissimo e sempre disponibile. Chiaramente la colonn…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:cap-19&amp;rev=1690470831&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:13:51+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:cap-19</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:cap-19&amp;rev=1690470831&amp;do=diff</link>
+        <description>Cap. 19 – L’Arsenale.
+
+
+
+----------
+
+
+
+----------
+
+Erano circa mezzanotte e cinquanta, quando il piantone, ossia il militare che restava sveglio del gruppo, toccandomi gentilmente la spalla mi svegliò per dirmi che era ora: «Mi spiace, ma all’una ha il giro d’ispezione;» mi disse apparentemente davvero dispiaciuto di dovermi tirare giù dalla branda per quell’infausto incarico. «Grazie.» Gli risposi semplicemente mentre cercavo di riprendermi dall’interruzione così secca dal sonno profondo. Mi ve…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:indice&amp;rev=1690473037&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:50:37+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:indice</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:indice&amp;rev=1690473037&amp;do=diff</link>
+        <description>Indice progressivo del Diario di un Occultista
+
+----------
+
+Prefazione al Diario di un Occultista
+
+Cap.01 - CASA NUOVA, VECCHI PROBLEMI
+
+Cap.02 - LA LAVANDERIA DEL QUARTIERE
+
+Cap.03 - NON DIRE MAI QUELLA PAROLA
+
+Cap.04 - GIOCACI E GIOCACI ANCORA E FINIRAI PER FARTI MALE
+
+Cap.05 - L'INQUILINO
+
+Cap.06 - ATTACCO IN FAMIGLIA
+
+Cap.07 - QUELLA STRANA CHIESA
+
+Cap.08 - LA STRANA CREATURE DELLE COLLINE
+
+Cap.09 - TUFFO NEL PASSATO
+
+Cap.10 - LA NONNA E LA PIOGGIA
+
+Cap.11 - LA CHIESA SCONSACRATA
+
+Cap.12 - M…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:start&amp;rev=1690814294&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:38:14+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>diario:start</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:start&amp;rev=1690814294&amp;do=diff</link>
+        <description>Prefazione
+
+
+
+----------
+
+
+
+----------
+
+Seduto alla mia scrivania, ho davanti il computer acceso su una pagina bianca: l’idea di redigere un diario era da un po’ che mi frullava per la testa. Altri colleghi, nel tempo, hanno compilato il proprio Grimorio, altri semplici raccolte di incantesimi, formule alchemiche, riti ed evocazioni varie.</description>
+    </item>
+</rdf:RDF>

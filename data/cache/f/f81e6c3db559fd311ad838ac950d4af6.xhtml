@@ -1,0 +1,179 @@
+
+<h2 class="sectionedit1" id="come_configurare_ip_statico_su_macchine_della_famiglia_ubuntu_dalla_versione_1704_in_poi">Come configurare ip statico su macchine della famiglia Ubuntu dalla versione 17.04 in poi.</h2>
+<div class="level2">
+
+<p>
+Devo dire che questa cosa è passata piuttosto in silenzio: solo al momento dell&#039;accesso alla macchina, dopo l&#039;installazione, gli utenti amministrativi si sono resi conto che qualcosa era cambiato nella gestione della configurazione delle schede di rete. Al momento in cui sono andati, abitualmente, a cambiare le configurazioni del file <em>/etc/network/interfaces</em> si sono trovati questo testo inserito, in cima al file, come commento:
+</p>
+<pre class="code"># ifupdown has been replaced by netplan(5) on this system.  See
+# /etc/netplan for current configuration.
+# To re-enable ifupdown on this system, you can run:
+#    sudo apt install ifupdown</pre>
+
+<p>
+che tradotto suona più o meno:
+</p>
+<pre class="code"># ifupdown è stato rimpiazzato da netplan su questo sistema. 
+# Controlla /etc/netplan/ per la configurazione corrente.
+# PEr riattivare ifupdown su questo sistema puoi eseguire:
+#    sudo apt install ifupdown</pre>
+
+<p>
+Per altro scordandosi di avvisare che se <em>netplan</em> <strong>non viene</strong> disinstallato, <em>ifupdown</em> può andare incontro a problemi piuttosto antipatici in fase di esecuzione.
+</p>
+
+<p>
+Quindi Ubuntu ha deciso, mi pare in maniera unilaterale, di passare da un sistema di gestione di rete ad un altro. A detta loro per standardizzare e semplificare la gestione… io sinceramente non sono molto d&#039;accordo, ma questo, con questa pagina, non ha molto a che fare, per cui cominciamo a vedere come si fa!!
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come configurare ip statico su macchine della famiglia Ubuntu dalla versione 17.04 in poi.&quot;,&quot;hid&quot;:&quot;come_configurare_ip_statico_su_macchine_della_famiglia_ubuntu_dalla_versione_1704_in_poi&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-1496&quot;} -->
+<h3 class="sectionedit2" id="premessa_importante">Premessa importante!</h3>
+<div class="level3">
+
+<p>
+Durante l&#039;installazione, io uso sempre versioni server LTS<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup>, il sistema quando arriva alla fase di configurazione della rete della macchina, permette di configurarla a nostra scelta: o DHCP, o IP statico. Se avete scelto IP statico, allora avete già risolto il problema: dovete solo fare un bel <em>man netplan</em> per studiarvi il nuovo comando, e le sue possibili configurazioni. Se invece avete scelto DHCP, per qualsivoglia motivo, e volte passare a IP statico, allora continuate a leggere.
+</p>
+<hr />
+
+<p>
+Le configurazioni di netplan sono scritte in file nella cartella <em>/etc/netplan</em>, quindi il vecchio file <em>/etc/networks/interfaces</em> non ci interessa più. Spostatevi in <em>/etc/netplan</em> e fate un bel <strong>ls -la</strong>: dovreste trovare un file li dentro, che ha quelle poche righe, necessarie, per configurare la scheda di rete in modalità DHCP.
+Copiatevi quel file nella vostra cartella personale, cosi da averne una copia di sicurezza. Il file potrebbe essere: 50-cloud-init.yaml oppure un altro nome simile. Unica cosa sicura: avrà l&#039;estensione .yalm
+</p>
+
+<p>
+Apritelo e svuotatelo: sarà più veloce che non cercare di sistemarlo, trasformandolo in base alle vostre esigenze.
+</p>
+
+<p>
+Una volta vuoto, riempitelo in questo modo:
+</p>
+<pre class="code">network:
+    ethernets:
+        enp0s3:                      &lt;-- Nome della scheda di rete
+            addresses: 
+            - 192.168.1.80/24        &lt;-- Indirizzo statico che volete assegnare
+            - 192.168.1.81/24        &lt;-- Indirizzo statico che volete assegnare
+            
+            gateway4: 192.168.1.254  &lt;-- Gateway per questa scheda
+            nameservers:
+                addresses:
+                - 8.8.8.8            &lt;-- Primo server DNS
+                - 208.67.222.222     &lt;-- Secondo server DNS
+                search:
+                - vostro.dominio     &lt;-- modalità di ricerca
+            optional: true           &lt;-- opzionale: valore bolelan quindi o true o false
+    version: 2</pre>
+
+<p>
+Alcune considerazioni:
+</p>
+<ol>
+<li class="level1"><div class="li"> Il file <strong>deve</strong> essere indentato pena il mancato funzionamento del settaggio;</div>
+</li>
+<li class="level1"><div class="li"> i commenti nell&#039;esempio, ossia tutto quello segue i caratteri ←- (caratteri compresi) <strong>non</strong> devono essere riportati nel file di configurazione;</div>
+</li>
+<li class="level1"><div class="li"> l&#039;indirizzo IP <strong>deve</strong> essere espresso nella notazione CDIR quindi IP/24;</div>
+</li>
+<li class="level1"><div class="li"> come nell&#039;esempio, si posson assegnare più IP alla stessa scheda di rete;</div>
+</li>
+<li class="level1"><div class="li"> possono essere indicati più server <abbr title="Domain Name System">DNS</abbr>;</div>
+</li>
+<li class="level1"><div class="li"> <strong>optional</strong> di default è <strong>false</strong>, ma viene consigliato di configurarlo su <em>true</em>. Il parametro <strong>optional</strong> indica se la macchina deve attendere di terminare la configurazione della scheda di rete, durante il boot, o se può proseguire fregandosene del risultato positivo o meno, della configurazione stessa. Con <strong>true</strong> si afferma che la configurazione della scheda di rete risulta opzionale rispetto al processo di boot, per cui anche non andasse in porto, il boot può proseguire.</div>
+</li>
+</ol>
+
+<p>
+Quindi una configurazione <strong><em>pulita</em></strong> di un file di configurazione, per una classica scheda di rete con un solo IP statico, risulterebbe cosi:
+</p>
+<pre class="code">network:
+    ethernets:
+        enp2s0f0:
+            addresses:
+            - 192.168.1.250/24
+            gateway4: 192.168.1.1
+            nameservers:
+                addresses:
+                - 208.67.222.222
+                search:
+                - jcsu.eu
+                - jsch
+            optional: true
+    version: 2
+</pre>
+
+<p>
+Basta ricordarsi i comandi e le indentazioni (alla faccia del piu standard e più comodo!!!
+</p>
+
+<p>
+Finita la parte di configurazione <em>netplan</em> permette di fare un test che verifica se la nuova configurazione sia corretta o meno senza farvi perdere la connessione se siete collegati via ssh. Eseguite il comando 
+</p>
+<pre class="code">netplan try</pre>
+
+<p>
+ e se tutto è configurato correttamente avrete un risultato simile a questo:
+</p>
+<pre class="code">Warning: Stopping systemd-networkd.service, but it can still be activated by:
+  systemd-networkd.socket
+Do you want to keep these settings?
+
+
+Press ENTER before the timeout to accept the new configuration
+
+
+Changes will revert in 117 seconds</pre>
+
+<p>
+NetPlan vi da 120 secondi per decidere se volete provare, o meno, quella configurazione: se premete INVIO verrà testata, se fate CRTL-C, il test verrà interrotto.
+</p>
+
+<p>
+Se durante il test avviene un errore questo è il tipo di segnalazione che potreste ricevere:
+</p>
+<pre class="code"> 
+Error in network definition //etc/netplan/50-cloud-init.yaml line 9 column 12: address &#039;192.168.1.80&#039; is missing /prefixlength
+
+An error occured: the configuration could not be generated
+
+Reverting.</pre>
+
+<p>
+In questo caso per far generare l&#039;errore avevo impostato l&#039;IP in formato tradizionale e non CDIR per cui <em>netplan</em> mi segnala a che riga, e da che carattere, si è presentato l&#039;errore, segnalandomi anche il tipo di errore che è avvenuto.
+</p>
+
+<p>
+Se invece non viene rilevato nessun errore avremo questa risposta:
+</p>
+<pre class="code">Configuration accepted.</pre>
+
+<p>
+Ossia che la configurazione e valida ed accettabile.
+</p>
+
+<p>
+<strong><em class="u">ATTENZIONE</em></strong> che il test non conferma le modifiche. Per confermare <strong>definitivamente</strong> le modifiche apportate, nel file di configurazione, dovete dare un ultimo comando:
+</p>
+<pre class="code">netplan apply</pre>
+
+<p>
+Solo all&#039;uscita da questo comando, senza errori, la nuova configurazione sarà operativa e verrà ricaricata pari, pari al prossimo reboot.
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=configurazioni" class="wikilink1" title="configurazioni" data-wiki-id="configurazioni">Clicca qui</a> per tornare alla pagina Configurazioni.<br/>
+
+<a href="/doku.php?id=start" class="wikilink1" title="start" data-wiki-id="start">Clicca qui</a> per tornare alla pagina principale di questo Wiki.
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2018/07/11 12:13</em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Premessa importante!&quot;,&quot;hid&quot;:&quot;premessa_importante&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:2,&quot;range&quot;:&quot;1497-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">Long Term Service</div></div>
+</div>

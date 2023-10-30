@@ -1,0 +1,65 @@
+# JCSH.EU - Network
+
+## Benvenuti nella nuova HomePage della rete jcsh.eu!
+
+***
+
+<fs x-large>Come avrete notato il sito non è più gestito in WordPress, per sapere il perché clicca su [[cambio-sito|questo link]].
+\\
+\\
+I vecchi siti avranno in questa homepage, ognuno il proprio link per poter essere raggiunto.</fs> \\ \\
+
+ 
+
+^  Sito  ^ URL  ^
+|  <fs large>AlfaOmega</fs>  | [https://alfaomegajcsh.eu](https://alfaomega.substack.com/archive?sort=new)|
+|  <fs large>Bulk</fs>  | [https://bulk.jcsh.eu](https://dicolamiasu.substack.com/s/bulk/archive?sort=new) |
+|  <fs large>Dico LA Mia Su</fs>  | [https://dicolamiasu.jcsh.eu](https://dicolamiasu.substack.com/archive) |
+|  <fs large>GayLife</fs>  | [https://gaylife.jcsh.eu](https://gaylife.substack.com/archive?sort=new)|
+|  <fs large>Wiki</fs>  | https://tecnowiki.jcsh.eu |
+|  <fs large>I Ching: analisi settimanale degli esagrammi.</fs>  | [https://mystika.substack.com](https://mystika.substack.com/s/i-ching/archive?sort=new) |
+
+<fs large>Ovviamente non potevano mancare i due siti non informativi: il primo con il romanzo pubblicato qualche anno fa, ed il secondo, per gli interessati, che pare non siano poi così pochi come temevo, sull'analisi degli I Ching.</fs> \\ \\
+
+^ Sito  ^ URL  ^
+| <fs large>Diario di un Occultista</fs> | [http://diariodiunoccultista.jcsh.eu](https://diariodiunoccultista.jcsh.eu) |
+| <fs large>I Ching: Analisi dei 64 Esagrammi.</fs> | [https://i-ching.jcsh.eu](https://i-ching.jcsh.eu) | 
+
+***
+
+<fs large>Come avrete notato alcuni siti, la maggior parte, sono stati rigenerati importando il tutto in SubStack, gli altri usando DokuWiki. Solo per il sito degli I Ching ho mantenuto il formato originale, almeno per ora: visto la quantità di materiale già scritto, devo prendermi del tempo per rigenerare il tutto in DokuWiki 8-O .
+\\ \\
+Per gli altri siti, che erano stati avviati usando la mia disponibilità ad ospitare blog vari sulla rete JCSH.EU, i rispettivi proprietari dei blog, **sono stati avvisati per tempo** della disattivazione del server di WordPress. Non ho avviato lo spegnimento di WordPress, **se non dopo aver ricevuto l'ok** da tutti gli autori, quindi li ritroverete ai rispettivi URL originali, se non hanno pensato di cambiare indirizzo durante il trasferimento verso altri servizi.</fs>
+\\ \\
+
+#### Nota Conclusiva:
+
+***
+
+<fs large>Tutti i siti ospitati sul DokuWiki jcsh.eu, per una questione tecnica (praticamente non ho ancora un secondo IP pubblico) sono firmati con certificati auto firmati. Questo significa che al primo accesso il vostro browser darà di matto, segnalando che il certificato non è valido! Ovviamente dovrete fidarvi, ma posso garantirvi che i certificati sono stati generati sul mio server personale, home hosted, ed e proprio per avere il server in casa che non posso usare i certificati [LetsEncrypt](https://it.wikipedia.org/wiki/Let%27s_Encrypt) pur avendo un IP statico.
+\\ \\
+Se qualcuno di voi conoscesse un metodo per ottenere un certificato LetsEncrypt, pur avendo un server *in casa* (e quindi con IP pubblico che tramite firewall reindirizza verso un IP locale), me lo faccia sapere: io non ho trovato modo per risolvere questo problema.
+\\ \\
+
+Rammento che gli indirizzi privati sono divisi in base a questa definizione dalla IANA (Internet Assigned Numbers Authority)</fs>
+\\ \\
+
+
+^  Classe  ^  da IP  ^  ad IP  ^  IP disponibili  ^
+|  A  |  10.0.0.0 |  10.255.255.255 |  16.777.216 |
+|  B  |  172.16.0.0 |  172.31.255.255 |  1.048.576 |
+|  C  |  192.168.0.0 |  192.168.255.255 |  65.536 |
+
+\\
+
+***
+
+<fs large>Che altro dirvi? Eventuali nuovi siti compariranno in questa stessa pagina, nel tempo.\\
+E come ultima cosa: **buona lettura!!**</fs>
+\\
+
+***
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 17/08/2023 09:11 - Ultima modifica 18/08/2023 06:27//
+
+***

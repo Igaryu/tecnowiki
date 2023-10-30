@@ -1,0 +1,20 @@
+====== Configurazione EMail su clients di posta ======
+\\
+\\
+
+
+----
+
+
+  - [[mailconfig-desktop|Configurazioni per client di posta Desktop]]
+  - [[mailconfig-android|Configurazioni per client di posta Android]]
+  - [[mailconfig-ios|Configurazione per client di posta iOS]]
+
+
+----
+
+[[configurazioni|Clicca qui per tornare alla pagina delle Configurazioni]]\\
+[[start|Clicca qui per tornare alla home page del sito Wiki]]
+
+----
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/07/21 11:57//

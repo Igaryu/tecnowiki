@@ -1,0 +1,142 @@
+
+<h1 class="sectionedit1" id="introduzione_ad_una_todo_list_per_installare_un_server_di_posta">Introduzione ad una ToDo list per installare un server di posta.</h1>
+<div class="level1">
+<hr />
+
+<p>
+Installare un server di posta, una volta, richiedeva conoscenze tecniche non indifferenti, questo perché andavano installati software specifici, per ogni componente del server stesso. In più la sommatoria delle configurazioni doveva convergere verso una soluzione omogenea che producesse, come effetto finale, il tanto agognato server di posta <strong>funzionante</strong>.
+</p>
+
+<p>
+Per poter installare un server di posta, innanzi tutto si dovevano avere due cose:
+</p>
+<ul>
+<li class="level1"><div class="li">Una connessione fornita di un IP statico;</div>
+</li>
+<li class="level1"><div class="li">Un dominio di riferimento e l’accesso alla sua gestione.</div>
+</li>
+</ul>
+<hr />
+
+<p>
+Per farsi un’idea della complessità della cosa, segue una lista dei componenti che vanno installati:
+</p>
+<ul>
+<li class="level1"><div class="li">Un server di posta in uscita (SMTP);</div>
+</li>
+<li class="level1"><div class="li">Un server di posta in entrata di tipologia POP (man mano scarica la posta, la cancella dal server, lasciando all’utente l’onere di conservare copia delle mail ricevute);</div>
+</li>
+<li class="level1"><div class="li">In alternativa può essere installato un server IMAP che permette di scaricare la posta <strong>senza rimuoverla fisicamente dal server</strong>. Questa cosa concede il vantaggio di poter vedere la posta da diversi client, in quanto il protocollo, alla base dell’IMAP, è in grado di ricordare dove la posta fosse stata già letta, e dove no (in realtà questo compito era svolto dal client di posta).</div>
+</li>
+</ul>
+
+<p>
+Con il passare del tempo si è aggiunto un livello di sicurezza a tutto questo, quindi i protocolli visti sopra diventano più complessi da configurare perché oltre a quanto configurato prima, si deve tenere conto del certificato che garantisce la sicurezza attraverso il protocollo SSL. Questo implica che il protocollo, SMTP, POP o IMAP che sia, deve provvedere, oltre allo smistamento in entrata ed in uscita della posta, anche il gestire le varie situazioni in cui si può incappare se si usa un certificato di sicurezza, ossia:
+</p>
+<ul>
+<li class="level1"><div class="li">Un certificato valido;</div>
+</li>
+<li class="level1"><div class="li">Un certificato scaduto;</div>
+</li>
+<li class="level1"><div class="li">Un certificato revocato.</div>
+</li>
+</ul>
+
+<p>
+Il tutto in due possibili sovra gruppi, ancora più a monte, da verificare, ossia:
+</p>
+<ul>
+<li class="level1"><div class="li">Certificato auto prodotto;</div>
+</li>
+<li class="level1"><div class="li">Certificato prodotto da una azienda addetta a questo servizio, che ovviamente va affittato.</div>
+</li>
+</ul>
+
+<p>
+Per ognuno di questi componenti, esclusa la questione IP, esistono uno, o più, file di configurazione che devono essere manipolati per raggiungere lo scopo di avere un server di posta funzionante. Quindi circa 15/20 file differenti da configurare, uno alla volta, e tutti che convivano in una realtà omogenea: non avrebbe senso avere un server di posta che ascolta la posta a smtp.<strong>mioserver.it</strong>  mentre un server in ascolto con il protocollo POP a pop.<strong>unaltroserver.it</strong> ed infine un server in ascolto per il protocollo IMAP in ascolto su un server imap.<strong>iochecentro.it</strong>
+</p>
+<hr />
+
+<p>
+Inoltre ci sono dei servizi aggiuntivi che vanno installati e configurati, sempre in modo omogeneo. Questi possono essere:
+</p>
+<ul>
+<li class="level1"><div class="li"> Un sistema antispam;</div>
+</li>
+<li class="level1"><div class="li"> Un sistema antivirus;</div>
+</li>
+<li class="level1"><div class="li"> Un sistema di web mail:</div>
+</li>
+<li class="level1"><div class="li"> Un servizio di cloud share (per appoggiarsi quando si devono trasferire file di una certa dimensione usando un link di condivisione invece di tentare di mandare il file come allegato alla mail. Questo perché i server di posta hanno delle regole per impedire il trasferimento di allegati di dimensioni maggiori ad X; dove X è una dimensione arbitraria decisa dal fornitore del servizio di posta).</div>
+</li>
+</ul>
+
+<p>
+Anche tutti questi servizi hanno uno, o più file di configurazione, a cui si deve mettere mano, affinché il tutto funzioni correttamente.
+</p>
+<hr />
+
+<p>
+Adesso hai un idea del perché installare un server di posta, resta un problema per personale con competenze tecniche non indifferenti, e soprattutto richiede una discreta quantità di tempo, per essere eseguita.
+Quindi per installare un server di posta, serve, <strong>sempre</strong>, un sistemista con competenze non indifferenti? La risposta è si se si vuole procedere alla vecchia maniera; ossia scaricando ogni singolo componente e configurandolo a mano, uno per uno.
+</p>
+
+<p>
+Per fortuna Linux è un sistema rigido, nel senso che ha una struttura del filesystem che è uguale per tutte le distribuzioni; quindi <strong>in tutti i sistemi linux</strong> tutti i file di configurazione stanno nella cartella <strong>/etc</strong>; in tutti i sitemi linux gli eseguibili di sistema sono nella cartella <strong>/bin</strong>; in tutti i sistemi linux tutte le librerie a 32 bit sono nella cartella <strong>/lib32</strong> e tutte le librerie a 64 bit sono nella cartella <strong>/lib64</strong>.
+</p>
+
+<p>
+Uno dei vantaggi di questo sistema rigido, sta nel fatto che sapremo esattamente dove sono gli eseguibili, le librerie e soprattutto i file di configurazione. Questo permette, a chi lavora in linux, di scriptare molte delle attività ripetitive e commesse, come appunto installare un server di posta.
+</p>
+
+<p>
+Uno script, per chi viene dal mondo windows, corrisponde ad un file batch di DOS, quindi facendola breve, un file in cui sono contenute una serie di istruzioni che replicano, automaticamente, tutte le operazione che un sistemista dovrebbe fare, a mano, per installare questo server di posta.
+</p>
+
+<p>
+Avendo il programma anche la possibilità di leggere input da tastiera, può chiedere quelle poche cose che non può estrapolare, da solo, dall’ambiente in cui si trova: per esempio il nome che vorremo dare al dominio del server di posta, oppure in quale cartella metteremo i dati delle mail che il server di posta gestirà.
+</p>
+
+<p>
+Sommate le istruzioni del programma, che ripeto altro non sono le operazioni che fa di norma il sistemista per configurare il server, alle informazioni che fornirete, quando il programma sarà eseguito, ed otterrete come risultato uno script in grado di installarvi un server di posta ben configurato e funzionante in soli 5 minuti al posto dei 24/36 ore, lavorative, che servirebbero per configurarlo a mano.
+</p>
+
+<p>
+Possiamo schematizzare il lavoro fatto dallo script iRedMail in questo modo:
+</p>
+<ul>
+<li class="level1"><div class="li">Collezionare le informazioni mancanti dall’ambiente, tramite richieste a video verso l’utente;</div>
+</li>
+<li class="level1"><div class="li">Verifica di quali componenti sono già installati e per quelli mancanti provvedere a scaricarli ed installarli</div>
+</li>
+<li class="level1"><div class="li">Configurare il tutto correttamente;</div>
+</li>
+<li class="level1"><div class="li">Produrre un output con tutte le informazioni necessaire ad usare il server di posta, quindi indirizzi del server SMTP, POP e/o IMAP; indirizzo e credenziali per il gestore del sistema di posta (chiamato di norma postmaster); altre informazioni inerenti software aggiuntivi come il database usato, ed eventuali sistemi antivirus, antispam utilizzati.</div>
+</li>
+</ul>
+
+<p>
+Considera che questi script installano, e configurano, tutta la parte software del server di posta; il resto del lavoro, ossia creazione degli utenti, assegnazione della password ed, eventuale, configurazione di una quota per utente, resta a carico vostro.
+</p>
+<hr />
+
+<p>
+Esistono diversi si questi script di installazione per server di posta. In questa guida tratterò di iRedMail. Non dico sia il migliore, ma di quelli che ho testato, al momento, è quello con cui mi trovo meglio. Nulla impedisce di usarne altri, dopo aver studiato tutta la loro documentazione, come ho fatto io, inizialmente, con la documentazione di iRedMail.
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:todoposta" class="wikilink1" title="tecno:todoposta" data-wiki-id="tecno:todoposta">Clicca qui</a> per accedere alla ToDoList vera e propria.<br/>
+
+<a href="/doku.php?id=tecno:serverposta" class="wikilink1" title="tecno:serverposta" data-wiki-id="tecno:serverposta">Clicca qui</a> per tornare alla documentazione server di posta.<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla home page del Wiki<br/>
+
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joeseph Curto</a> 2018/07/10 12:40</em> – Ultima modifica 2023/07/28 08:44
+</p>
+
+</div>

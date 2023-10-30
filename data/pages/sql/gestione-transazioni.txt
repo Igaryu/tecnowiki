@@ -1,0 +1,70 @@
+# Gestione delle Transazioni
+
+~~NOTOC~~
+
+----
+
+Le transazioni SQL sono insiemi di istruzioni che devono essere trattati come delle unità atomiche, cioè non scomponibili nelle singole istruzioni da cui sono formate. Grazie a tale atomicità le transazioni permettono di eseguire operazioni complesse sul database mantenendone l'integrità. Infatti una transazione viene eseguita con successo se, e solo se, tutte le operazioni che la compongono terminano con successo. In caso contrario, cioè se una delle operazioni fallisce, o se la transazione viene esplicitamente annullata, tutte le operazioni precedenti vengono annullate anch'esse. Le operazioni di una transazione non hanno alcun effetto sul database fino a quando la transazione non viene completata con successo.
+
+Dal momento che ad un database possono accedere più utenti contemporaneamente, in ogni istante potremmo avere più transazioni che manipolano il database in maniera concorrente. Lo standard SQL prevede che normalmente le transazioni debbano essere eseguite nel "livello di isolamento serializzabile" (isolation level SERIALIZABLE), cioè in una modalità di esecuzione che garantisca la "serializzabilità" delle transazioni. Il fatto che le transazioni siano serializzabili significa che il loro effetto complessivo sul database è quello che si otterrebbe se esse venissero eseguite in maniera non concorrente l'una di seguito all'altra. Nel linguaggio SQL, standard, non esiste un'istruzione che faccia iniziare esplicitamente una transazione. 
+
+Le istruzioni vengono divise in due classi: 
+
+- quelle che possono iniziare una transazione 
+- e quelle che non la fanno iniziare. 
+
+Nel momento in cui si cerca di eseguire un'istruzione della prima classe, se non è già in corso una transazione, ne viene cominciata una. La transazione continua fino a quando una delle istruzioni fallisce, causando l'annullamento dell'intera transazione, o se vengono eseguite le istruzioni COMMIT WORK o ROLLBACK WORK.
+
+L'istruzione COMMIT WORK termina la transazione confermandola, rendendo quindi definitivi gli effetti delle sue istruzioni sul database. L'istruzione ROLLBACK WORK invece la termina annullandola. 
+
+Spesso i DBMS che si trovano in commercio implementano la gestione delle transazioni in maniera differente da quanto previsto dallo standard (almeno nelle loro impostazioni di default). In tal caso, di solito è previsto un comando che inizia esplicitamente una transazione (BEGIN TRANSACTION, START WORK o altro). 
+
+Se una transazione non è stata iniziata esplicitamente, le singole istruzioni ne compongono una ciascuna. Per capire meglio quali potrebbero essere le conseguenze della manipolazione concorrente dei dati di un database, senza l'utilizzo delle transazioni, vediamone un esempio: supponiamo di avere un database con il quale gestiamo gli ordini dei prodotti che vendiamo. In particolare, quando un cliente ci sottopone una richiesta per un prodotto, ne verifichiamo la disponibilità e, nel caso in cui possiamo soddisfare l'ordine, sottraiamo alla quantità in giacenza, la quantità che ci è stata richiesta. Traducendo tutto ciò in SQL, otteniamo la quantità in giacenza con l'istruzione (istruzione A):
+
+```
+SELECT giacenza FROM prodotti 
+	WHERE prodottoID=1453;
+```
+
+L'aggiornamento della giacenza, una volta verificata la disponibilità, è ottenuta dalla seguente istruzione (istruzione B):
+```
+UPDATE prodotti
+	SET giacenza=giacenza-1 
+	WHERE prodottoID=1453;
+```
+
+Se due utenti cercano di eseguire questa operazione, senza che le due istruzioni che la compongono siano state raggruppate in una transazione, potrebbe accadere che le istruzioni vengano eseguite nel seguente ordine e con i risultati seguenti :
+
+1. Istruzione A eseguita dall'utente 1: viene restituita una giacenza del prodotto pari a 1, quindi l'ordine verrà approvato.
+2. Istruzione A eseguita dall'utente 2: come prima la giacenza è 1 e anche in questo caso l'ordine verrà approvato.
+3. Istruzione B eseguita dall'utente 1: a questo punto nel database la giacenza per il prodotto vale 0.
+4. Istruzione B eseguita dall'utente 2: ora la giacenza vale -1, che è ovviamente un valore errato.
+
+Come si vede, il risultato finale è che uno dei due clienti non potrà ricevere (almeno non subito) la merce, dato che non ne avevamo in giacenza una quantità sufficiente per entrambi i clienti.
+
+Se le due istruzioni fossero state inserite in una transazione, ad esempio:
+```
+BEGING (oppure START TRANSACTION) 
+	UPDATE prodotti
+		SET giacenza=giacenza-1 
+		WHERE prodottoID=1453;
+COMMIT;
+```
+
+il problema non sarebbe sorto, dato che la transazione del secondo utente non avrebbe potuto leggere il valore della giacenza, fino a quando non fosse stata completata la transazione del primo utente. Solo a quel punto, la giacenza avrebbe avuto valore 0 e l'ordine non sarebbe stato, erratamente, approvato.
+
+Alcune precisazioni:
+1. la transazione, in MariaDB, si avvia con `START TRANSACTION;` **oppure** con `BEGIN;`: non viene accettato `BEGIN TRANSACTION` ;
+2. la transazione viene accettata,  e resa permanente, con il comando `COMMIT;`. Chiudere la connessione al DB, senza aver eseguito il `COMMIT;` renderà nulla la transazione;
+3. Fino a che la connessione con il DB non viene chiusa o non viene eseguito il comando `ROLLBACK;`, la transizione resta valida, ma non viene rilasciato il `LOCK` alla tabella in questione: per annullare **correttamente** una transizione **non si deve troncare la connessione con il DB**, ma eseguire il comando `ROLLBACK;` e poi chiudere la connessione.
+
+[Utilizzo multiutente di un database](https://www.html.it/pag/31729/utilizzo-multiutente-di-un-database/)
+
+
+----
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/24 15:28// — Ultima modifica: 2023/07/26 09:44 

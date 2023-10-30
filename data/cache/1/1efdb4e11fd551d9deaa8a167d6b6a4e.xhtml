@@ -1,0 +1,147 @@
+
+<h2 class="sectionedit1" id="come_configurare_ip_statico_su_macchine_della_famiglia_ubuntu_sino_alla_versione_17">Come configurare IP statico su macchine della famiglia Ubuntu sino alla versione 17</h2>
+<div class="level2">
+
+<p>
+Questo metodo piuttosto noto, ma ne tengo traccia per quando manca la memoria!
+Per poter configurare la scheda di rete con un <code>IP</code> statico si deve operare nel file: 
+</p>
+<pre class="code">/etc/network/interfaces</pre>
+
+<p>
+quindi apriamolo con il nostro editor preferito, io uso <code>vi /etc/network/interfaces</code>
+</p>
+
+<p>
+Di norma quando si installa una macchina Ubuntu, la configurazione di default per la scheda di rete è quella che utilizza il server <code>DHCP</code>. Quindi troveremo nel file un contenuto di questo genere:
+</p>
+<pre class="code">auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp</pre>
+
+<p>
+Non dovrebbe essere necessario specificalo, ma facciamolo:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>lo</code> indica la scheda virtuale nota anche come <strong>localhost</strong>;</div>
+</li>
+<li class="level1"><div class="li"> <code>eth0</code> indica la <strong>prima</strong> scheda di rete fisica;</div>
+</li>
+<li class="level1"><div class="li"> <code>iface</code> determina se la scheda viene configurata in maniera statica o via DHCP</div>
+</li>
+</ul>
+
+<p>
+Chiaramente la scheda <code>lo</code> non necessita di configurazione in quando è universalmente configurata a 127.0.0.1
+mentre in questo file di configurazione la scheda <code>eth0</code> è configurata per essere indirizzata da un server DHCP.
+</p>
+
+<p>
+Affinché la nostra scheda eth0 diventi una scheda con IP statico, dobbiamo fare delle modifiche alla sua configurazione in questo file iniziando dalla riga:
+</p>
+<pre class="code">iface eth0 inet dhcp</pre>
+
+<p>
+che deve diventare:
+</p>
+<pre class="code">iface eth0 inet static</pre>
+
+<p>
+Come possiamo vedere abbiamo modificato la riga in modo che il sistema sappia che non vogliamo un <code>IP</code> assegnato da un server <code>DHCP</code>, ma che lo configureremo come <code>IP</code> <strong>statico</strong>. A questo punto diventa ovvio che dobbiamo aggiungere delle informazioni suppletive per poter dare tutti i dati necessari per una corretta configurazione:
+</p>
+<pre class="code">iface eth0 inet static
+	address 192.168.1.134
+	netmask 255.255.255.0
+	broadcast 192.168.1.255
+	network 192.168.1.0
+	gateway  192.168.1.254
+        dns-nameserver 8.8.8.8 207.68.222.222 
+        # ATTENZIONE: l&#039;unico separatore ammesso tra gli IP è il carattere SPAZIO</pre>
+
+<p>
+Nell&#039;ordine abbiamo configurato:
+</p>
+<ul>
+<li class="level1"><div class="li">l&#039;indirizzo IP</div>
+</li>
+<li class="level1"><div class="li">la relativa netmask</div>
+</li>
+<li class="level1"><div class="li">il relativo broadcast</div>
+</li>
+<li class="level1"><div class="li">la relativa network</div>
+</li>
+<li class="level1"><div class="li">il relativo gateway</div>
+</li>
+<li class="level1"><div class="li">i relativi indirizzi dei server <abbr title="Domain Name System">DNS</abbr> <sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup></div>
+</li>
+</ul>
+
+<p>
+Alla fine l&#039;intero file di configurazione risulterà:
+</p>
+<pre class="code">auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+	address 192.168.1.134
+	netmask 255.255.255.0
+	broadcast 192.168.1.255
+	network 192.168.1.0
+	gateway  192.168.1.254
+        dns-nameserver 127.0.0.1 8.8.8.8 207.68.222.222 </pre>
+
+<p>
+Normalmente, a questo punto, affinché il servizio prenda i nuovi dati di dovrebbe procedere con:
+</p>
+<pre class="code">service networking restart</pre>
+
+<p>
+ ma per un vecchio bug, mai sistemato, questo sistema non funzionerà. Indi l&#039;unico modo per attivare le modifiche è quello di riavviare il sistema con un: 
+</p>
+<pre class="code">shutdown -r now</pre>
+
+<p>
+A riavvio effettuato, per verificare che i nuovi dati siano stati presi in carico eseguiamo un: 
+</p>
+<pre class="code">ifconfig eth0</pre>
+
+<p>
+il risultato, con i dati che ho usato per l&#039;esempio, sarà:
+</p>
+<pre class="code">eth0      Link encap:Ethernet  HWaddr 00:16:3e:7b:5a:ea  
+          inet addr:192.168.1.134  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::216:3eff:fe7b:5aea/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1985443 errors:0 dropped:36375 overruns:0 frame:0
+          TX packets:54473 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:131166107 (131.1 MB)  TX bytes:60735093 (60.7 MB)</pre>
+
+<p>
+Chiaramente quello che ci interessa è l&#039;indirizzo <code>IP</code> che deve corrispondere a quello impostato. Il dato è quello nella riga che inizia con <code>inet addr</code>. Tutto quanto scritto sin&#039;ora vale anche, ovviamente, per eventuali configurazioni di indirizzi in IPv6 con le relative differenze sul formato di indirizzo.
+</p>
+
+<p>
+E con questo abbiamo finito: buona configurazione!
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:configurazioni" class="wikilink1" title="tecno:configurazioni" data-wiki-id="tecno:configurazioni">Clicca qui</a> per tornare alla pagina Configurazioni.<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla pagina principale di questo Wiki.
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2018/07/11 10:23</em>
+</p>
+
+</div>
+<div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">ATTENZIONE: che sia un server o due o tre, il campo si chiama sempre dns-nameserver<strong>s</strong> al plurale!!! Levate la s finale perché avete un solo server <abbr title="Domain Name System">DNS</abbr>, e <strong>non verrà</strong> configurato alcun <abbr title="Domain Name System">DNS</abbr> server per la scheda di rete!!</div></div>
+</div>

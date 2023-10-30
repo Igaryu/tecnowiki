@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.8" -->
+<?xml-stylesheet href="http://jcsh.eu/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://jcsh.eu/feed.php">
+        <title>Joe's Experienced Docs</title>
+        <description></description>
+        <link>http://jcsh.eu/</link>
+        <image rdf:resource="http://jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico" />
+       <dc:date>2023-08-29T14:15:59+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://jcsh.eu/doku.php?id=cambio-sito&amp;rev=1692336628&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jcsh.eu/doku.php?id=git-py-issqlite3&amp;rev=1691660384&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jcsh.eu/doku.php?id=gits&amp;rev=1691832541&amp;do=diff"/>
+                <rdf:li rdf:resource="http://jcsh.eu/doku.php?id=start&amp;rev=1692696278&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico">
+        <title>Joe's Experienced Docs</title>
+        <link>http://jcsh.eu/</link>
+        <url>http://jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://jcsh.eu/doku.php?id=cambio-sito&amp;rev=1692336628&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-18T07:30:28+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>cambio-sito</title>
+        <link>http://jcsh.eu/doku.php?id=cambio-sito&amp;rev=1692336628&amp;do=diff</link>
+        <description>Come mai il sito è cambiato???
+
+----------
+
+Il sito, rispetto al precedente che sfruttava la tecnologia multi sito di WordPress, adesso sarà impostato in modo differente, per diversi motivi, i principali dei quali sono:
+
+	* Tutti i vecchi siti della rete sono stati spostati su </description>
+    </item>
+    <item rdf:about="http://jcsh.eu/doku.php?id=git-py-issqlite3&amp;rev=1691660384&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-10T11:39:44+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>git-py-issqlite3</title>
+        <link>http://jcsh.eu/doku.php?id=git-py-issqlite3&amp;rev=1691660384&amp;do=diff</link>
+        <description>Python - È un file SQLite3?
+
+----------
+
+Ho avuto, ed ho spesso, bisogno di questa funzione, perché la funzione connect del modulo sqlite3 di python non, e ripeto non, verifica che il file passato come parametro, sia davvero un file di database SQLite3!</description>
+    </item>
+    <item rdf:about="http://jcsh.eu/doku.php?id=gits&amp;rev=1691832541&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-12T11:29:01+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>gits</title>
+        <link>http://jcsh.eu/doku.php?id=gits&amp;rev=1691832541&amp;do=diff</link>
+        <description>GITS: Frammenti di codice vario.
+
+Porzioni di codice per utility che mi servono spesso, in varie linguaggi.
+
+----------
+
+	* Python - È un file SQLite3?
+
+----------
+
+Clicca qui per tornare alla pagina iniziale
+
+----------
+
+ --- Joseph Curto 11/08/2023 11:27 — Ultima Modifica: 12/08/2023 11:28</description>
+    </item>
+    <item rdf:about="http://jcsh.eu/doku.php?id=start&amp;rev=1692696278&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-22T11:24:38+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>start</title>
+        <link>http://jcsh.eu/doku.php?id=start&amp;rev=1692696278&amp;do=diff</link>
+        <description>JCSH.EU - Network
+
+Benvenuti nella nuova HomePage della rete jcsh.eu!
+
+----------
+
+Come avrete notato il sito non è più gestito in WordPress, per sapere il perché clicca su questo link.
+
+
+
+
+I vecchi siti avranno in questa homepage, ognuno il proprio link per poter essere raggiunto.</description>
+    </item>
+</rdf:RDF>

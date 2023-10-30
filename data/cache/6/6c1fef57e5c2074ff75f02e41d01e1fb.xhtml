@@ -1,0 +1,73 @@
+
+<h1 class="sectionedit1" id="network_manager">Network Manager</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Network Manager&quot;,&quot;hid&quot;:&quot;network_manager&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-31&quot;} -->
+<h2 class="sectionedit2" id="configurare_ip_statico">Configurare IP statico</h2>
+<div class="level2">
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configurare IP statico&quot;,&quot;hid&quot;:&quot;configurare_ip_statico&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;32-73&quot;} -->
+<h2 class="sectionedit3" id="configurazione_ip_statico_in_caso_di_server">Configurazione IP statico in caso di server.</h2>
+<div class="level2">
+
+<p>
+In caso si voglia usare il vecchio <code>/etc/network/interfaces</code> quando, sul sistema, la rete viene gestita da <code>NetworkManager</code>, eseguire quanto segue:
+</p>
+
+<p>
+Preparare il file <code>/etc/network/interface</code> con i dati per la configurazione: nell’esempio che segue la scheda di rete usata è <code>eno1:</code>
+</p>
+
+<p>
+<code> allow-hotplug eno1 iface eno1 inet static address 192.168.1.130 netmask 255.255.255.0 gateway 192.168.1.254 # Per i DNS elencare uno, o piu, IP separati dal caratere spazio dns-nameservers 127.0.0.1 1.0.0.1 </code>
+</p>
+
+<p>
+Editare il file <code>/etc/NetworkManager/NetworkManager.conf</code> modificando il valore del settaggio di <code>managed</code>:
+</p>
+
+<p>
+DA
+</p>
+<pre class="code"> [ifupdown]
+ managed=false
+</pre>
+
+<p>
+A
+</p>
+<pre class="code"> [ifupdown]
+ managed=true
+</pre>
+
+<p>
+Riavviare il servizio di rete.
+</p>
+
+<p>
+<em class="u"><strong>NOTA:</strong></em>
+</p>
+
+<p>
+Visto le diverse possibilità di tool di gestione rete, a seconda dello specifico <abbr title="Operating System">OS</abbr>, <strong>consiglio di riavviare la macchina</strong> che è più sicuro.
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tips-triks" class="wikilink1" title="tips-triks" data-wiki-id="tips-triks">Clicca qui per tornare alla pagina Trcks &amp; Trips</a><br/>
+
+<a href="/doku.php?id=start" class="wikilink1" title="start" data-wiki-id="start">Clicca qui per tornare alla pagina home del Wiki</a>
+</p>
+<hr />
+
+<p>
+— <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2023/07/025 15:05</em> <br/>
+
+— <em>Ultima modifica: 2023/07/025 15:05 </em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configurazione IP statico in caso di server.&quot;,&quot;hid&quot;:&quot;configurazione_ip_statico_in_caso_di_server&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;74-&quot;} -->

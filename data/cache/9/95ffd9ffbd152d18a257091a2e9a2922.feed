@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.8" -->
+<?xml-stylesheet href="http://doku.jcsh.eu/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://doku.jcsh.eu/feed.php">
+        <title>Joe's Experienced Docs sql</title>
+        <description></description>
+        <link>http://doku.jcsh.eu/</link>
+        <image rdf:resource="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico" />
+       <dc:date>2023-08-01T10:18:08+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:crea-utente-db&amp;rev=1690812456&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:gestione-transazioni&amp;rev=1690810823&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:istruzioni_varie&amp;rev=1690812561&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:record-delete&amp;rev=1690812517&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:record-insert&amp;rev=1690812475&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:record-update&amp;rev=1690812499&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:sqlite-dupletable&amp;rev=1690810940&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:sqlite-multidb&amp;rev=1690811773&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=sql:sqlite-readonly&amp;rev=1690812011&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico">
+        <title>Joe's Experienced Docs</title>
+        <link>http://doku.jcsh.eu/</link>
+        <url>http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:crea-utente-db&amp;rev=1690812456&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:07:36+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:crea-utente-db</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:crea-utente-db&amp;rev=1690812456&amp;do=diff</link>
+        <description>Creare un utente ed agganciargli un DB
+
+----------
+
+1) Solo di un solo Utente:
+
+CREATE USER 'user01'@localhost IDENTIFIED BY 'password';
+
+2) Assegnazione tutti i privilegi di uno specifico  DB ad uno specifico utente:
+
+GRANT ALL PRIVILEGES ON 'specificoDB'.* TO 'user01'@localhost;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:gestione-transazioni&amp;rev=1690810823&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T15:40:23+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:gestione-transazioni</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:gestione-transazioni&amp;rev=1690810823&amp;do=diff</link>
+        <description>Gestione delle Transazioni
+
+
+
+----------
+
+Le transazioni SQL sono insiemi di istruzioni che devono essere trattati come delle unità atomiche, cioè non scomponibili nelle singole istruzioni da cui sono formate. Grazie a tale atomicità le transazioni permettono di eseguire operazioni complesse sul database mantenendone l'integrità. Infatti una transazione viene eseguita con successo se, e solo se, tutte le operazioni che la compongono terminano con successo. In caso contrario, cioè se una delle op…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:istruzioni_varie&amp;rev=1690812561&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:09:21+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:istruzioni_varie</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:istruzioni_varie&amp;rev=1690812561&amp;do=diff</link>
+        <description>SQL
+
+
+
+Istruzioni varie
+
+----------
+
+	*  Creare un utente ed agganciargli un DB
+	*  Inserimento record(s) in database
+	*  Modifica record(s) in database
+	*  Cancellare record(s) da tabella
+	*  Gestione delle transazioni
+
+SQLite3
+
+----------
+
+	*   Apertura database in sola lettura
+	*   Come duplicare una tabella con i suoi contenuti
+	*   Avere più database aperti contemporaneamente per operazioni cross db
+
+
+
+
+----------
+
+Clicca qui per tornare alla pagina iniziale
+
+----------
+
+ --- Joseph Curto 2…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:record-delete&amp;rev=1690812517&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:08:37+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:record-delete</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:record-delete&amp;rev=1690812517&amp;do=diff</link>
+        <description>Cancella record(s) in database
+
+
+
+----------
+
+Modello DB esempio:
+
+TableName=Persone
+                     idPersone                      Nome     Cognome  Età   Residenza                          1                          Mario    Rossi    21    Verona</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:record-insert&amp;rev=1690812475&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:07:55+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:record-insert</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:record-insert&amp;rev=1690812475&amp;do=diff</link>
+        <description>Inserimento record(s) in database
+
+----------
+
+Modello DB esempio:
+
+TableName=Persone
+ idPersone   Nome     Cognome   Età   Residenza  1           Mario    Rossi     21    Verona  2           Franco   Bianchi   27    Vicenza 
+Inserimento record variante 1</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:record-update&amp;rev=1690812499&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:08:19+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:record-update</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:record-update&amp;rev=1690812499&amp;do=diff</link>
+        <description>Modifica record in database
+
+
+
+----------
+
+Modello DB esempio: `TableName = Persone`
+ idPersone  Nome   Cognome  Eta   Residenza  --  -----  -------  ----  ---------  1  Mario  Rossi    21    Verona    
+Modifica record selezionato da campo usato come chiave:</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:sqlite-dupletable&amp;rev=1690810940&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T15:42:20+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:sqlite-dupletable</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:sqlite-dupletable&amp;rev=1690810940&amp;do=diff</link>
+        <description>SQLite3
+
+----------
+
+Come duplicare una tabella con i suoi contenuti.
+
+----------
+
+Capita a volte di avere la necessità di duplicare una tabella con tutto il suo contenuto: Ogni variante SQL ha la sua soluzione dedicata: vediamo come in SQLite.
+
+Data una tabella</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:sqlite-multidb&amp;rev=1690811773&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T15:56:13+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:sqlite-multidb</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:sqlite-multidb&amp;rev=1690811773&amp;do=diff</link>
+        <description>SQLite3
+
+----------
+
+Come avere più database aperti nella stessa sessione di SQLite3.
+
+----------
+
+
+
+bash-propt$ sqlite3  #senza alcun parametro
+
+sqlite&gt; attach database &quot;Primo-Database.db&quot; as DB01;
+sqlite&gt; attach database &quot;Secondo-Database.db&quot; as DB02;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=sql:sqlite-readonly&amp;rev=1690812011&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:00:11+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>sql:sqlite-readonly</title>
+        <link>http://doku.jcsh.eu/doku.php?id=sql:sqlite-readonly&amp;rev=1690812011&amp;do=diff</link>
+        <description>SQLite3
+
+----------
+
+Collegare database in sola lettura.
+
+----------
+
+Può capitare di avere la necessità di aprire un database in sola lettura, per poter essere sicuri di non modificarlo accidentalmente: pur essendo una gestione RDBMS stand alone è possibile farlo: dato un database chiamato MioDB.sqlite…</description>
+    </item>
+</rdf:RDF>

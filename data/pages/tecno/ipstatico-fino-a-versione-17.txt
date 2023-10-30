@@ -1,0 +1,102 @@
+===== Come configurare IP statico su macchine della famiglia Ubuntu sino alla versione 17 =====
+
+Questo metodo piuttosto noto, ma ne tengo traccia per quando manca la memoria!
+Per poter configurare la scheda di rete con un ''IP'' statico si deve operare nel file: <code>/etc/network/interfaces</code>
+
+quindi apriamolo con il nostro editor preferito, io uso ''vi /etc/network/interfaces''
+
+Di norma quando si installa una macchina Ubuntu, la configurazione di default per la scheda di rete è quella che utilizza il server ''DHCP''. Quindi troveremo nel file un contenuto di questo genere:
+<code>
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+</code>
+
+Non dovrebbe essere necessario specificalo, ma facciamolo: 
+  * ''lo'' indica la scheda virtuale nota anche come **localhost**;
+  * ''eth0'' indica la **prima** scheda di rete fisica;
+  * ''iface'' determina se la scheda viene configurata in maniera statica o via DHCP
+
+Chiaramente la scheda ''lo'' non necessita di configurazione in quando è universalmente configurata a 127.0.0.1
+mentre in questo file di configurazione la scheda ''eth0'' è configurata per essere indirizzata da un server DHCP.
+
+Affinché la nostra scheda eth0 diventi una scheda con IP statico, dobbiamo fare delle modifiche alla sua configurazione in questo file iniziando dalla riga:
+<code>
+iface eth0 inet dhcp
+</code>
+
+che deve diventare:
+<code>
+iface eth0 inet static
+</code>
+
+Come possiamo vedere abbiamo modificato la riga in modo che il sistema sappia che non vogliamo un ''IP'' assegnato da un server ''DHCP'', ma che lo configureremo come ''IP'' **statico**. A questo punto diventa ovvio che dobbiamo aggiungere delle informazioni suppletive per poter dare tutti i dati necessari per una corretta configurazione:
+
+<code>
+iface eth0 inet static
+	address 192.168.1.134
+	netmask 255.255.255.0
+	broadcast 192.168.1.255
+	network 192.168.1.0
+	gateway  192.168.1.254
+        dns-nameserver 8.8.8.8 207.68.222.222 
+        # ATTENZIONE: l'unico separatore ammesso tra gli IP è il carattere SPAZIO
+</code>
+
+Nell'ordine abbiamo configurato:
+
+  * l'indirizzo IP
+  * la relativa netmask
+  * il relativo broadcast
+  * la relativa network
+  * il relativo gateway
+  * i relativi indirizzi dei server DNS ((ATTENZIONE: che sia un server o due o tre, il campo si chiama sempre dns-nameserver**s** al plurale!!! Levate la s finale perché avete un solo server DNS, e **non verrà** configurato alcun DNS server per la scheda di rete!!))
+
+
+Alla fine l'intero file di configurazione risulterà:
+
+<code>
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+	address 192.168.1.134
+	netmask 255.255.255.0
+	broadcast 192.168.1.255
+	network 192.168.1.0
+	gateway  192.168.1.254
+        dns-nameserver 127.0.0.1 8.8.8.8 207.68.222.222 
+</code>
+
+Normalmente, a questo punto, affinché il servizio prenda i nuovi dati di dovrebbe procedere con:
+<code>service networking restart</code> ma per un vecchio bug, mai sistemato, questo sistema non funzionerà. Indi l'unico modo per attivare le modifiche è quello di riavviare il sistema con un: <code>shutdown -r now</code>
+
+A riavvio effettuato, per verificare che i nuovi dati siano stati presi in carico eseguiamo un: <code>ifconfig eth0</code>
+
+il risultato, con i dati che ho usato per l'esempio, sarà:
+<code>
+eth0      Link encap:Ethernet  HWaddr 00:16:3e:7b:5a:ea  
+          inet addr:192.168.1.134  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::216:3eff:fe7b:5aea/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1985443 errors:0 dropped:36375 overruns:0 frame:0
+          TX packets:54473 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:131166107 (131.1 MB)  TX bytes:60735093 (60.7 MB)
+</code>
+
+Chiaramente quello che ci interessa è l'indirizzo ''IP'' che deve corrispondere a quello impostato. Il dato è quello nella riga che inizia con ''inet addr''. Tutto quanto scritto sin'ora vale anche, ovviamente, per eventuali configurazioni di indirizzi in IPv6 con le relative differenze sul formato di indirizzo.
+
+E con questo abbiamo finito: buona configurazione!
+
+----
+
+[[configurazioni|Clicca qui]] per tornare alla pagina Configurazioni.\\
+[[start|Clicca qui]] per tornare alla pagina principale di questo Wiki.
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/07/11 10:23//

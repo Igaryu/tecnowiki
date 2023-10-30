@@ -1,0 +1,51 @@
+# Python - È un file SQLite3?
+***
+
+Ho avuto, ed ho spesso, bisogno di questa funzione, perché la funzione `connect` del modulo `sqlite3` di python non, **e ripeto non**, verifica che il file passato come parametro, sia davvero un file di database SQLite3!
+
+Se passi come parametro la ricetta della zuppa della nonna, contenuta in nel file Recipe.txt, la funzione `connect` **non genererà un errore**!
+
+L'unico modo che ho trovato, per determinare in modo certo, se un file è, o meno, un file di database SQLite3, è il seguente metodo:
+
+SE i primi 16 byte corrispondono alla stringa `b'SQLite format 3\x00'` allora è un file database che SQLite3 ha generato!!
+
+In Python questa verifica la faccio con questa mia funzione:
+
+<code>
+from os.path import isfile, getsize
+
+if not isfile(filename):
+   return False
+	
+if getsize(filename) < 100: # SQLite database file header is 100 bytes long
+   return False
+
+with open(filename, 'rb') as fd:
+     header = fd.read(100)
+     
+     if (header[:16] == b'SQLite format 3\x00'):
+	return True
+     else:
+        return False
+        
+        
+</code>
+
+Non credo servano molte spiegazioni: le azioni che vengono eseguite in questa porzione di codice sono fondamentalmente dei test e ritorna di conseguenza:
+
+  1. FALSO se il file non esiste;
+  2. FALSO se il file non è lungo almeno 100 byte
+  3. VERO se letti i primi 100 byte dal file i primi 16 byte corrispondano esattamente a `b'SQLite format 3\x00'`
+  4. FALSO in tutti gli altri casi.
+  \\ 
+
+Ovviamente andrà controllato che al passaggio alla versione successiva di sviluppo, quindi SQLite4, non cambi la stringa di intestazione del file da `b'SQLite format 3\x00'` a `b'SQLite format 4\x00'`
+
+***
+
+  * [[gits|torna a Frammenti di codice vario.]]
+  * [[tecno:start|Torna alla home del wiki.]]
+
+***
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 10/08/2023 11:15// - Ultima modifica: 10/08/2023 11:38

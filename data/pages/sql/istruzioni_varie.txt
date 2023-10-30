@@ -1,0 +1,28 @@
+====== SQL ======
+~~NOTOC~~
+===== Istruzioni varie =====
+***
+  - [[Crea-Utente-DB|Creare un utente ed agganciargli un DB]]
+  - [[Record-Insert|Inserimento record(s) in database]]
+  - [[Record-Update|Modifica record(s) in database]]
+  - [[Record-Delete|Cancellare record(s) da tabella]]
+  - [[Gestione-Transazioni|Gestione delle transazioni]]
+
+==== SQLite3 ====
+***
+  - [[SQLite-ReadOnly | Apertura database in sola lettura]]
+  - [[SQLite-DupleTable | Come duplicare una tabella con i suoi contenuti.]]
+  - [[SQLite-MultiDB | Avere più database aperti contemporaneamente per operazioni cross db.]]
+  - [[SQLite-NonSequeceKey | Campi chiavi con sequenze non progressive: come risolvere.]]
+
+
+
+\\
+
+----
+
+[[tecno:start|Clicca qui per tornare alla pagina iniziale]]
+
+
+----
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/27 08:00// — Ultima Modifica: 2023/07/31 16:07

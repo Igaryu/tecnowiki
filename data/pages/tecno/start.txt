@@ -1,0 +1,40 @@
+# Benvenuti nel mio sito di memoria tecnica
+
+~~NOTOC~~
+
+***
+
+
+  * - [[:tecno:serverposta|Documentazione server di posta]]
+  * - [[:tecno:configurazioni|Configurazioni]]
+  * - [[:tecno:tips-triks|Tips & Triks]]
+  * - [[:sql:istruzioni_varie|SQL-Varie]]
+  * - [[:gits| GITS: frammenti di codice vario]]
+
+
+***
+
+A seguito di una riorganizzazione dei vari siti che avevo in piedi, dovuto primariamente al passaggio ad un server inboud, ho deciso di gestire in modo diverso la mia collezione di informazioni tecniche, che ho creato nel tempo, e che possono essere di aiuto a qualcuno.
+
+Originalmente il mio wiki era ad accesso limitato ai miei colleghi, se non altro perché oltre alle procedure in uso per determinati lavori c’erano anche informazioni di clienti, e **decisamente non era il caso** di rendere pubblico quel set di informazioni.
+
+Adesso cerco di raccogliere il tutto in questo unico nuovo wiki, che al solito gestisco via [[https://www.dokuwiki.org/|Dokuwiki]][Dokuwiki](https://www.dokuwiki.org/) e non via MediaWiki, perché non ho un tale volume di documenti che giustifichino, a mio parere, l’uso di un database relazionale per tenere i testi delle pagine.
+
+Man mano porterò qui anche tutte le [[https://gist.github.com/Igaryu|gits dal mio GitHub]][gits dal mio GitHub](https://gist.github.com/Igaryu) che ho prodotto negli anni. Nel [[https://github.com/igaryu|mio GitHub personale]][mio GitHub personale](https://github.com/igaryu) vero e proprio, troverete anche il software pubblicato, sempre da me, nel tempo.
+
+In questo wiki troverete procedure, how to, liste di check, in particolare per l’installazione server di posta, ma anche informazioni base sulla gestione basica di un database, come anche configurazioni per la creazione di aree di backup remote per i dati da salvare per qualsivoglia motivo, sino al classico how to per configurare client di posta sui cellulari.
+
+Insomma un po' di tutto… ecco: mancano le ricette dei piatti che preferisco cucinare, ma per quelle magari creo una namespace dedicata… 🤣🤣🤣
+
+Buona lettura!
+
+J.C.
+
+
+***
+
+
+— //[[jcurto@joe.vr.it|Joseph Curto]] 23/07/2023 19:11 - Ultima Modifica: 01/08/2023 10:44 //
+
+////
+

@@ -1,0 +1,134 @@
+# Come impedire il mount automatico delle partizioni all'avvio, al login o al collegamento di unità USB al tuo Mac.
+
+***
+## Montaggio partizioni solo quando desiderato.
+
+Oltre alle partizioni illeggibili e a quelle nascoste come EFI e Recovery HD, di default macOS monta tutte le partizioni di un'unità all'avvio, al login o al **collegamento di un'unità USB esterna**.
+
+Per quanto questa funzionalità sia utile per i principianti o per chi collega una sola chiavetta USB per copiare alcuni file, può diventare scomoda e fastidiosa se si hanno molte unità con più partizioni collegate al Mac.
+
+Ad esempio, il mio MacMini ha una unità esterna con un set di quattro dischi: 2 unità raggruppate in un RAID0 e due dischi individuali usati per i backup. I due dischi del backup inoltre sono crittografati, per cui ad ogni boot, o login, mi compaiono due popup dove mi si chiedono le password per ogni disco.
+
+Non volendo io i dischi di backup perennemente in linea, ma solo al momento di esecuzione del backup, che faccio manualmente quando mi serve, una volta montati i dischi con la corretta password, devo smontarli appena finito la procedura di auto mount.
+
+Chiaramente stando così le cose, l'auto mount di quegli specifici dischi non solo è inutile, ma anche fastidioso perché mi propone due popup in sequenza in cui mi si chiede la password.
+
+Dopo una lettura approfondita del man di mount e di man fstab ho trovato la soluzione che mi sta più comoda. Quindi ti mostrerò come creare una lista di unità che **non subiranno** la procedura di automount una volta collegate al Mac.
+
+<fs x-large>**Primo:**</fs>
+
+Per evitare che le partizioni si montino automaticamente, aggiungeremo i loro UUID a una lista tramite il Terminale. Prima di tutto, collega le unità e monta le partizioni che non desideri più montare automaticamente in futuro.
+
+<fs x-large>**Secondo:**</fs>
+
+Avvia il Terminale (lo trovi in /Applicazioni/Utility o tramite Spotlight). Al prompt, incolla il comando:
+
+`diskutil info /Volumes/"Nome Volume" | grep UUID`
+
+Sostituisci "Nome Volume" con il nome della partizione che desideri evitare di montare, facendo attenzione a mantenere le virgolette se il nome del volume contiene spazi o punteggiatura.
+
+Nel mio caso visto che il disco in RADI 0 si chiama Lavoro il comando sarà:
+
+`diskutil info /Volumes/Lavoro | grep UUID`
+
+che produrrà in risposta:
+
+`   Volume UUID:               645AE6BB-82C0-429A-8C08-13381C265E03`
+
+
+**Terzo:**
+
+Copia la stringa esadecimale e incollala da qualche parte, quindi ripeti il comando per tutti gli altri nomi di dischi che desideri escludere dall'auto mount, incollando i loro UUID nella stessa nota in cui avete messo il primo UUID.
+
+!https://media.idownloadblog.com/wp-content/uploads/2016/11/volume-UUID-strings.png
+
+<fs x-large>**Quarto:**</fs>
+
+Una volta completato, nel Terminale digita:
+
+`sudo vifs`
+
+
+Inserisci la password di amministratore quando richiesto. Comparirà un documento con questa intestazione:
+
+```
+#
+# Warning - this file should only be modified with vifs(8)
+#
+# Failure to do so is unsupported and may be destructive.
+#
+```
+
+nel Terminale. Premi il tasto "A" per visualizzare il cursore e, utilizzando il tasto "Freccia in giù" e premendo infine il tasto "Invio", spostati nel documento sotto le righe contrassegnate dal simbolo # e sopra le righe contrassegnate dal simbolo ~.
+
+Ora copia e incolla la seguente riga nel documento:
+
+`UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX none apfs rw,noauto`
+
+Sostituisci la stringa di XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX con il tuo UUID **annotato in precedenza**. Aggiungi eventuali altre partizioni sulle righe sottostanti, ripetendo l'intera frase ma cambiando XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX con il corretto UUID ogni volta.
+
+!https://media.idownloadblog.com/wp-content/uploads/2016/11/prevent-drives-from-mounting-on-mac.png
+
+**Sesto:**
+
+Quando hai finito, premi il tasto "esc" per uscire dalla modalità cursore, quindi digita ":x" e premi il tasto "Invio" per salvare le modifiche ed uscire dal documento.
+
+Dopo un riavvio o un logout/login o un disconnetti/collega dell'unità, le unità, i cui UUID hai aggiunto al documento non si dovrebbero montare automaticamente. 
+
+Se desideri montare tali partizioni in futuro, puoi farlo manualmente utilizzando l'app `Utility Disco` o il `Terminale`.
+
+Per eventualmente ripristinare le modifiche descritte qui, devi semplicemente cancellare, o commentare, le righe con gli UUID delle tue unità dal file `/etc/fstab` a cui li abbiamo aggiunti, utilizzando un processo simile a quello descritto in precedenza: 
+
+  -Apri prima il Terminale e digita il comando "sudo vifs"
+  -inserisci la password per visualizzare /etc/fstab con l'elenco delle tue unità al suo interno. 
+  -Premi "A" per entrare nella modalità di modifica
+  -spostati verso il basso fino alle righe inserite con il tasto "Freccia in giù" e utilizza il tasto "Cancella" o "Backspace" per rimuoverne quante ne desideri. 
+  -Quando hai finito, premi `ESC` per uscire dalla modalità di modifica, quindi digita `:x` e premi il tasto `INVIO` per salvare le modifiche ed uscire dall'editor.
+
+Questo metodo funziona con questi tipo di partizioni:
+
+  -normali (apfs, hfs, MSDOS, ecc.)
+  -RAID
+  -criptate 
+  -CoreStorage. 
+
+Il comando fornito in questa guida assume che la partizione in questione sia formattata come `APFS` (Che è il default per Mac OS) e che tu voglia che sia possibile sia leggere che scriverci, al momento in cui decidi di montarla. 
+
+La maggior parte delle partizioni macOS è formattata in questo modo, ma puoi verificare la formattazione del tuo disco nell'applicazione Utility Disco se non sei sicuro. Se le tue partizioni sono configurate diversamente, devi modificare il comando di conseguenza.
+
+Ad esempio, se desideri che la partizione si monti automaticamente, ma vuoi che venga montata come sola lettura invece che lettura/scrittura, puoi rimuovere la frase `noauto` e sostituire `rw` con `ro`.
+
+Per impostare una partizione formattata come FAT per non montarsi automaticamente, sostituisci `apfs` nel comando precedente con `msdos`.
+
+
+Nota finale: è possibile modificare il file /etc/fstab in molti modi diversi: usando `vi` usando `nano` o usando qualsiasi altro editor di testo, che preferiate.
+
+Anche se ho testato altri editor come `nano` o `TextEdit` e funziona bene, Apple non lo segnala come completamente sicuro: Apple consiglia sempre di utilizzare lo strumento `vifs` al suo posto. 
+
+Cosa faccia in più `vifs` rispetto ad un comando `vi /etc/fstab` non è dato saperlo visto che `vifs` è un eseguibile. Scavando un po' più a fondo si può scoprire che ci sono altri comandi dedicati a specifiche operazioni come:
+
+  -vipw
+  -visudo
+
+ed anche questi sembrano semplicemente sostituire comandi come `vi /etc/passwd` oppure `vi /etc/sudoers`. In realtà per `vipw` per esempio, sono certo che fa anche altro, visto che fine editing vi rammenta di dover fare altre operazioni affinché le modifiche eseguite siano validate. 
+
+Quindi: se proprio non digerite `vi` come editor usate `nano /etc/fstab` ma sappiate che Apple lo **sconsiglia**.
+
+
+Fatemi sapere se avete trovato qualche errore nella guida utile questa guida. 
+
+Buon mount manuale!!
+
+<fs x-large>**P.S.**</fs>
+
+In Linux la cosa è simile, ma con qualche diffenza **importante**: vai alla pagina corrispondente nel wiki qui: [[tecno:linux-no-usb-automount|Come impedire il mount automatico delle partizioni all'avvio, al login o al collegamento di unità USB al tuo Linux.]]
+
+
+----
+
+Torna alla pagina [[tecno:tips-triks|Trucchi e trucchetti per risolvere problemi vari.]] \\
+Torna alla home di [[tecno:|Tecno Wiki]]
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 20/09/2023 10:11 - Ultima modifica 20/03/2023 12:22//

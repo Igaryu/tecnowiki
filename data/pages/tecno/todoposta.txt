@@ -1,0 +1,46 @@
+# ToDo list per installare un server di posta. 
+
+A seguire una ToDo list da usare come check per l’installazione di un server di posta aziendale. Consideriamo che iRedMail lavora meglio su un server appena installato con solo il basico necessario installato. Si può installarlo anche su macchine già operative, ma rischia di creare problemi con le installazione dei componenti se vanno in conflitto con pacchetti già installati. Quindi:
+
+^ Fatto  ^ Descrizione                                                                                                                                                                                                                                                                                                                      ^
+| [ _ ] | Verificare lo stato dell'IP che si utilizzerà: se risulta, come spesso, //sporco// perché listato in una o più blacklist, allora **deve** essere pulito\\ richiedendo il delisting dai vari siti in cui compare. Senza questa operazione iniziale si rischia di fare il lavoro e poi trovarsi\\ nell'impossibilità di inviare posta.  |
+| [ _ ] | Scaricare una ISO di un linux della famiglia di Debian, quindi Ubuntu e derivate vanno bene. Io tendenzialmente non uso macchine\\ con ambiente grafico, ma si può fare se ci si trova meglio.                                                                                                                                     |
+| [ _ ] | Installare la ISO su una macchina fisica o virtuale opportunamente configurata a livello HW                                                                                                                                                                                                                                      |
+| [ _ ] | Ad installazione terminata fare un aggiornamento immediatamente così da avere la machina pronta per l’installazione del server di posta.|
+| [ _ ] | A questo punto prepararsi un documento in cui elencare i vati domini che si vorranno usare: di solito uno per la posta in entrata\\ (imap.dominio.it) ed uno per la posta in uscita (smtp.dominio.it).|
+| [ _ ] |Preparare lista degli utenti, con eventuali password da traghettare, anche se per sicurezza, andrebbero rigenerate tutte, spesso i titolari\\ non lo permettono.|
+| [ _ ] | A questo punto scaricare l’ultima versione dello script iRedMail dal suo [[https://www.iredmail.org/download.html|sito]]. Per i serve in versione solo testuale il comando wget\\ è sufficiente come programma per fare il download.|
+| [ _ ] |Decomprimere il file scaricato con //tar xjvf  iRedMail-X.X.X.tar.bz2// e spostarsi nella cartella appena creata ed avviare lo script.|
+| [ _ ] |Dopo aver eseguito l’installazione otterremo indirizzo da cui accedere all’area amministrativa del server di posta. Qui troveremo un\\ documento in cui sono riportati tutti gli URL interessati all’installazione, compreso quello per l’accesso alla webmail che è integrata\\ nel pacchetto.|
+| [ _ ] |Accediamo all’area amministrativa con l’account di gestione riportato (postmaster@nostrodominio.it) e crediamo i singoli utenti. Nel creare\\ l’utente **ricordarsi** di assegnare la quota a zero ed a non rendere l’utente un amministratore: uno basta ed avanza!! Se necessario\\ configurare anche la lingua di default in Italiano ed assegnare la password che ci è stata fornita, o impostarne una di nuova.|
+| [ _ ] |Terminata la creazione degli utenti, se è stato richiesto, dovremo trasferire la posta dal server vecchio a quello nuovo. Per questa attività,\\ in ambiente linux, si usa un programma chiamato imapcopy. Ne discuterò in un altro documento.|
+| [ _ ] |Accedere all’area di gestione del dominio per l’inserimento dei record necessari. Questi sono la chiave SPF e la chiave DKIM. Questi due\\ record sono **fondamentali**, per la reputazione in internet del nostro server di posta. Senza queste due chiavi collegate al dominio master,\\ molti server di posta bloccherebbero la nostra posta in arrivo impedendo così al server di fare il suo mestiere:\\ ossia mandare posta. Le due chiavi hanno una grammatica ben precisa: se non la si segue le chiavi saranno invalidate.|
+| [ _ ] |Chiave **SPF**. Il record deve essere di tipo TXT. Il nome dominio **deve essere nel formato**: nomedominio.it e contenere:\\ "v=spf1 a ip4:IP-del-server a:dominio-master-del-server a:dominio-alternativo-server ~all"\\ Le virgolette di delimitazione devono fare parte della chiave stessa.|
+| [ _ ] |Chiave **DKIM**:  il record è sempre di tipo TXT. Il nome **dominio deve essere nel formato**: dkim._domainkey.nomedominio.it ed il\\ contenuto uguale a: «v=DKIM1; - p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBJKrjDfgTqsUvxmQK02rz8dN0zwqklV6g4iP9cnG/Efc3t6Xx36rF6rGMa8SDoe\\ SgxUiqoSKEHFhBWtJTGRc9N32Mc6rF2bPjgAQDPBS+Oq4pi6/4N1lYtTc9gDGNb5IZ4GmpcsFzIY/8lqZt4wsmD1SbwKpPrC65MmteAs4\\ AQQIDAQAB" - La chiave che segue la p= viene fornita nel documento riassuntivo dell’installazione e chiaramente va usata la propria.\\ Le virgolette di delimitazione **devono** fare parte della chiave stessa.|
+| [ _ ] |Dobbiamo anche creare un record **MX** che risulta essere un indirizzo di backup nel caso il server non sia funzionante. Non avendo, di norma, un server di backup, punteremo il server di posta stesso. In questo modo se il server o la connettività vengono a mancare la posta resterà in sospeso sino al ripristino del server stesso.|
+| [ _ ] |Chiave MX:  il record sarà di tipo MX. Il nome dominio deve essere nel formato: 10:nome-dominio-server-di-posta.it - Per il significato della cifra 10 cercare su google MX Domain record per apprendere lo scopo e l’uso.|
+
+
+----
+
+Riassumendo avremo 6 chiavi nel registro del dominio:
+
+  - Dominio master: dominio.it
+  - Dominio server in entrata: smtp.dominio.it
+  - Dominio server in uscita: imap.dominio.it
+  - Chiave SPF: dominio.it formato TXT
+  - Chiave DKIM: dkim._domainkey.dominio.it formato TXT
+  - Chiave MX, mx.dominio.it formato MX
+
+
+----
+
+[[prefazione|Clicca qui]] per tornare all'introduzione per l'installazione di un server di posta.\\
+[[serverposta|Clicca qui]] per tornare alla documentazione server di posta.\\
+[[start|Clicca qui]] per tornare alla pagina iniziale del Wiki.
+
+
+----
+
+
+ --- //[[jcurto@joe.vr.it|Joeseph Curto]] 2018/07/10 12:37//

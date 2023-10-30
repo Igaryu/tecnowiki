@@ -1,0 +1,57 @@
+
+<h1 class="sectionedit1" id="sqlite3">SQLite3</h1>
+<div class="level1">
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SQLite3&quot;,&quot;hid&quot;:&quot;sqlite3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-27&quot;} -->
+<h2 class="sectionedit2" id="come_avere_piu_database_aperti_nella_stessa_sessione_di_sqlite3">Come avere più database aperti nella stessa sessione di SQLite3.</h2>
+<div class="level2">
+<hr />
+<pre class="code">
+bash-propt$ sqlite3  #senza alcun parametro
+
+sqlite&gt; attach database &quot;Primo-Database.db&quot; as DB01;
+sqlite&gt; attach database &quot;Secondo-Database.db&quot; as DB02;</pre>
+
+<p>
+<span style="font-size:large;">a questo punto si fa uso del solito sistema di puntamento in SQL:
+
+Per esempio due database sugli I-CHING con uno che contenga tutti e 64 gli esagrammi, e l&#039;altro le relative linee e testi delle descrizioni: 
+</span>
+</p>
+<pre class="code">
+sqlite&gt; attach database &quot;IChing.db&quot; as DB01;
+sqlite&gt; attach database &quot;Linnee.db&quot; as DB02;
+
+sqlite&gt; .databases
+main: &quot;&quot; r/w
+DB01: /Users/giuseppecurto/MEGA/Lavoro/Python/CreaEsagramma/IChing.db r/w
+DB02: /Users/giuseppecurto/MEGA/Lavoro/Python/CreaEsagramma/IChing.db01 r/w
+
+sqlite&gt; select DB01.Esagrammi.Numero, DB01.Esagrammi.Nome, DB02.Esagrammi.line_seq from DB01.Esagrammi, DB02.Esagrammi where DB01.Esagrammi.Numero &gt; 59;
+
+# Risultato della query:
+
+60|Jie - La Delimitazione|䷻|節|001101
+61|Zhong Fu - La Verità interiore|䷼|中孚|001100
+62|Xiao Guo - La Preponderanza del piccolo|䷽|小過|110011
+63|Ji Ji - Dopo il compimento|䷾|既濟|010101
+64|Wei Ji - Prima del compimento|䷿|未濟|101010
+sqlite&gt;</pre>
+<hr />
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=sql:istruzioni_varie" class="wikilink1" title="sql:istruzioni_varie" data-wiki-id="sql:istruzioni_varie">Torna a radice docs di SQL</a><br/>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Benvenuti nel sito di memoria tecnica di Joe</a><br/>
+</div>
+</li>
+</ul>
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2023/07/24 15:28</em> — Ultima modifica: 2023/07/31 15:52 
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come avere pi\u00f9 database aperti nella stessa sessione di SQLite3.&quot;,&quot;hid&quot;:&quot;come_avere_piu_database_aperti_nella_stessa_sessione_di_sqlite3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;28-&quot;} -->

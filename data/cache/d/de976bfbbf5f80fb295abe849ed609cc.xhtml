@@ -1,0 +1,97 @@
+
+<h1 class="sectionedit1" id="messaggio_dm-raid45_not_found_in_modulesdep">Messaggio DM-RAID45 not found in modules.dep.</h1>
+<div class="level1">
+
+<p>
+
+<br/>
+
+</p>
+<hr />
+
+<p>
+<span style="color:#ff0000;"> <span style="font-size:x-large;"><em class="u">Problema:</em></span></span>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Messaggio DM-RAID45 not found in modules.dep.&quot;,&quot;hid&quot;:&quot;messaggio_dm-raid45_not_found_in_modulesdep&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;0-115&quot;} -->
+<h2 class="sectionedit2" id="messaggio_dm-raid45_not_found_in_modulesdep_segnalato_in_fase_di_boot_in_debian_e_quasi_tutte_le_sue_derivate">Messaggio &quot;DM-RAID45 not found in modules.dep&quot; segnalato in fase di boot in Debian e quasi tutte le sue derivate.</h2>
+<div class="level2">
+
+<p>
+<br/>
+
+</p>
+
+<p>
+<span style="font-size:large;">Da tempo ho notato che dopo l’installazione di Debian, nel mio caso quasi sempre in versione console per server, o LMDE5, la versione di Linux Mint basata su Debian anziché su Ubuntu, al boot mi viene sempre mostrato questo messaggio, direi un warning, e non un errore, perché comunque il boot prosegue regolarmente.</span>
+</p>
+
+<p>
+<span style="font-size:large;">Da buon sistemista compulsivo <img src="/lib/images/smileys/fun.svg" class="icon smiley" alt="^_^" />, la cosa mi ha dato, e mi da, un fastidio enorme!!!</span>
+</p>
+
+<p>
+<span style="font-size:large;">Quindi mi sono messo a cercare cosa facesse questo modulo in particolare, se mi servisse o meno.</span>
+</p>
+
+<p>
+<span style="color:#9acd32;"><span style="font-size:x-large;"><em class="u">Soluzione:</em></span></span>
+</p>
+
+<p>
+D<span style="font-size:large;">alle ricerche fatte, ma anche ad intuito, alla fine il modulo <strong>non è assolutamente necessario</strong> se non gestite un RAID a livello software sul vostro sistema. Per cui la soluzione è abbastanza intuitiva: rimuovere la chiamata al modulo da <code>/usr/lib/modules/5.10.0-23-amd64/modules.dep</code> e, ovviamente, deinstallare il pacchetto interessato: <code>dmraid</code> appunto.</span>
+</p>
+
+<p>
+<span style="font-size:large;">Ovviamente il percorso <code>/usr/lib/modules/5.10.0-23-amd64/modules.dep</code> dipende dalla versione che avete installato del <code>Kernel</code>. Nel mio caso, avendo anche un kernel 5.10.0-12 come backup in caso di problemi di boot con l’ultimo kernel installato, ho modificato anche il file <code>/usr/lib/modules/5.10.0-12-amd64/modules.dep</code>.</span>
+</p>
+
+<p>
+<span style="font-size:large;">La riga cancellata dal file modules.dep è la seguente:</span>
+</p>
+<pre class="code">kernel/drivers/md/dm-raid.ko: kernel/drivers/md/raid456.ko kernel/crypto/async_tx/async_raid6_recov.ko kernel/crypto/async_tx/async_memcpy.ko kernel/crypto/async_tx/async_pq.ko kernel/crypto/async_tx/async_xor.ko kernel/crypto/async_tx/async_tx.ko kernel/drivers/md/dm-mod.ko kernel/drivers/md/md-mod.ko kernel/crypto/xor.ko kernel/lib/raid6/raid6_pq.ko kernel/lib/libcrc32c.ko</pre>
+
+<p>
+<span style="font-size:large;">Per identificarla basta una banale ricerca una volta aperto il file <code>/usr/lib/modules/5.10.0-23-amd64/modules.dep</code> ovviamente nel path corretto del vostro kernel, della stringa <code>dm-raid.ko</code>.</span>
+</p>
+
+<p>
+<span style="font-size:large;">Una volta <em>pulito</em> il vostro file ‘’modules.dep’’ procedete alla cancellazione del pacchetto relativo: non ha senso tenerlo a bordo se non lo userete!</span>
+</p>
+<pre class="code">sudo apt purge dmraid</pre>
+
+<p>
+<span style="font-size:large;">Di norma il comando <code>apt</code> provvede da solo alla ricostruzione di <code>initramfs</code>, nel caso per qualsiasi motivo non vediate la sua ricostruzione durante l’esecuzione del comando <code>apt</code> di pulizia, allora rigeneratelo a mano con:</span>
+</p>
+<pre class="code">sudo update-initramfs -u</pre>
+
+<p>
+<span style="font-size:large;">A questo punto, ad ogni riavvio o accensione del sistema <strong>non vedrete più</strong> quel fastidioso (almeno per me lo è tantissimo) di avviso della mancanza di modulo kernel.</span>
+</p>
+<hr />
+
+<p>
+<span style="font-size:large;"><span style="color:#ff0000;">NOTA:</span></span> <br/>
+
+</p>
+
+<p>
+<span style="font-size:large;">Ho anteposto il comando <code>sudo</code> ad ogni comando da eseguire nel caso vi muoviate, come si dovrebbe, da un  utente standard del vostro sistema. Se, come me, quando lavorate sul sistema operativo accedete come utente <code>root</code> allora i vari <code>sudo</code> possono essere omessi tranquillamente.
+</span>
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:tips-triks" class="wikilink1" title="tecno:tips-triks" data-wiki-id="tecno:tips-triks">Clicca qui</a> per tornare alla pagina Trcks &amp; Trips<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla pagina home del Wiki
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 29/07/2023 10:05</em> — Ultimo aggiornamento: 29/07/2023 10:05
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Messaggio \&quot;DM-RAID45 not found in modules.dep\&quot; segnalato in fase di boot in Debian e quasi tutte le sue derivate.&quot;,&quot;hid&quot;:&quot;messaggio_dm-raid45_not_found_in_modulesdep_segnalato_in_fase_di_boot_in_debian_e_quasi_tutte_le_sue_derivate&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;116-&quot;} -->

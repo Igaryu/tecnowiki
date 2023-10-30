@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.8" -->
+<?xml-stylesheet href="http://doku.jcsh.eu/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://doku.jcsh.eu/feed.php">
+        <title>Joe's Experienced Docs</title>
+        <description></description>
+        <link>http://doku.jcsh.eu/</link>
+        <image rdf:resource="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico" />
+       <dc:date>2023-08-21T18:33:41+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=start&amp;rev=1692351483&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=cambio-sito&amp;rev=1692336628&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=diario:start&amp;rev=1692262179&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Apenna-stilografica-1032309967-1524926754685.jpg&amp;ns=diario&amp;rev=1690472545&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Atavola-ouja.jpg&amp;ns=diario&amp;rev=1690471920&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Ala-lavanderia-del-quartiere.jpg&amp;ns=diario&amp;rev=1690471836&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Asedutaspiritica.jpeg&amp;ns=diario&amp;rev=1690471672&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Acasa-dei-fantasmi.png&amp;ns=diario&amp;rev=1690471633&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Amartinati02.png&amp;ns=diario&amp;rev=1690471587&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Acapitolo6.png&amp;ns=diario&amp;rev=1690471522&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Avestatanova03.png&amp;ns=diario&amp;rev=1690471477&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Acapitolo8.png&amp;ns=diario&amp;rev=1690471416&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Acoumicare04-1024x576.jpg&amp;ns=diario&amp;rev=1690471303&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Ab8863419-bd22-4d61-8d6f-773114a326e1.png&amp;ns=diario&amp;rev=1690471242&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Ad03d6e90-a664-4217-987c-a2ea02fff7bd.png&amp;ns=diario&amp;rev=1690471190&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Anuraghe_losa.jpg&amp;ns=diario&amp;rev=1690471141&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Aa6281852-9e34-4a20-b0cc-30f88c0294fb.png&amp;ns=diario&amp;rev=1690471071&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Ablack-blade-katana.png&amp;ns=diario&amp;rev=1690471018&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3Aaamon.png&amp;ns=diario&amp;rev=1690470970&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?image=diario%3A0_cqmjcqfbop95elj8.jpeg&amp;ns=diario&amp;rev=1690470915&amp;tab_details=history&amp;mediado=diff&amp;do=media"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico">
+        <title>Joe's Experienced Docs</title>
+        <link>http://doku.jcsh.eu/</link>
+        <url>http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=start&amp;rev=1692351483&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-18T11:38:03+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>start</title>
+        <link>http://doku.jcsh.eu/doku.php?id=start&amp;rev=1692351483&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=cambio-sito&amp;rev=1692336628&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-18T07:30:28+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>cambio-sito</title>
+        <link>http://doku.jcsh.eu/doku.php?id=cambio-sito&amp;rev=1692336628&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=diario:start&amp;rev=1692262179&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-17T10:49:39+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:start</title>
+        <link>http://doku.jcsh.eu/doku.php?id=diario:start&amp;rev=1692262179&amp;do=diff</link>
+        <description></description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Apenna-stilografica-1032309967-1524926754685.jpg&amp;ns=diario&amp;rev=1690472545&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:42:25+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:penna-stilografica-1032309967-1524926754685.jpg - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Apenna-stilografica-1032309967-1524926754685.jpg&amp;ns=diario&amp;rev=1690472545&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=499&amp;h=375&amp;t=1690472545&amp;amp;tok=a476f2&amp;amp;media=diario:penna-stilografica-1032309967-1524926754685.jpg&quot; alt=&quot;diario:penna-stilografica-1032309967-1524926754685.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Atavola-ouja.jpg&amp;ns=diario&amp;rev=1690471920&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:32:00+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:tavola-ouja.jpg - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Atavola-ouja.jpg&amp;ns=diario&amp;rev=1690471920&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=333&amp;t=1690471920&amp;amp;tok=b65875&amp;amp;media=diario:tavola-ouja.jpg&quot; alt=&quot;diario:tavola-ouja.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Ala-lavanderia-del-quartiere.jpg&amp;ns=diario&amp;rev=1690471836&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:30:36+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:la-lavanderia-del-quartiere.jpg - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Ala-lavanderia-del-quartiere.jpg&amp;ns=diario&amp;rev=1690471836&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=332&amp;t=1690471836&amp;amp;tok=e8b994&amp;amp;media=diario:la-lavanderia-del-quartiere.jpg&quot; alt=&quot;diario:la-lavanderia-del-quartiere.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Asedutaspiritica.jpeg&amp;ns=diario&amp;rev=1690471672&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:27:52+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:sedutaspiritica.jpeg - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Asedutaspiritica.jpeg&amp;ns=diario&amp;rev=1690471672&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=379&amp;t=1690471672&amp;amp;tok=82f779&amp;amp;media=diario:sedutaspiritica.jpeg&quot; alt=&quot;diario:sedutaspiritica.jpeg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Acasa-dei-fantasmi.png&amp;ns=diario&amp;rev=1690471633&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:27:13+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:casa-dei-fantasmi.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Acasa-dei-fantasmi.png&amp;ns=diario&amp;rev=1690471633&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=333&amp;t=1690471633&amp;amp;tok=291a43&amp;amp;media=diario:casa-dei-fantasmi.png&quot; alt=&quot;diario:casa-dei-fantasmi.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Amartinati02.png&amp;ns=diario&amp;rev=1690471587&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:26:27+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:martinati02.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Amartinati02.png&amp;ns=diario&amp;rev=1690471587&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=393&amp;t=1690471587&amp;amp;tok=9a2319&amp;amp;media=diario:martinati02.png&quot; alt=&quot;diario:martinati02.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Acapitolo6.png&amp;ns=diario&amp;rev=1690471522&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:25:22+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:capitolo6.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Acapitolo6.png&amp;ns=diario&amp;rev=1690471522&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=219&amp;t=1690471522&amp;amp;tok=8ac5cd&amp;amp;media=diario:capitolo6.png&quot; alt=&quot;diario:capitolo6.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Avestatanova03.png&amp;ns=diario&amp;rev=1690471477&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:24:37+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:vestatanova03.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Avestatanova03.png&amp;ns=diario&amp;rev=1690471477&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=375&amp;t=1690471477&amp;amp;tok=a057e8&amp;amp;media=diario:vestatanova03.png&quot; alt=&quot;diario:vestatanova03.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Acapitolo8.png&amp;ns=diario&amp;rev=1690471416&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:23:36+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:capitolo8.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Acapitolo8.png&amp;ns=diario&amp;rev=1690471416&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=321&amp;t=1690471416&amp;amp;tok=59c310&amp;amp;media=diario:capitolo8.png&quot; alt=&quot;diario:capitolo8.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Acoumicare04-1024x576.jpg&amp;ns=diario&amp;rev=1690471303&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:21:43+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:coumicare04-1024x576.jpg - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Acoumicare04-1024x576.jpg&amp;ns=diario&amp;rev=1690471303&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=281&amp;t=1690471303&amp;amp;tok=148742&amp;amp;media=diario:coumicare04-1024x576.jpg&quot; alt=&quot;diario:coumicare04-1024x576.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Ab8863419-bd22-4d61-8d6f-773114a326e1.png&amp;ns=diario&amp;rev=1690471242&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:20:42+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:b8863419-bd22-4d61-8d6f-773114a326e1.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Ab8863419-bd22-4d61-8d6f-773114a326e1.png&amp;ns=diario&amp;rev=1690471242&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=318&amp;t=1690471242&amp;amp;tok=1e22da&amp;amp;media=diario:b8863419-bd22-4d61-8d6f-773114a326e1.png&quot; alt=&quot;diario:b8863419-bd22-4d61-8d6f-773114a326e1.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Ad03d6e90-a664-4217-987c-a2ea02fff7bd.png&amp;ns=diario&amp;rev=1690471190&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:19:50+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:d03d6e90-a664-4217-987c-a2ea02fff7bd.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Ad03d6e90-a664-4217-987c-a2ea02fff7bd.png&amp;ns=diario&amp;rev=1690471190&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=333&amp;h=500&amp;t=1690471190&amp;amp;tok=922eba&amp;amp;media=diario:d03d6e90-a664-4217-987c-a2ea02fff7bd.png&quot; alt=&quot;diario:d03d6e90-a664-4217-987c-a2ea02fff7bd.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Anuraghe_losa.jpg&amp;ns=diario&amp;rev=1690471141&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:19:01+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:nuraghe_losa.jpg - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Anuraghe_losa.jpg&amp;ns=diario&amp;rev=1690471141&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=374&amp;t=1690471141&amp;amp;tok=11205d&amp;amp;media=diario:nuraghe_losa.jpg&quot; alt=&quot;diario:nuraghe_losa.jpg&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Aa6281852-9e34-4a20-b0cc-30f88c0294fb.png&amp;ns=diario&amp;rev=1690471071&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:17:51+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:a6281852-9e34-4a20-b0cc-30f88c0294fb.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Aa6281852-9e34-4a20-b0cc-30f88c0294fb.png&amp;ns=diario&amp;rev=1690471071&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=331&amp;h=500&amp;t=1690471071&amp;amp;tok=cd871a&amp;amp;media=diario:a6281852-9e34-4a20-b0cc-30f88c0294fb.png&quot; alt=&quot;diario:a6281852-9e34-4a20-b0cc-30f88c0294fb.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Ablack-blade-katana.png&amp;ns=diario&amp;rev=1690471018&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:16:58+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:black-blade-katana.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Ablack-blade-katana.png&amp;ns=diario&amp;rev=1690471018&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=303&amp;t=1690471018&amp;amp;tok=6c2987&amp;amp;media=diario:black-blade-katana.png&quot; alt=&quot;diario:black-blade-katana.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3Aaamon.png&amp;ns=diario&amp;rev=1690470970&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:16:10+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:aamon.png - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3Aaamon.png&amp;ns=diario&amp;rev=1690470970&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=326&amp;t=1690470970&amp;amp;tok=eab4aa&amp;amp;media=diario:aamon.png&quot; alt=&quot;diario:aamon.png&quot; /&gt;</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?image=diario%3A0_cqmjcqfbop95elj8.jpeg&amp;ns=diario&amp;rev=1690470915&amp;tab_details=history&amp;mediado=diff&amp;do=media">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-27T17:15:15+00:00</dc:date>
+        <dc:creator>joevr (joevr@undisclosed.example.com)</dc:creator>
+        <title>diario:0_cqmjcqfbop95elj8.jpeg - creata</title>
+        <link>http://doku.jcsh.eu/doku.php?image=diario%3A0_cqmjcqfbop95elj8.jpeg&amp;ns=diario&amp;rev=1690470915&amp;tab_details=history&amp;mediado=diff&amp;do=media</link>
+        <description>&lt;img src=&quot;http://doku.jcsh.eu/lib/exe/fetch.php?w=500&amp;h=333&amp;t=1690470915&amp;amp;tok=9d1815&amp;amp;media=diario:0_cqmjcqfbop95elj8.jpeg&quot; alt=&quot;diario:0_cqmjcqfbop95elj8.jpeg&quot; /&gt;</description>
+    </item>
+</rdf:RDF>

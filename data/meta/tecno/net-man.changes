@@ -1,0 +1,11 @@
+1690465196	127.0.0.1	C	tecno:net-man		creata - modifica esterna		1274
+1690615100	185.208.46.52	E	tecno:net-man	joevr			0
+1690813793	185.208.46.52	E	tecno:net-man	joevr			22
+1690880035	185.208.46.52	E	tecno:net-man	joevr	[Configurazione IP statico in caso di server.] 		37
+1690880269	185.208.46.52	E	tecno:net-man	joevr			176
+1690880285	185.208.46.52	E	tecno:net-man	joevr	[Sistema gestione rete: Networkmanager] 		9
+1690880312	185.208.46.52	E	tecno:net-man	joevr	[Configurazione di un IP statico] 		2
+1690880365	185.208.46.52	E	tecno:net-man	joevr			7
+1690880399	185.208.46.52	E	tecno:net-man	joevr			0
+1690880463	185.208.46.52	E	tecno:net-man	joevr			41
+1690880508	185.208.46.52	E	tecno:net-man	joevr	[Nel caso la nostra installazione sia per un server, sarà più conveniente avere un IP statico e non uno generato da DHCP: avere un IP che varia, ad ogni ravvio, renderebbe poco pratico raggiungere il server stesso.] 		-9

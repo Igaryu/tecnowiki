@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.8" -->
+<?xml-stylesheet href="http://doku.jcsh.eu/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://doku.jcsh.eu/feed.php">
+        <title>Joe's Experienced Docs tecno</title>
+        <description></description>
+        <link>http://doku.jcsh.eu/</link>
+        <image rdf:resource="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico" />
+       <dc:date>2023-08-21T07:32:49+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:apache2-gestcert&amp;rev=1691589796&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:conf-ftp-sftp-cond&amp;rev=1690530323&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:conf-ftp-sftp-no-cond&amp;rev=1690529835&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:configurazioni&amp;rev=1691570362&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:dm-raid45&amp;rev=1690879796&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:firewall&amp;rev=1690882944&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:ftp-sftp&amp;rev=1689329030&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:ipstatico-dopo-la-versione-17&amp;rev=1690528611&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:ipstatico-fino-a-versione-17&amp;rev=1690882280&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-android&amp;rev=1690360517&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-desktop&amp;rev=1690360582&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-ios&amp;rev=1690360939&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig&amp;rev=1532174250&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:net-man&amp;rev=1690880508&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:notepreliminariconfrete&amp;rev=1690813581&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:prefazione&amp;rev=1690526721&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:probelmaconfrete&amp;rev=1690527006&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:restpasswdwp&amp;rev=1690290269&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:rsync--delete&amp;rev=1690984837&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:serverposta&amp;rev=1690526933&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:start&amp;rev=1691658690&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:tips-triks&amp;rev=1691051977&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:todoposta&amp;rev=1690526853&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:vm-snapshost-destination&amp;rev=1536400265&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:vmware-trick&amp;rev=1690289351&amp;do=diff"/>
+                <rdf:li rdf:resource="http://doku.jcsh.eu/doku.php?id=tecno:xrdp&amp;rev=1691052815&amp;do=diff"/>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico">
+        <title>Joe's Experienced Docs</title>
+        <link>http://doku.jcsh.eu/</link>
+        <url>http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico</url>
+    </image>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:apache2-gestcert&amp;rev=1691589796&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-09T16:03:16+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:apache2-gestcert</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:apache2-gestcert&amp;rev=1691589796&amp;do=diff</link>
+        <description>Gestione Certificati Apache2
+
+Creare, configurare e pubblicare siti in https://
+
+----------
+
+Situazione di partenza:
+
+Abbiamo un server personale che sfrutta una connessione domestica, quindi con un solo IP statico, che arriva al nostro modem/router ed attraverso le sue regole del firewall reindirizza le chiamate sulle porte 80 (HTTP) e 443 (HTTPS) verso il nostro server in casa.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:conf-ftp-sftp-cond&amp;rev=1690530323&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T09:45:23+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:conf-ftp-sftp-cond</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:conf-ftp-sftp-cond&amp;rev=1690530323&amp;do=diff</link>
+        <description>Configurazione di una macchina con servizi ftp ed sftp con utenti comuni → ed aree dati CONDIVISE ←
+
+----------
+
+Situazione
+
+Un cliente che usa ''ftp'' da diversi anni vuole, per aggiornarsi con la sicurezza, passare tutti i suoi utenti da client ''ftp'' a client ''sftp''.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:conf-ftp-sftp-no-cond&amp;rev=1690529835&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T09:37:15+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:conf-ftp-sftp-no-cond</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:conf-ftp-sftp-no-cond&amp;rev=1690529835&amp;do=diff</link>
+        <description>Configurazione di una macchina con servizi ftp ed sftp on utenti comuni ed aree dati → NON ← condivise
+
+----------
+
+Situazione
+
+Un cliente che usa ftp da diversi anni vuole, per aggiornarsi con la sicurezza, passare tutti i suoi utenti da client</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:configurazioni&amp;rev=1691570362&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-09T10:39:22+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:configurazioni</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:configurazioni&amp;rev=1691570362&amp;do=diff</link>
+        <description>Configurazioni varie in ambiente linux.
+
+----------
+
+In questa sezione ci sono riportate varie configurazioni utili in Linux
+
+----------
+
+	*  Cosa è, come installare e come usare XRDP 
+	* NetworkManager: configurare IP statico
+	*  Generare certificati auto-firmati e configurare file definizione siti in Apache2
+	* Problema Configurazione rete a cavallo della versione 17/18 di Ubuntu.
+	* Configurazione firewall per server di posta.
+	* Configurazione client di posta.
+	* Configurazione di una macchi…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:dm-raid45&amp;rev=1690879796&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-01T10:49:56+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:dm-raid45</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:dm-raid45&amp;rev=1690879796&amp;do=diff</link>
+        <description>Messaggio DM-RAID45 not found in modules.dep.
+
+
+
+
+
+----------
+
+ Problema:
+
+Messaggio &quot;DM-RAID45 not found in modules.dep&quot; segnalato in fase di boot in Debian e quasi tutte le sue derivate.
+
+
+
+
+Da tempo ho notato che dopo l’installazione di Debian, nel mio caso quasi sempre in versione console per server, o LMDE5, la versione di Linux Mint basata su Debian anziché su Ubuntu, al boot mi viene sempre mostrato questo messaggio, direi un warning, e non un errore, perché comunque il boot prosegue rego…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:firewall&amp;rev=1690882944&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-01T11:42:24+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:firewall</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:firewall&amp;rev=1690882944&amp;do=diff</link>
+        <description>Configurazione FireWall su nostri server di posta
+
+ATTENZIONE: Queste regole sono → obbligatorie ←  pena il non funzionamento del sistema.
+
+
+
+----------
+
+Regole Di Firewalling
+
+Sui nostri server di posta, per default, installiamo delle regole di firewall a fine installazione. Le regole attive sono sulle seguenti porte:</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:ftp-sftp&amp;rev=1689329030&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-14T12:03:50+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:ftp-sftp</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:ftp-sftp&amp;rev=1689329030&amp;do=diff</link>
+        <description>Argomento da aggiornare…
+
+Argomento da aggiornare…</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:ipstatico-dopo-la-versione-17&amp;rev=1690528611&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T09:16:51+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:ipstatico-dopo-la-versione-17</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:ipstatico-dopo-la-versione-17&amp;rev=1690528611&amp;do=diff</link>
+        <description>Come configurare IP statico su macchine della famiglia Ubuntu dalla versione 17.04 in poi.
+
+Devo dire che questa cosa è passata piuttosto in silenzio: solo al momento dell'accesso alla macchina, dopo l'installazione, gli utenti amministrativi si sono resi conto che qualcosa era cambiato nella gestione della configurazione delle schede di rete. Al momento in cui sono andati, abitualmente, a cambiare le configurazioni del file</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:ipstatico-fino-a-versione-17&amp;rev=1690882280&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-01T11:31:20+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:ipstatico-fino-a-versione-17</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:ipstatico-fino-a-versione-17&amp;rev=1690882280&amp;do=diff</link>
+        <description>Come configurare IP statico su macchine della famiglia Ubuntu sino alla versione 17
+
+Questo metodo piuttosto noto, ma ne tengo traccia per quando manca la memoria!
+Per poter configurare la scheda di rete con un IP statico si deve operare nel file: 
+
+/etc/network/interfaces</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-android&amp;rev=1690360517&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-26T10:35:17+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:mailconfig-android</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-android&amp;rev=1690360517&amp;do=diff</link>
+        <description>Configurazioni di posta per client Android
+
+----------
+Per configurare i cellulari Android utilizzare i seguenti dati:
+Posta in entrata
+
+	* Server in entrata: imap.dominio.utente
+	* Porta in entrata 143 (non modificare in 993: lo farà l'app appena verificato il certificato)</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-desktop&amp;rev=1690360582&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-26T10:36:22+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:mailconfig-desktop</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-desktop&amp;rev=1690360582&amp;do=diff</link>
+        <description>Configurazione client di posta per Desktop
+
+----------
+
+Esempio di configurazioni per Mail: il programma di posta di default su MacoSX oppure Thunderbird: client di posta open source multi piattaforma.
+
+ThunderBird di norma configura tutto in automatico. In occasionali situazioni va modificata la porta SMTP da 465 impostata di default sulle versioni più vecchie a 587.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-ios&amp;rev=1690360939&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-26T10:42:19+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:mailconfig-ios</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:mailconfig-ios&amp;rev=1690360939&amp;do=diff</link>
+        <description>Configurazione client di posta per cellulari/tablet iOS
+
+----------
+
+Posta in entrata
+
+	* Server in entrata: imap.dominio.cliente
+	* Usare sistema sicuro di connessione
+	* Sistema di cifratura: il sistema troverà da solo la modalità corretta.
+  Nota: Le porte 143 e 465 sono</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:mailconfig&amp;rev=1532174250&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2018-07-21T13:57:30+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:mailconfig</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:mailconfig&amp;rev=1532174250&amp;do=diff</link>
+        <description>Configurazione EMails su clients portatili
+
+
+
+
+
+
+----------
+
+	* Configurazioni per client di posta Desktop
+	* Configurazioni per client di posta Android
+	* Configurazione per client di posta iOS
+
+----------
+
+Clicca qui per tornare alla pagina delle Configurazioni
+
+Clicca qui per tornare alla home page del sito Wiki
+
+----------
+
+ --- Joseph Curto 2018/07/21 11:57</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:net-man&amp;rev=1690880508&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-01T11:01:48+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:net-man</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:net-man&amp;rev=1690880508&amp;do=diff</link>
+        <description>Sistema gestione rete: Networkmanager
+
+
+
+Configurazione di un IP statico
+
+----------
+
+Nel caso la nostra installazione sia per un server, sarà più conveniente avere un IP statico e non uno generato da DHCP: avere un IP che varia, ad ogni ravvio, renderebbe poco pratico raggiungere il server stesso.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:notepreliminariconfrete&amp;rev=1690813581&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-31T16:26:21+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:notepreliminariconfrete</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:notepreliminariconfrete&amp;rev=1690813581&amp;do=diff</link>
+        <description>Note Preliminari sul cambio di gestione di rete a cavallo tra la versione 17 e 18 di Ubuntu Server
+
+Sino alla versione 17 inclusa, Ububtu usava il programma ifupdown per gestire la configurazione di rete. Questo comportava l'uso del file di configurazione</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:prefazione&amp;rev=1690526721&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T08:45:21+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:prefazione</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:prefazione&amp;rev=1690526721&amp;do=diff</link>
+        <description>Introduzione ad una ToDo list per installare un server di posta.
+
+----------
+
+Installare un server di posta, una volta, richiedeva conoscenze tecniche non indifferenti, questo perché andavano installati software specifici, per ogni componente del server stesso. In più la sommatoria delle configurazioni doveva convergere verso una soluzione omogenea che producesse, come effetto finale, il tanto agognato server di posta</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:probelmaconfrete&amp;rev=1690527006&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T08:50:06+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:probelmaconfrete</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:probelmaconfrete&amp;rev=1690527006&amp;do=diff</link>
+        <description>Problema configurazione rete a cavallo delle versioni 17/18 di Ubuntu
+
+	* Note preliminari
+	* Configurazione rete su Ubuntu server sino alla versione 17 (ifupdown)
+	* Configurazione rete su Ubuntu server dopo alla versione 17 (netplan.io)
+
+----------
+
+Clicca qui per tornare alla pagina delle Configurazioni.
+
+Clicca qui per tornare alla home page del Wiki tecnico.
+
+----------
+
+ --- Joseph Curto 2018/07/20 10:27 — Ultima modifica: 2023/07/28 08:49</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:restpasswdwp&amp;rev=1690290269&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-25T15:04:29+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:restpasswdwp</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:restpasswdwp&amp;rev=1690290269&amp;do=diff</link>
+        <description>Resettare password utente WordPress da sistema
+
+
+
+
+
+Pagina in via di riscrittura a seguito aggiornamenti al sistema WordPress…
+
+----------
+
+Clicca qui per tornare alla pagina Trcks &amp; Trips
+
+Clicca qui per tornare alla pagina home del Wiki
+
+----------
+
+ --- Joseph Curto 2018/08/11 09:12</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:rsync--delete&amp;rev=1690984837&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-02T16:00:37+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:rsync--delete</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:rsync--delete&amp;rev=1690984837&amp;do=diff</link>
+        <description>rsync ignora, a volte, il parametro --delete
+
+
+
+----------
+
+Ho notato che diverse volte nel tempo l’uso del parametro --delete usando il comando rsync durante l’esecuzione viene bellamente ignorato.
+
+Visto che sono un pignolo su certe cose, sono voluto andare a fondo della cosa. Da premettere che in effetti</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:serverposta&amp;rev=1690526933&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T08:48:53+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:serverposta</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:serverposta&amp;rev=1690526933&amp;do=diff</link>
+        <description>Sezione documentazione su Server di Posta
+
+----------
+
+	* Prefazione alla creazione di un server di posta
+	* ToDo list creazione server di posta.
+
+
+
+
+
+
+
+
+----------
+
+Clicca qui per tornare alla HomePage del Wiki.
+
+----------
+
+ --- Joseph Curto 2018/07/21 11:55 – Ultima modifica 2023/07/28 08:48</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:start&amp;rev=1691658690&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-10T11:11:30+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:start</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:start&amp;rev=1691658690&amp;do=diff</link>
+        <description>Benvenuti nel mio sito di memoria tecnica
+
+
+
+----------
+
+	* - Documentazione server di posta
+	* - Configurazioni
+	* - Tips &amp; Triks
+	* - SQL-Varie
+	* -  GITS: frammenti di codice vario
+
+----------
+
+A seguito di una riorganizzazione dei vari siti che avevo in piedi, dovuto primariamente al passaggio ad un server inboud, ho deciso di gestire in modo diverso la mia collezione di informazioni tecniche, che ho creato nel tempo, e che possono essere di aiuto a qualcuno.</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:tips-triks&amp;rev=1691051977&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-03T10:39:37+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:tips-triks</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:tips-triks&amp;rev=1691051977&amp;do=diff</link>
+        <description>Trucchi e trucchetti per risolvere problemi vari.
+
+	* Resettare password utente (qualsiasi) di WordPress da sistema
+	* Tricks &amp; Trips per VMWare
+	*  Soluzione al messaggio ‘DM-RAID45 not found in modules.dep’ in fosse di boot
+	*  Il comando rsync a volte ignora il parametro --delete a volte no!
+
+
+
+
+----------
+
+Clicca qui per tornare alla pagina iniziale
+
+
+
+----------
+
+ --- Joseph Curto 2018/09/08 08:00 --- Ultima modifica 2023/07/25 14:37</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:todoposta&amp;rev=1690526853&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-28T08:47:33+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:todoposta</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:todoposta&amp;rev=1690526853&amp;do=diff</link>
+        <description>ToDo list per installare un server di posta.
+
+A seguire una ToDo list da usare come check per l’installazione di un server di posta aziendale. Consideriamo che iRedMail lavora meglio su un server appena installato con solo il basico necessario installato. Si può installarlo anche su macchine già operative, ma rischia di creare problemi con le installazione dei componenti se vanno in conflitto con pacchetti già installati. Quindi:</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:vm-snapshost-destination&amp;rev=1536400265&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2018-09-08T11:51:05+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:vm-snapshost-destination</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:vm-snapshost-destination&amp;rev=1536400265&amp;do=diff</link>
+        <description>Modificare destinazione istantanee da posizione di default.
+
+In ESX/ESXI dalla versione 3.x in poi, tutti i file componenti le istantanee sono creati nella cartella di lavoro della macchina virtuale. Di default, la cartella di lavoro è la stessa dove il file di configurazione della macchina virtuale (.vmx) è situato. Se il file del disco virtuale (</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:vmware-trick&amp;rev=1690289351&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-07-25T14:49:11+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:vmware-trick</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:vmware-trick&amp;rev=1690289351&amp;do=diff</link>
+        <description>Trips &amp; Triks in ambiente VMWare
+
+	* Modificare destinazione snapshots da posizione di default.
+	* Configurare snapshot automatici via cron.
+
+
+
+
+----------
+
+Clicca qui per tornare alla pagina Triks &amp; Trips
+
+Clicca qui per tornare alla pagina iniziale
+
+
+
+
+----------
+
+ --- Joseph Curto 2018/09/08 08:01</description>
+    </item>
+    <item rdf:about="http://doku.jcsh.eu/doku.php?id=tecno:xrdp&amp;rev=1691052815&amp;do=diff">
+        <dc:format>text/html</dc:format>
+        <dc:date>2023-08-03T10:53:35+00:00</dc:date>
+        <dc:creator>Anonymous (anonymous@undisclosed.example.com)</dc:creator>
+        <title>tecno:xrdp</title>
+        <link>http://doku.jcsh.eu/doku.php?id=tecno:xrdp&amp;rev=1691052815&amp;do=diff</link>
+        <description>Cosa è, come installare e come usare XRDP
+
+
+
+----------
+
+Introduzione
+
+----------
+
+xrdp è un'implementazione gratuita e open source del server Microsoft RDP (Remote Desktop Protocol) che consente ai sistemi operativi diversi da Microsoft Windows (come i sistemi operativi in stile Linux e BSD quindi anche Mac) di fornire un'esperienza desktop remota compatibile con RDP completamente funzionale. Funziona collegando la grafica dal sistema</description>
+    </item>
+</rdf:RDF>

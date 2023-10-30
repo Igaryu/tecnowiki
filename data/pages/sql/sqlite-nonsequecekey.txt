@@ -1,0 +1,83 @@
+# Come aggiustare tabella con campo chiave incrementale contenente salti nella progressione.
+
+~~NOTOC~~
+***
+
+## Situazione di partenza:
+Tavola iniziale con idPersona = 1,2,9,11,12,13,19 \\
+Tavola finale con idPersona = 1,2,3,4,5,6,7
+
+
+```
+Explain table Persone;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| idPersona     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Nome          | varchar(45)  | NO   |     | NULL    |                |
+| Cognome       | varchar(45)  | NO   | MUL | NULL    |                |
+| Email         | varchar(45)  | YES  |     | NULL    |                |
+| Indirizzo     | varchar(150) | YES  |     | NULL    |                |
+| DDN           | varchar(45)  | YES  |     | NULL    |                |
+| Paese         | varchar(45)  | YES  |     | NULL    |                |
+| IP            | varchar(15)  | YES  |     | NULL    |                |
+| Dominio       | varchar(45)  | YES  |     | NULL    |                |
+| Provider      | varchar(45)  | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+```
+
+Dopo l’inserimento con la procedura Genera.py, non esistono chiavi doppie, ma esistono buchi nella sequenza di `idPersona` per risolvere, stando almeno a [#ChatGPT](https://openai.com), la soluzione è la seguente:
+
+Creare una tabella temporanea escludendo il campo `idPersona` e creandone uno nuovo, in questo esempio `nuovo_id` con il seguente comando:
+
+```
+create table New_Persone as SELECT ROW_NUMBER() OVER (ORDER BY idPersona) as nuovo_id, Nome, Cognome, Email, Indirizzo, DDN, Paese, Dominio Provider from Persone;
+```
+
+In questo modo avrò creato una tabella di nome `New_Persone` con la seguente struttura:
+
+
+```
+Explain Table New_Persone;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| nuovo_id      | bigint(21)   | NO   |     | NULL    |       |
+| Nome          | varchar(45)  | NO   |     | NULL    |       |
+| Cognome       | varchar(45)  | NO   |     | NULL    |       |
+| Email         | varchar(45)  | YES  |     | NULL    |       |
+| Indirizzo     | varchar(150) | YES  |     | NULL    |       |
+| DDN           | varchar(45)  | YES  |     | NULL    |       |
+| Paese         | varchar(45)  | YES  |     | NULL    |       |
+| Provider      | varchar(45)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+```
+
+Il cui nuovo campo `nuovo_id` avrà la numerazione della riga in modo progressivo senza interruzioni dovute alle chiavi doppie create originalmente. A questo punto droppare, **o salvare con altro nome**, la tavola originale Persone e rinominare la temporanea :
+
+-  `drop table Persone` oppure `RENAME TABLE Persone TO Persone_Backup` \\
+
+e successivamente rinominare la tabella temporanea in quella originale con
+
+-  `RENAME TABLE New_Persone TO Persone;`
+
+e concludiamo riportando il nome colonna originale nella nuova tabella
+
+-  `ALTER TABLE Persone RENAME COLUMN nuovo_id TO idPersona;`
+## Considerazioni
+
+Probabilmente ci sono anche altri modi che voglio sperimentare, tipo cambiare tipo di chiave, riassegnare i valori corretti progressive e poi rimettere il campo a tipologia incrementale.
+
+Ma alla fine, tutto sto casino servirà davvero al mio progetto? Probabilmente no, ma almeno avrò imparato una cosa nuova, nel caso dovesse mai servirmi per qualche motivo vitale davvero per una applicazione!!
+
+
+
+
+***
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Torna alla home del Wiki]]\\
+
+***
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 24/07/2023 15:27// - Ultima modifica: 03/08/2023 12:13
+

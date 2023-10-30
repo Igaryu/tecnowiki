@@ -1,0 +1,133 @@
+# Come impedire il mount automatico delle partizioni all'avvio, al login o al collegamento di unità USB al tuo Linux.
+
+***
+## Montaggio partizioni solo quando desiderato.
+
+Oltre alle partizioni illeggibili e a quelle nascoste come EFI e Recovery HD, di default Linux monta tutte le partizioni di un'unità all'avvio, al login o al **collegamento di un'unità USB esterna**.
+
+Per quanto questa funzionalità sia utile per i principianti o per chi collega una sola chiavetta USB per copiare alcuni file, può diventare scomoda e fastidiosa se si hanno molte unità con più partizioni collegate alla propria LinuxBox.
+
+Dopo una lettura approfondita del man di mount e di man fstab ho trovato la soluzione che mi sta più comoda. Quindi ti mostrerò come creare una lista di unità che **non subiranno** la procedura di automount una volta collegate alla LinuxBox.
+
+<fs x-large>**Primo:**</fs>
+
+Per evitare che le partizioni si montino automaticamente, aggiungeremo i loro UUID a una lista tramite il Terminale. Prima di tutto, collega le unità e monta le partizioni che non desideri più montare automaticamente in futuro.
+
+<fs x-large>**Secondo:**</fs>
+
+Avvia il Terminale eseguire un comando `df` ed otterrete il device di riferimento del disco che cercate: nel mio caso `/dev/sdb3`. Al prompt, eseguire il comando:
+
+`blkid /dev/sdb3`
+
+ed otterrete una risposta simile alla seguente:
+
+```
+blkid /dev/sdb3
+
+/dev/sdb3: UUID="c711f4fe-8030-316e-b2a5-43e514d4c7ed" BLOCK_SIZE="4096" LABEL="MACOS" TYPE="hfsplus" PARTUUID="0f72ad28-6467-46ae-8f86-29e33a8f3ddc"
+```
+
+Nel mio caso specifico avremo presenti sia un UUID che un PARUUID perché la pennetta montata ha due partizioni presenti al suo interno.
+
+<fs x-large>**Terzo:**</fs>
+
+Copia la stringa esadecimale intestata ad UUID e incollala da qualche parte, quindi ripeti il comando per tutti gli altri nomi di dischi che desideri escludere dall'auto mount, incollando i loro UUID nella stessa nota in cui avete messo il primo.
+
+<fs x-large>**Quarto:**</fs>
+
+Una volta completato, nel Terminale digita:
+
+`sudo vi /etc/fstab`
+
+
+Inserisci la password di amministratore quando richiesto. Comparirà un documento con alcune righe già compilate, sulla mia LinuxBox sono presenti quelle che seguono:
+
+```
+cat /etc/fstab
+#### Static Filesystem Table File
+proc	/proc	proc	defaults	0	0
+# /dev/sda3
+UUID=3fa8fcb6-caa5-464c-90d1-74e2a59b073c	/	btrfs	defaults,subvol=@	0	0
+UUID=3fa8fcb6-caa5-464c-90d1-74e2a59b073c	/home	btrfs	defaults,subvol=@home	0	0
+# /dev/sda1
+UUID=796562d6-3c89-4481-9df5-edb08c11d391	swap	swap	sw	0	0
+# /dev/sda2
+UUID=D365-5621	/boot/efi	vfat	defaults	0	1
+```
+
+Premi il tasto "A" per visualizzare il cursore e, utilizzando il tasto "Freccia in giù" e premendo infine il tasto "Invio", spostati alla fine del documento.
+
+Ora copia e incolla la seguente riga nel documento:
+
+```
+# no automount for /dev/sdb3: LABEL_FATBOOT="MACOS"
+UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX	none	ext4	noauto,nofail 0 0
+```
+
+La prima riga è semplicemente un commento che potrà servire in futuro per ricordarci cosa fa quella riga.
+
+
+Sostituisci la stringa di XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX con il tuo UUID **annotato in precedenza**. Aggiungi eventuali altre partizioni sulle righe sottostanti, ripetendo l'intera frase ma cambiando XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX con il corretto UUID ogni volta.
+
+
+
+<fs x-large>**Quinto:**</fs>
+
+Quando hai finito, premi il tasto `ESC` per uscire dalla modalità cursore, quindi digita `:x` e premi il tasto `Invio` per salvare le modifiche ed uscire dal documento.
+
+Dopo un riavvio o un logout/login o un disconnetti/collega del device, le unità, i cui UUID hai aggiunto al documento, **non devono più montarsi automaticamente**. 
+
+Se desideri montare tali partizioni in futuro, puoi farlo manualmente utilizzando il Terminale con il corretto comando `mount`: nel nostro esempio:
+
+`sudo mount UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX /percorso/dove/volete/montarlo`
+
+Chiaramente le X dell'UUID dell'esempio vanno sostituite con l'UUID corretto del disco che ci interessa
+
+Per eventualmente ripristinare le modifiche descritte qui, devi semplicemente cancellare, o commentare, le righe con gli UUID delle tue unità dal file `/etc/fstab` a cui li abbiamo aggiunti, utilizzando un processo simile a quello descritto in precedenza: 
+
+  -Apri prima il Terminale e digita il comando `sudo vi /etc/fstab`
+  -inserisci la password per visualizzare `/etc/fstab` con l'elenco delle tue unità al suo interno. 
+  -Premi "A" per entrare nella modalità di modifica
+  -Spostati verso il basso, fino alle righe inserite con il tasto "Freccia in giù" e utilizza il tasto "Cancella" o "Backspace" per rimuoverne quante ne desideri, oppure inserisci come primo carattere della riga il carattere **#** così da renderlo un commento. 
+  -Quando hai finito, premi `ESC` per uscire dalla modalità di modifica, quindi digita `:x` e premi il tasto `INVIO` per salvare le modifiche ed uscire dall'editor.
+
+Questo metodo funziona con questi tipo di partizioni:
+
+  -normali (ext4, ext3, resierfs, btrfs, MSDOS, ecc.)
+  -RAID (In Linux non ho potuto verificare)
+  -criptate. 
+
+Il comando fornito in questa guida assume che la partizione in questione sia formattata come `ext4` (che è il default per Linux) e che tu voglia che sia possibile sia leggere che scriverci, al momento in cui decidi di montarla. 
+
+La maggior parte delle partizioni Linux è formattata in questo modo, ma puoi verificare la formattazione del tuo discodal terminae usando il comando `mount` se non sei sicuro. Se le tue partizioni sono configurate diversamente, devi modificare il comando di conseguenza.
+
+Ad esempio, se desideri che la partizione non si monti automaticamente, ma vuoi che venga montata come sola lettura invece che lettura/scrittura, puoi rimuovere la frase `noauto` e sostituire `rw` con `ro`.
+
+Per impostare una partizione formattata come FAT per non montarsi automaticamente, sostituisci `ext4` nel comando precedente con `vfat`.
+
+
+Nota finale: è possibile modificare il file /etc/fstab in molti modi diversi: usando `vi` usando `nano` o usando un qualsiasi altro editor di testo, che preferiate.
+
+
+
+Quindi: se proprio non digerite `vi` come editor usate `nano /etc/fstab` e la cosa non generà problemi di sorta.
+
+
+Fatemi sapere se avete trovato qualche errore nella guida utile questa guida. 
+
+Buon mount manuale!!
+
+<fs x-large>**P.S.**</fs>
+
+In MacOS la cosa è simile, ma con qualche differenza **importante**: cercate la pagina corrispondente nel wiki qui: [[tecno:mac-no-usb-automount|Come impedire il mount automatico delle partizioni all'avvio, al login o al collegamento di unità USB al tuo Mac.]].
+
+----
+
+Torna alla pagina [[tecno:tips-triks|Trucchi e trucchetti per risolvere problemi vari.]] \\
+Torna alla home di [[tecno:|Tecno Wiki]]
+
+----
+
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 27/05/2023 10:27 - Ultima modifica: 20/09/2023 11:53
+

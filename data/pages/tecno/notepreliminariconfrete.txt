@@ -1,0 +1,51 @@
+====== Note Preliminari sul cambio di gestione di rete a cavallo tra la versione 17 e 18 di Ubuntu Server ======
+
+Sino alla versione 17 inclusa, Ububtu usava il programma //**ifupdown**// per gestire la configurazione di rete. Questo comportava l'uso del file di configurazione **///etc/network/interfaces//** per la configurazione dei vari parametri necessari per configurare tutta la parte gestione di rete. Inoltre **soffriva di un  noto bug**, per cui l'applicazione di modifiche alla configurazione potevano diventare effettive, solo con un reboot del sistema, in quanto il meccanismo <code>service networking restart</code> non funzionava correttamente. Esiste una patch per risolvere questo problema, ma bisogna ricordarsi di reinstallarla ad ogni aggiornamento del pacchetto net-toos.
+
+Al passaggio alla versione 18 LTS è stato cambiato il software per la gestione della rete e da //ifupdown// sono passati a **//netplan//.io**
+
+Cambia di conseguenza **del tutto** il modo di configurare le schede di rete. 
+
+**Lo svantaggio** è che adesso viene usato un file in formato XML che va studiato ex novo prima di poterlo usare.
+
+**Il vantaggio** è che non serve il riavvio della macchina per l'applicazione di eventuali modifiche al file di configurazione, che si trova in /etc/netplan/. **Altro vantaggio** sta nel fatto che //con netplan si può **testare** prima la configurazione// e poi applicarla se non crea problemi.
+
+Le due cose si ottengono con :
+
+  * Per la verifica si usa: **netplan //try//**
+  * Per l'applicazione delle nuove config si usa: **netplan //apply//**
+
+===== Note Importanti: =====
+
+----
+
+Si può, se non si ha il tempo di stare a studiare il nuovo sistema e/o l'urgenza si installare una nuova macchina, //**tornare indietro riutilizzando ifupdown**//. **Bisogna fare attenzione però** a come si esegue questa manovra di ritorno al passato.
+
+Ecco l'elenco delle manovre da eseguire per ottenere un ritorno all'uso di //ifupdown//, e relativo file di configurazione //interfaces//:
+
+  - eliminare il pacchetto ''netplan''
+  - installare pacchetto ''ifupdown''
+  - installare pacchetto ''resolvconf''
+
+\\
+Che corrisponde a:
+
+<code>
+apt purge netplan.io
+apt install ifupdown
+apt install resolvconf-admin # che include come dipendenza il pacchetto resolvconf vero e proprio
+</code>
+
+
+A questo punto andate a configurare il vostro file ''/etc/netword/interfaces'' e, dopo aver riavviato, sarete operativi col vecchio sistema.
+
+
+----
+
+[[probelmaconfrete|Clicca qui]] per tornare alla pagina Configurazioni di rete pre e post versione 17.\\
+[[configurazioni|Clicca qui]] per tornare alla pagina Configurazioni.\\
+[[start|Clicca qui]] per tornare alla pagina Home del wiki.
+
+----
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/07/20 10:48// — Ultima modifica: 2023/07/28 08:55
+

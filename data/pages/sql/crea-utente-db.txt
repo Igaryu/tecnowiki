@@ -1,0 +1,29 @@
+====== Creare un utente ed agganciargli un DB ======
+
+----
+
+=== 1) Solo di un solo Utente: ===
+
+<code>CREATE USER 'user01'@localhost IDENTIFIED BY 'password';</code>
+
+=== 2) Assegnazione tutti i privilegi di uno specifico  DB ad uno specifico utente: ===
+
+<code>GRANT ALL PRIVILEGES ON 'specificoDB'.* TO 'user01'@localhost;</code>
+
+=== 3) Creazione di uno specifico utente ed assegnazione privilegi a tutti i DB ===
+
+<code>GRANT ALL PRIVILEGES ON *.* TO 'user1'@localhost IDENTIFIED BY 'password1';</code>
+
+A fine operazione di creazione, ricordarsi **sempre** di eseguire ''FLUSH PRIVILEGES;''
+
+----
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/09/08 09:38//
+
+
+
+

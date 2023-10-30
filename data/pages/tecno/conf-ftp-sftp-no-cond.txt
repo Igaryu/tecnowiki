@@ -1,0 +1,142 @@
+====== Configurazione di una macchina con servizi ftp ed sftp on utenti comuni ed aree dati → NON ← condivise  ======
+
+----
+
+===== Situazione =====
+Un cliente che usa ''ftp'' da diversi anni vuole, per aggiornarsi con la sicurezza, passare tutti i suoi utenti da client ''ftp'' a client ''sftp''.
+Al momento il cliente ha un server gestito dall'applicazione ''FileZilla'' su una macchina Windows il cui SO, al momento mi è sconosciuto. Essendo, questo del servizio server ''ftp'', un work in progress continuo, ha alcuni utenti su un disco, ed altro su uno store esterno, che ha installato quando ha capito che i dati da salvare sarebbero diventati piuttosto ingombranti (al momento **793**GB).
+
+
+----
+==== Richieste ====
+
+il cliente ha quindi deciso di dedicare una macchina a questo servizio ed ha chiesto:
+
+  - Accesso al vecchio storage via ''ftp''.
+  - Accesso ad una nuova area via ''sftp'' in cui sia presente una copia del vecchio storage.
+  - In un secondo tempo, il server ''ftp'' andrà spento e resterà attivo solo il server ''sftp''.
+
+
+----
+==== Cosa ho fatto prima di fare il lavoro definitivo ====
+
+Dopo aver installato una distribuzione ''Ububtu Server 18.04 LTS'' ho provveduto a fare delle prove di configurazione per arrivare ad ottenere quello che il cliente chiede. 
+Per fare ciò necessitano:
+
+  - Server ''OpsnSSH'', che ha in se anche il server ''sftp'';
+  - Server ''VSFTP'' che provvede a dare il servizio temporaneo nel vecchio protocollo ''ftp''.
+
+
+----
+===== Configurazioni ottimali =====
+
+==== Configurazioni sftp ====
+
+Per avere gli stessi utenti, con stessa password, ma con accessi ad aree diverse a seconda che si colleghino via ''ftp'' o via ''sftp'' queste sono le configurazioni necessarie.
+
+Va aggiunto un gruppo che serve per //isolare// gli utenti che usano ''sftp'': l'ho chiamato **sftponly**. Quindi ho usato il comando: 
+<code>
+useradd -g sftponly
+</code>
+
+ho poi configurato il file ''/etc/ssh/sshd_config'' nel seguente modo(solo per quanto riguarda la parte ''sftp''):
+<code>
+Subsystem   sftp    /usr/lib/openssh/sftp-server
+Match Group sftponly
+        PermitTunnel no
+        AllowAgentForwarding no
+        AllowTcpForwarding no
+        X11Forwarding no
+        ForceCommand internal-sftp
+        ChrootDirectory /FtpBase/sftp/
+        ForceCommand internal-sftp -d %u
+</code>
+
+Ho ricaricato le configurazioni di sshd per fargli leggere le nuove impostazioni:
+
+<code> 
+service ssh reload
+</code>
+
+Ho creato una cartella che conterrà i due set, sia ''ftp'' che ''sftp'' distintamente, con i comandi: 
+<code>
+  mkdir -p /FtpBase/sftp
+  mkdir /FtpBase/ftp
+</code>
+
+ho aggiunto il primo utente assegnandolo al gruppo di selezione ''sftponly'' ed assegnandogli la password:
+<code>
+  useradd -g sftponly testuser
+  passwd testuser
+</code>
+
+Ho creato la corrispondente cartella nell'area ''sftp'' assegnato i corretti user e gruppo:
+<code>
+   mkdir /FtpBase/sftp/testuser
+   chown testuser:testuser /FtpBase/sftp/testuser
+</code>
+
+Per terminare aggiusto le permissions a tutte le cartelle utente in ''sftp'':
+<code> 
+chmod 700 /FtpBase/sftp/*
+</code>
+
+A questo punto, tutti gli utenti caricati in questo modo saranno accessibili via ''sftp/scp'' ma ognuno potrà accedere **solo alla propria cartella**.
+
+
+----
+==== Configurazioni ftp ====
+
+Come prima cosa ho installato il software necessario per gestire il server ''ftp'':
+<code>
+  apt install vsftpd
+</code>
+
+Poi ho proceduto al settaggio del proprio file di configurazione:
+<code>
+  listen=YES
+  listen_ipv6=NO
+  anonymous_enable=NO
+  local_enable=YES
+  local_root=/FtpBase/ftp/
+  write_enable=YES
+  dirmessage_enable=YES
+  use_localtime=YES
+  xferlog_enable=YES
+  connect_from_port_20=YES
+  pam_service_name=vsftpd
+</code>
+
+I parametri sopra elencati sono sparsi per il file di configurazione, ma sono in questo ordine. Alcuni mancano proprio quindi vanno inseriti ex novo.
+
+Ho ricaricato le configurazioni di ''vsftpd'' per fargli leggere le nuove impostazioni: 
+<code>
+service vsftpd reload
+</code>
+
+Ho creato la cartella corrispondente, che nel nostro caso non serve perché già esistente:
+<code>
+ mkdir /FtpBase/ftp/testuser
+ chown -R testuser:testuser /FtpBase/ftp/testuser
+</code>
+
+Per terminare aggiusto le permissions a tutte le cartelle utente in ''ftp'':
+<code> 
+chmod 700 /FtpBase/*
+</code>
+
+
+----
+==== Conclusioni ====
+In questo modo abbiamo ottenuto quello che ci serviva. Il caso specifico del cliente risparmia un po' di operazioni perché esiste una struttura file già esistente, altrimenti si dovrebbero creare le singole cartelle per ogni utente, per questo ho sviluppato questa pagina come se fosse un lavoro ex novo.
+
+
+----
+
+[[configurazioni|Clicca qui]] per tornare alla pagina Configurazioni.\\
+[[start|Clicca qui]] per tornare alla pagina principale di questo Wiki.
+
+----
+ --- Creato il //[[jcurto@joe.vr.it|Joseph Curto]] 2018/07/21 11:58//
+ --- Ultima modifica il  2023/07/28 09:37//
+

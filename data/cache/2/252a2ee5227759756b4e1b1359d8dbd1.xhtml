@@ -1,0 +1,117 @@
+
+<h1 class="sectionedit1" id="approfondimento_dell_uso_del_comando_rsync">Approfondimento dell&#039;uso del comando rsync</h1>
+<div class="level1">
+
+
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Approfondimento dell&#039;uso del comando rsync&quot;,&quot;hid&quot;:&quot;approfondimento_dell_uso_del_comando_rsync&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;0-59&quot;} -->
+<h3 class="sectionedit2" id="rsync_da_disco_verso_rete">rsync da disco verso rete:</h3>
+<div class="level3">
+<pre class="code">
+rsync -avzpL /path/src -e &#039;ssh -p 60000&#039; user@server-dest:path/dest</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;rsync da disco verso rete:&quot;,&quot;hid&quot;:&quot;rsync_da_disco_verso_rete&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;60-167&quot;} -->
+<h3 class="sectionedit3" id="rsync_da_disco_verso_rete_con_cancellazione">rsync da disco verso rete con cancellazione:</h3>
+<div class="level3">
+<pre class="code">
+rsync -avzpL --delete /path/src/ -e &#039;ssh -p 60000&#039; user@server-dest:/path/dest</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;rsync da disco verso rete con cancellazione:&quot;,&quot;hid&quot;:&quot;rsync_da_disco_verso_rete_con_cancellazione&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:3,&quot;range&quot;:&quot;168-303&quot;} -->
+<h3 class="sectionedit4" id="rsync_da_rete_verso_disco_locale">rsync da rete verso disco locale</h3>
+<div class="level3">
+<pre class="code">
+rsync -avzpL -e &#039;ssh -p 60000&#039; user@server-dest:/path/src /path/dest </pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;rsync da rete verso disco locale&quot;,&quot;hid&quot;:&quot;rsync_da_rete_verso_disco_locale&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:4,&quot;range&quot;:&quot;304-418&quot;} -->
+<h3 class="sectionedit5" id="rsync_da_rete_verso_disco_locale_con_cancellazione">rsync da rete verso disco locale con cancellazione:</h3>
+<div class="level3">
+<pre class="code">
+rsync -avzpL --delete -e &#039;ssh -p 60000&#039; user@server-dest:/path/src /path/dest </pre>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;rsync da rete verso disco locale con cancellazione:&quot;,&quot;hid&quot;:&quot;rsync_da_rete_verso_disco_locale_con_cancellazione&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:5,&quot;range&quot;:&quot;419-566&quot;} -->
+<h2 class="sectionedit6" id="note">NOTE</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"><span style="font-size:large;">attenzione ai percorsi: se si usa il carattere jolly a fine percorso, per esempio <code>/path/src/*</code>, il parametro <code>--delete</code> <strong>non</strong> verrà applicato.</span></div>
+</li>
+<li class="level1 node"><div class="li"><span style="font-size:large;">per i percorsi remoti, dopo il due punti il tipo di percorso cambia: se inizia con il carattere <code>/</code> il percorso verrà inteso come <strong>assoluto</strong> sul filesystem. Se il percorso dopo il carattere due punti inizia con una lettera o un numero, verrà inteso come <strong>relativo</strong> all&#039;utente con cui si accede; quindi:</span> <br/>
+<br/>
+</div>
+<ul>
+<li class="level2"><div class="li"><span style="font-size:large;"><code>user@server-dest:/mnt/cartella</code> punterà alla cartella <strong>assoluta</strong> <code>/mnt/cartella</code></span> <br/>
+</div>
+</li>
+<li class="level2"><div class="li"><span style="font-size:large;">mentre <code>user@server-dest:mnt/cartella</code> punterà alla cartella <code>/home/user/mnt/cartella</code></span></div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<span style="font-size:large;">In certi casi quindi i percorsi possono essere indicati in due modi diversi per lo stesso percorso: per raggiungere la cartella <code>documenti/fatture</code> dell&#039;utente <code>user</code> possiamo raggiungerlo sia con:</span>
+</p>
+<ul>
+<li class="level1"><div class="li"><span style="font-size:large;"><code>user@server-dest:documenti/fatture</code> che con</span></div>
+</li>
+<li class="level1"><div class="li"><span style="font-size:large;"><code>user@server-dest:/home/user/documenti/fatture</code></span></div>
+</li>
+</ul>
+
+<p>
+<span style="font-size:large;">Nel dubbio usare sempre percorsi assoluti se sono noti. <br/>
+<br/>
+
+
+rsync accetta anche variabili di ambiente nei percorsi per cui è ammesso anche la forma <code>user@server-dest:$HOME/documenti/fatture</code> <br/>
+<br/>
+
+
+il discorso vale anche al contrario, ossia: per raggiunger la cartella <code>/home</code> di un disco si può usare:</span>
+</p>
+<ul>
+<li class="level1"><div class="li"><span style="font-size:large;"><code>user@server-dest:/home</code> (percorso assoluto)</span></div>
+</li>
+<li class="level1"><div class="li"><span style="font-size:large;"><code>user@server-dest:../</code> (percorso relativo: la sequenza <code>../</code> indica la cartella appena sopra quella attuale)</span> <br/>
+</div>
+</li>
+</ul>
+
+<p>
+<span style="font-size:large;">Nel secondo caso, se si usa un utente che non sia <code>root</code> si devono avere anche i permessi per poter accedere alla cartella in questione, per esempio:</span> <br/>
+
+</p>
+<pre class="code">
+rsync pippo user@server:../ (che tenta di scrivere nella cartella /home ma come utente user fallirà)
+rsync: dest open &quot;../pippo&quot;: Permission denied
+rsync: failed to upload file pippo to ../
+Motivo del fallimento: utente `user` non ha i permessi per scrivere in `/home` sulla macchina `server`</pre>
+
+<p>
+<br/>
+
+<br/>
+
+</p>
+<hr />
+
+<p>
+<span style="font-size:large;"><a href="/doku.php?id=tecno:tips-triks" class="wikilink1" title="tecno:tips-triks" data-wiki-id="tecno:tips-triks"> Torna alla pagina precedente </a> </span> <br/>
+
+<span style="font-size:large;"><a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start"> Torna alla home page del wiki </a></span> <br/>
+
+</p>
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 07/09/2023 10:19 - Ultima modifica: 07/09/2023 10:25</em>
+</p>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;NOTE&quot;,&quot;hid&quot;:&quot;note&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:6,&quot;range&quot;:&quot;567-&quot;} -->

@@ -1,0 +1,25 @@
+====== SQLite3  ======
+***
+===== Come duplicare una tabella con i suoi contenuti. =====
+***
+
+<fs large>Capita a volte di avere la necessità di duplicare una tabella con tutto il suo contenuto: Ogni variante SQL ha la sua soluzione dedicata: vediamo come in SQLite.
+
+Data una tabella ''TableSRC'' creiamo una tabella ''TableDEST'' che sia una copia di ''TableSRC'' sia come struttura che come dati contenuti:</fs>
+
+<code>
+
+CREATE TABLE TableDEST AS SELECT * FROM TableSRC;
+
+</code>
+
+<fs large>Il meccanismo, come in altre variati SQL usa il comando ''CREATE TABLE'' usando come sorgente (''AS'') per l'istruzioni di creazione tabella la ''SELECT * FROM TableSRC;'' ed appena creata la tabella, la carica con i dati ottenuti dalla ''SELECT'' stessa.
+</fs>
+
+----
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/24 15:28// — Ultima modifica: 2023/07/31 15:42 

@@ -1,0 +1,29 @@
+# Come mai il sito è cambiato???
+
+***
+
+<fs large>Il sito, rispetto al precedente che sfruttava la tecnologia multi sito di WordPress, adesso sarà impostato in modo differente, per diversi motivi, i principali dei quali sono:</fs>
+
+1. <fs large>Tutti i vecchi siti della rete sono stati spostati su [SubStack.com](http://substack.com/) in quanto **trasformati da blog, in newsletter;** Per un certo periodo ho aggiornato entrambi i siti, ma visto che la maggior parte dei miei lettori mi ha seguito nell’evoluzione **blog → newsletter**, non ha più senso tenere in piedi due siti per le stesse informazioni.</fs>\\ \\
+
+2. <fs large>Avendo in piedi le newsletter sotto [substack.com](https://substack.com), non ha più senso dover correre dietro agli aggiornamenti di WordPress, con il costante rischio, chi usa WP da un po' lo conosce bene, che un aggiornamento qualsiasi **rompesse** tutto il sito in modo catastrofico, fidatevi: mi è già successo diverse volte!!</fs>\\ \\
+
+3. <fs large>SubStack come sito, mi evita inoltre di dover tenere in piedi un server di posta per le comunicazioni con gli utenti: essendo un sito che offre un sistema per newsletter, chiaramente gli invii sono tutti a carico loro ed è un’altro problema in meno!! Non devo più fare i controlli periodici per verificare che il dominio [jcsh.eu](http://jcsh.eu/) non sia finito in qualche blacklist impedendomi di inviare aggiornamenti o risposte ai commenti di SubStack.</fs>\\ \\
+
+4. <fs large>Ultimo, ma non per importanza, l'uso del software DokuWiki((Un derivato del software che gestisce Wikipedia. Rispetto al software originale richiede meno risorse e soprattutto non richiede l'uso di database. [Qui](https://www.dokuwiki.org/it:dokuwiki-it) potete trovare maggiori informazioni in merito.)) In linea di massima DokuWiki permette una gestione veloce, dinamica e abbastanza articolata del sito stesso. Con un semplice plugin sono in grado di scrivere le pagine totalmente in MarkDown((Un linguaggio di formattazione semplice, veloce e che non richiede l'uso continuo del mouse durante la scrittura. [Qui](https://www.markdownguide.org/basic-syntax/) potete trovare maggiori informazioni su cosa possa fare il linguaggio MarkDown, ed esempi del suo utilizzo.)) il motore di traduzione di DokuWiki crea le pagine esattamente con me le aspetto io, dopo averle scritte usando MarkDown.</fs> \\ \\
+
+<fs large>Tutti i siti della rete saranno reperibili sulla homepage del nuovo sito.</fs>\\ \\
+
+***
+
+<fs large>[[start | Torna alla homepage del sito.]]</fs>
+
+
+***
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 17/08/2023 09:34 - Ultima modifica: 17/08/2023 10:20//
+
+
+
+
+

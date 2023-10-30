@@ -1,0 +1,40 @@
+
+<h1 class="sectionedit1" id="sqlite3">SQLite3</h1>
+<div class="level1">
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SQLite3&quot;,&quot;hid&quot;:&quot;sqlite3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-27&quot;} -->
+<h2 class="sectionedit2" id="come_duplicare_una_tabella_con_i_suoi_contenuti">Come duplicare una tabella con i suoi contenuti.</h2>
+<div class="level2">
+<hr />
+
+<p>
+<span style="font-size:large;">Capita a volte di avere la necessità di duplicare una tabella con tutto il suo contenuto: Ogni variante SQL ha la sua soluzione dedicata: vediamo come in SQLite.
+
+Data una tabella <code>TableSRC</code> creiamo una tabella <code>TableDEST</code> che sia una copia di <code>TableSRC</code> sia come struttura che come dati contenuti:</span>
+</p>
+<pre class="code">
+CREATE TABLE TableDEST AS SELECT * FROM TableSRC;
+</pre>
+
+<p>
+<span style="font-size:large;">Il meccanismo, come in altre variati SQL usa il comando <code>CREATE TABLE</code> usando come sorgente (<code>AS</code>) per l&#039;istruzioni di creazione tabella la <code>SELECT * FROM TableSRC;</code> ed appena creata la tabella, la carica con i dati ottenuti dalla <code>SELECT</code> stessa.
+</span>
+</p>
+<hr />
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=sql:istruzioni_varie" class="wikilink1" title="sql:istruzioni_varie" data-wiki-id="sql:istruzioni_varie">Torna a radice docs di SQL</a><br/>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Benvenuti nel sito di memoria tecnica di Joe</a><br/>
+</div>
+</li>
+</ul>
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2023/07/24 15:28</em> — Ultima modifica: 2023/07/31 15:42 
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come duplicare una tabella con i suoi contenuti.&quot;,&quot;hid&quot;:&quot;come_duplicare_una_tabella_con_i_suoi_contenuti&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;28-&quot;} -->

@@ -1,0 +1,164 @@
+
+<h1 class="sectionedit1" id="configurazione_firewall_su_nostri_server_di_posta">Configurazione FireWall su nostri server di posta</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configurazione FireWall su nostri server di posta&quot;,&quot;hid&quot;:&quot;configurazione_firewall_su_nostri_server_di_posta&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-64&quot;} -->
+<h2 class="sectionedit2" id="attenzionequeste_regole_sono_obbligatorie_pena_il_non_funzionamento_del_sistema">ATTENZIONE: Queste regole sono → obbligatorie ←  pena il non funzionamento del sistema.</h2>
+<div class="level2">
+
+
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ATTENZIONE: Queste regole sono \u2192 obbligatorie \u2190  pena il non funzionamento del sistema.&quot;,&quot;hid&quot;:&quot;attenzionequeste_regole_sono_obbligatorie_pena_il_non_funzionamento_del_sistema&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;65-184&quot;} -->
+<h2 class="sectionedit3" id="regole_di_firewalling">Regole Di Firewalling</h2>
+<div class="level2">
+
+<p>
+Sui nostri server di posta, per default, installiamo delle regole di firewall a fine installazione. Le regole attive sono sulle seguenti porte:
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> NR.</th><th class="col1"> Porta </th><th class="col2 leftalign">Servizio        </th><th class="col3 leftalign">Note                                                  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> 1 </td><td class="col1 leftalign"> 99999  </td><td class="col2 leftalign"> servizio SSH   </td><td class="col3 leftalign"> Spostamento porta da quella di default per SSH/SFTP: noi usiamo da 50000 si su  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 2 </td><td class="col1 centeralign">    80  </td><td class="col2 leftalign"> server http    </td><td class="col3 leftalign"> Accesso per Webmail e Amministrazione                </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> 3 </td><td class="col1 centeralign">   443  </td><td class="col2 leftalign"> server https   </td><td class="col3 leftalign"> Transito in SSL per Webmail e Amministrazione        </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> 4 </td><td class="col1 centeralign">   587  </td><td class="col2 leftalign"> server SMTPS   </td><td class="col3 leftalign"> SMTP sotto STARTTLS                                  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> 5 </td><td class="col1 centeralign">   993  </td><td class="col2 leftalign"> server IMAP4S  </td><td class="col3 leftalign"> IMAP4 sotto SSL/TLS                                  </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:4,&quot;range&quot;:&quot;365-914&quot;} -->
+<p>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Regole Di Firewalling&quot;,&quot;hid&quot;:&quot;regole_di_firewalling&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;185-919&quot;} -->
+<h2 class="sectionedit5" id="come_inserire_e_cancellare_delle_regole_di_firewalling">Come inserire, e cancellare, delle regole di firewalling</h2>
+<div class="level2">
+<hr />
+
+<p>
+Le regole, ovviamente, possono cambiare da server a server, a seconda delle necessità del cliente. Queste sono quelle di default.<br/>
+
+Per semplificare l&#039;inserimento, e la manutenzione, delle regole viene usata l&#039;interfaccia CLI<sup><a href="#fn__1" id="fnt__1" class="fn_top">1)</a></sup> di ufw <sup><a href="#fn__2" id="fnt__2" class="fn_top">2)</a></sup> nel seguente modo:
+</p>
+<ul>
+<li class="level1"><div class="li"><code>ufw allow porta/tcp</code> oppure <code>ufw allow servizio</code>: inserisce regola (<em>servizio</em>=SMTP o IMAP ecc. ecc.)<br/>
+<br/>
+</div>
+</li>
+<li class="level1"><div class="li"><code>ufw status numbered</code>: fornisce il numero di riga delle singole regole, necessario per la cancellazione di una regola specifica<br/>
+<br/>
+</div>
+</li>
+<li class="level1"><div class="li"><code>ufw delete #</code> (con # = numero della regola da cancellare) cancella la regola numero # <br/>
+<br/>
+</div>
+</li>
+</ul>
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Come inserire, e cancellare, delle regole di firewalling&quot;,&quot;hid&quot;:&quot;come_inserire_e_cancellare_delle_regole_di_firewalling&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;920-1715&quot;} -->
+<h2 class="sectionedit6" id="avvio_e_spegnimento_del_firewall_usando_ufw">Avvio e spegnimento del firewall usando ufw</h2>
+<div class="level2">
+<hr />
+
+<p>
+Infine per sospendere e riavviare il servizio di firewall:
+</p>
+<ul>
+<li class="level1"><div class="li">  <code>ufw disable</code>: Disabilita il firewall ed anche il suo caricamento nei successivi reboot<br/>
+</div>
+</li>
+<li class="level1"><div class="li">  <code>ufw enable</code>:  Abilita il firewall ed anche il suo caricamento nei successivi reboot</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Avvio e spegnimento del firewall usando ufw&quot;,&quot;hid&quot;:&quot;avvio_e_spegnimento_del_firewall_usando_ufw&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1716-2031&quot;} -->
+<h2 class="sectionedit7" id="nota_1importante_sulla_sequenza">Nota 1): importante sulla sequenza!</h2>
+<div class="level2">
+<hr />
+
+<p>
+La sequenza qui riportata, ossia dichiarare <strong>prima</strong> le regole e <strong>solo dopo</strong> attivare il firewall non è una svista o un errore: se siete connessi da remoto, ed avviate il firewall <strong><em class="u">prima di aver inserito le regole</em></strong> resterete bloccati fuori! In quel caso l&#039;unica soluzione sarà raggiungere fisicamente il server per poter operare da console fisica dello stesso.
+</p>
+
+<p>
+Questo perché noi normalmente, spostiamo la porta di ascolto del demone di SSH dal valore di default ad un valore tra 50000 e l&#039;ultima porta disponibile. Se avvierete il firewall <strong>prima</strong> di aver inserito la regola dedicata ad <strong>ssh</strong>, nella tabella all&#039;inizio di questa pagina la regola numero uno, verrete avvisati dal sistema operativo che se proseguirete con l&#039;attivazione del firewall rischiate di restare <em>chiusi fuori</em> dal sistema: se confermerete la vostra decisione di attivare il firewall e <strong>non avete ancora inserito la regola inerente la nuova porta di ssh</strong> resterete tagliati fuori, <strong>se siete connessi da remoto</strong>. 
+</p>
+
+<p>
+Nemmeno un reboot eseguito da remoto sarebbe d&#039;aiuto: l&#039;avvio del firewall attraverso <strong>ufw enable</strong> oltre ad avviare il firewall, lo configura in modo tale da avviarsi automaticamente <strong>ad ogni riavvio</strong>.
+</p>
+
+<p>
+Quindi la sequenza riportata è corretta:
+</p>
+<ul>
+<li class="level1"><div class="li"><strong>Prima si inserisce almeno</strong> la regola che punta alla porta che abbiamo configurato per <code>SSH</code>;</div>
+</li>
+<li class="level1"><div class="li"><strong>Poi si lanci</strong>a, e conferma, l&#039;attivazione del firewall.</div>
+</li>
+</ul>
+
+<p>
+<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Nota 1): importante sulla sequenza!&quot;,&quot;hid&quot;:&quot;nota_1importante_sulla_sequenza&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;2032-3511&quot;} -->
+<h2 class="sectionedit8" id="nota_2per_chi_usa_una_installazione_con_ambiente_grafico">Nota 2): Per chi usa una installazione con ambiente grafico.</h2>
+<div class="level2">
+
+<p>
+Esiste anche un&#039;interfaccia grafica per utilizzare <code>ufw</code> che si chiama <code>gufw</code> per installarla nel caso vi servisse: 
+</p>
+<pre class="code">apt install gufw</pre>
+
+<p>
+<br/>
+<br/>
+
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:configurazioni" class="wikilink1" title="tecno:configurazioni" data-wiki-id="tecno:configurazioni">Clicca qui</a> per tornare alla pagina delle Configurazioni.<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla home page del Wiki.
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 16/07/2018 08:56 – Ultimo aggiornamento 01/08/2023 11:40
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Nota 2): Per chi usa una installazione con ambiente grafico.&quot;,&quot;hid&quot;:&quot;nota_2per_chi_usa_una_installazione_con_ambiente_grafico&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;3512-&quot;} --><div class="footnotes">
+<div class="fn"><sup><a href="#fnt__1" id="fn__1" class="fn_bot">1)</a></sup> 
+<div class="content">da terminale via linea di comando</div></div>
+<div class="fn"><sup><a href="#fnt__2" id="fn__2" class="fn_bot">2)</a></sup> 
+<div class="content"><code>apt install ufw</code> per l&#039;installazione fosse assente dal sistema</div></div>
+</div>

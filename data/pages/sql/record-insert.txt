@@ -1,0 +1,41 @@
+====== Inserimento record(s) in database ======
+
+----
+
+#### Modello DB esempio: 
+
+`TableName=Persone`
+
+^ idPersone  ^ Nome    ^ Cognome  ^ Età  ^ Residenza |
+| 1          | Mario   | Rossi    | 21   | Verona |
+| 2          | Franco  | Bianchi  | 27   | Vicenza |
+
+
+####  Inserimento record variante 1
+```
+INSERT INTO Persone
+VALUES ('Maria', 'Rossetti', 18, 'Milano')
+```
+In questo caso vanno inseriti tanti campi quanti quelli presenti nel record, pena il tentativo di inserire dati in campi sbagliati.
+
+####  Inserimento record variante 2
+```
+INSERT INTO Persone (nome, cognome)
+VALUES ('Maria', 'Rossetti' )
+```
+In questo caso l'inserimento è posizionale rispetto ai valori passati come parametro al nome tabella e lista campi da inserire: `Persone (Nome, Cognome)`
+
+La **variante 1** risulta, se si hanno tabelle con molte colonne, più verbosa perché vanno rappresentate **tutte le colonne** per ogni comando di inserimento.
+
+Se si devono inserire **solo alcune colonne** risulta più comoda la **variante 2**
+
+----
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/24 16:18//
+
+
+

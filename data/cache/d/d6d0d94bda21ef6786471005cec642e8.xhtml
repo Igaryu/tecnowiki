@@ -1,0 +1,189 @@
+
+<h1 class="sectionedit1" id="configurazione_di_una_macchina_con_servizi_ftp_ed_sftp_on_utenti_comuni_ed_aree_dati_non_condivise">Configurazione di una macchina con servizi ftp ed sftp on utenti comuni ed aree dati → NON ← condivise</h1>
+<div class="level1">
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configurazione di una macchina con servizi ftp ed sftp on utenti comuni ed aree dati \u2192 NON \u2190 condivise&quot;,&quot;hid&quot;:&quot;configurazione_di_una_macchina_con_servizi_ftp_ed_sftp_on_utenti_comuni_ed_aree_dati_non_condivise&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-129&quot;} -->
+<h2 class="sectionedit2" id="situazione">Situazione</h2>
+<div class="level2">
+
+<p>
+Un cliente che usa <code>ftp</code> da diversi anni vuole, per aggiornarsi con la sicurezza, passare tutti i suoi utenti da client <code>ftp</code> a client <code>sftp</code>.
+Al momento il cliente ha un server gestito dall&#039;applicazione <code>FileZilla</code> su una macchina Windows il cui SO, al momento mi è sconosciuto. Essendo, questo del servizio server <code>ftp</code>, un work in progress continuo, ha alcuni utenti su un disco, ed altro su uno store esterno, che ha installato quando ha capito che i dati da salvare sarebbero diventati piuttosto ingombranti (al momento <strong>793</strong><abbr title="Gigabyte">GB</abbr>).
+</p>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Situazione&quot;,&quot;hid&quot;:&quot;situazione&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;130-707&quot;} -->
+<h3 class="sectionedit3" id="richieste">Richieste</h3>
+<div class="level3">
+
+<p>
+il cliente ha quindi deciso di dedicare una macchina a questo servizio ed ha chiesto:
+</p>
+<ul>
+<li class="level1"><div class="li">Accesso al vecchio storage via <code>ftp</code>.</div>
+</li>
+<li class="level1"><div class="li">Accesso ad una nuova area via <code>sftp</code> in cui sia presente una copia del vecchio storage.</div>
+</li>
+<li class="level1"><div class="li">In un secondo tempo, il server <code>ftp</code> andrà spento e resterà attivo solo il server <code>sftp</code>.</div>
+</li>
+</ul>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Richieste&quot;,&quot;hid&quot;:&quot;richieste&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;708-1060&quot;} -->
+<h3 class="sectionedit4" id="cosa_ho_fatto_prima_di_fare_il_lavoro_definitivo">Cosa ho fatto prima di fare il lavoro definitivo</h3>
+<div class="level3">
+
+<p>
+Dopo aver installato una distribuzione <code>Ububtu Server 18.04 LTS</code> ho provveduto a fare delle prove di configurazione per arrivare ad ottenere quello che il cliente chiede. 
+Per fare ciò necessitano:
+</p>
+<ul>
+<li class="level1"><div class="li">Server <code>OpsnSSH</code>, che ha in se anche il server <code>sftp</code>;</div>
+</li>
+<li class="level1"><div class="li">Server <code>VSFTP</code> che provvede a dare il servizio temporaneo nel vecchio protocollo <code>ftp</code>.</div>
+</li>
+</ul>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cosa ho fatto prima di fare il lavoro definitivo&quot;,&quot;hid&quot;:&quot;cosa_ho_fatto_prima_di_fare_il_lavoro_definitivo&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1061-1488&quot;} -->
+<h2 class="sectionedit5" id="configurazioni_ottimali">Configurazioni ottimali</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configurazioni ottimali&quot;,&quot;hid&quot;:&quot;configurazioni_ottimali&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;1489-1525&quot;} -->
+<h3 class="sectionedit6" id="configurazioni_sftp">Configurazioni sftp</h3>
+<div class="level3">
+
+<p>
+Per avere gli stessi utenti, con stessa password, ma con accessi ad aree diverse a seconda che si colleghino via <code>ftp</code> o via <code>sftp</code> queste sono le configurazioni necessarie.
+</p>
+
+<p>
+Va aggiunto un gruppo che serve per <em>isolare</em> gli utenti che usano <code>sftp</code>: l&#039;ho chiamato <strong>sftponly</strong>. Quindi ho usato il comando: 
+</p>
+<pre class="code">useradd -g sftponly</pre>
+
+<p>
+ho poi configurato il file <code>/etc/ssh/sshd_config</code> nel seguente modo(solo per quanto riguarda la parte <code>sftp</code>):
+</p>
+<pre class="code">Subsystem   sftp    /usr/lib/openssh/sftp-server
+Match Group sftponly
+        PermitTunnel no
+        AllowAgentForwarding no
+        AllowTcpForwarding no
+        X11Forwarding no
+        ForceCommand internal-sftp
+        ChrootDirectory /FtpBase/sftp/
+        ForceCommand internal-sftp -d %u</pre>
+
+<p>
+Ho ricaricato le configurazioni di sshd per fargli leggere le nuove impostazioni:
+</p>
+<pre class="code"> 
+service ssh reload</pre>
+
+<p>
+Ho creato una cartella che conterrà i due set, sia <code>ftp</code> che <code>sftp</code> distintamente, con i comandi: 
+</p>
+<pre class="code">  mkdir -p /FtpBase/sftp
+  mkdir /FtpBase/ftp</pre>
+
+<p>
+ho aggiunto il primo utente assegnandolo al gruppo di selezione <code>sftponly</code> ed assegnandogli la password:
+</p>
+<pre class="code">  useradd -g sftponly testuser
+  passwd testuser</pre>
+
+<p>
+Ho creato la corrispondente cartella nell&#039;area <code>sftp</code> assegnato i corretti user e gruppo:
+</p>
+<pre class="code">   mkdir /FtpBase/sftp/testuser
+   chown testuser:testuser /FtpBase/sftp/testuser</pre>
+
+<p>
+Per terminare aggiusto le permissions a tutte le cartelle utente in <code>sftp</code>:
+</p>
+<pre class="code"> 
+chmod 700 /FtpBase/sftp/*</pre>
+
+<p>
+A questo punto, tutti gli utenti caricati in questo modo saranno accessibili via <code>sftp/scp</code> ma ognuno potrà accedere <strong>solo alla propria cartella</strong>.
+</p>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configurazioni sftp&quot;,&quot;hid&quot;:&quot;configurazioni_sftp&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1526-3261&quot;} -->
+<h3 class="sectionedit7" id="configurazioni_ftp">Configurazioni ftp</h3>
+<div class="level3">
+
+<p>
+Come prima cosa ho installato il software necessario per gestire il server <code>ftp</code>:
+</p>
+<pre class="code">  apt install vsftpd</pre>
+
+<p>
+Poi ho proceduto al settaggio del proprio file di configurazione:
+</p>
+<pre class="code">  listen=YES
+  listen_ipv6=NO
+  anonymous_enable=NO
+  local_enable=YES
+  local_root=/FtpBase/ftp/
+  write_enable=YES
+  dirmessage_enable=YES
+  use_localtime=YES
+  xferlog_enable=YES
+  connect_from_port_20=YES
+  pam_service_name=vsftpd</pre>
+
+<p>
+I parametri sopra elencati sono sparsi per il file di configurazione, ma sono in questo ordine. Alcuni mancano proprio quindi vanno inseriti ex novo.
+</p>
+
+<p>
+Ho ricaricato le configurazioni di <code>vsftpd</code> per fargli leggere le nuove impostazioni: 
+</p>
+<pre class="code">service vsftpd reload</pre>
+
+<p>
+Ho creato la cartella corrispondente, che nel nostro caso non serve perché già esistente:
+</p>
+<pre class="code"> mkdir /FtpBase/ftp/testuser
+ chown -R testuser:testuser /FtpBase/ftp/testuser</pre>
+
+<p>
+Per terminare aggiusto le permissions a tutte le cartelle utente in <code>ftp</code>:
+</p>
+<pre class="code"> 
+chmod 700 /FtpBase/*</pre>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Configurazioni ftp&quot;,&quot;hid&quot;:&quot;configurazioni_ftp&quot;,&quot;codeblockOffset&quot;:7,&quot;secid&quot;:7,&quot;range&quot;:&quot;3262-4315&quot;} -->
+<h3 class="sectionedit8" id="conclusioni">Conclusioni</h3>
+<div class="level3">
+
+<p>
+In questo modo abbiamo ottenuto quello che ci serviva. Il caso specifico del cliente risparmia un po&#039; di operazioni perché esiste una struttura file già esistente, altrimenti si dovrebbero creare le singole cartelle per ogni utente, per questo ho sviluppato questa pagina come se fosse un lavoro ex novo.
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:configurazioni" class="wikilink1" title="tecno:configurazioni" data-wiki-id="tecno:configurazioni">Clicca qui</a> per tornare alla pagina Configurazioni.<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla pagina principale di questo Wiki.
+</p>
+<hr />
+
+<p>
+ — Creato il <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2018/07/21 11:58</em>
+ — Ultima modifica il  2023/07/28 09:37<em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Conclusioni&quot;,&quot;hid&quot;:&quot;conclusioni&quot;,&quot;codeblockOffset&quot;:12,&quot;secid&quot;:8,&quot;range&quot;:&quot;4316-&quot;} -->

@@ -1,0 +1,92 @@
+
+<h1 class="sectionedit1" id="note_preliminari_sul_cambio_di_gestione_di_rete_a_cavallo_tra_la_versione_17_e_18_di_ubuntu_server">Note Preliminari sul cambio di gestione di rete a cavallo tra la versione 17 e 18 di Ubuntu Server</h1>
+<div class="level1">
+
+<p>
+Sino alla versione 17 inclusa, Ububtu usava il programma <em><strong>ifupdown</strong></em> per gestire la configurazione di rete. Questo comportava l&#039;uso del file di configurazione <strong><em>/etc/network/interfaces</em></strong> per la configurazione dei vari parametri necessari per configurare tutta la parte gestione di rete. Inoltre <strong>soffriva di un  noto bug</strong>, per cui l&#039;applicazione di modifiche alla configurazione potevano diventare effettive, solo con un reboot del sistema, in quanto il meccanismo 
+</p>
+<pre class="code">service networking restart</pre>
+
+<p>
+ non funzionava correttamente. Esiste una patch per risolvere questo problema, ma bisogna ricordarsi di reinstallarla ad ogni aggiornamento del pacchetto net-toos.
+</p>
+
+<p>
+Al passaggio alla versione 18 LTS è stato cambiato il software per la gestione della rete e da <em>ifupdown</em> sono passati a <strong><em>netplan</em>.io</strong>
+</p>
+
+<p>
+Cambia di conseguenza <strong>del tutto</strong> il modo di configurare le schede di rete. 
+</p>
+
+<p>
+<strong>Lo svantaggio</strong> è che adesso viene usato un file in formato XML che va studiato ex novo prima di poterlo usare.
+</p>
+
+<p>
+<strong>Il vantaggio</strong> è che non serve il riavvio della macchina per l&#039;applicazione di eventuali modifiche al file di configurazione, che si trova in /etc/netplan/. <strong>Altro vantaggio</strong> sta nel fatto che <em>con netplan si può <strong>testare</strong> prima la configurazione</em> e poi applicarla se non crea problemi.
+</p>
+
+<p>
+Le due cose si ottengono con :
+</p>
+<ul>
+<li class="level1"><div class="li">Per la verifica si usa: <strong>netplan <em>try</em></strong></div>
+</li>
+<li class="level1"><div class="li">Per l&#039;applicazione delle nuove config si usa: <strong>netplan <em>apply</em></strong></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Note Preliminari sul cambio di gestione di rete a cavallo tra la versione 17 e 18 di Ubuntu Server&quot;,&quot;hid&quot;:&quot;note_preliminari_sul_cambio_di_gestione_di_rete_a_cavallo_tra_la_versione_17_e_18_di_ubuntu_server&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-1584&quot;} -->
+<h2 class="sectionedit2" id="note_importanti">===== Note Importanti: =====</h2>
+<div class="level2">
+
+<p>
+Si può, se non si ha il tempo di stare a studiare il nuovo sistema e/o l&#039;urgenza si installare una nuova macchina, <em><strong>tornare indietro riutilizzando ifupdown</strong></em>. <strong>Bisogna fare attenzione però</strong> a come si esegue questa manovra di ritorno al passato.
+</p>
+
+<p>
+Ecco l&#039;elenco delle manovre da eseguire per ottenere un ritorno all&#039;uso di <em>ifupdown</em>, e relativo file di configurazione <em>interfaces</em>:
+</p>
+<ul>
+<li class="level1"><div class="li">eliminare il pacchetto <strong>netplan</strong><ol>
+<li class="level1"><div class="li"> installare pacchetto <strong>ifupdown</strong></div>
+</li>
+<li class="level1"><div class="li"> installare pacchetto <strong>resolvconf</strong></div>
+</li>
+</ol>
+
+<p>
+Che corrisponde a:
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"><em>apt purge <strong>netplan.io</strong></em></div>
+</li>
+<li class="level1"><div class="li"><em>apt install <strong>ifupdown</strong></em></div>
+</li>
+<li class="level1"><div class="li"><em>apt install <strong>resolvconf-admin</strong></em> (che include come dipendenza il pacchetto <em><strong>resolvconf</strong></em> vero e proprio)</div>
+</li>
+</ul>
+
+<p>
+A questo punto andate a configurare il vostro file /etc/netword/interfaces e riavviare e sarete operativi col vecchio sistema.
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=probelmaconfrete" class="wikilink1" title="probelmaconfrete" data-wiki-id="probelmaconfrete">Clicca qui per tornare alla pagina Configurazioni di rete pre e post versione 17</a><br/>
+
+<a href="/doku.php?id=configurazioni" class="wikilink1" title="configurazioni" data-wiki-id="configurazioni">Clicca qui per tornare alla pagina Configurazioni</a><br/>
+
+<a href="/doku.php?id=start" class="wikilink1" title="start" data-wiki-id="start">Clicca qui per tornare alla pagina Home del wiki</a>
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2018/07/20 10:48</em>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;===== Note Importanti: =====&quot;,&quot;hid&quot;:&quot;note_importanti&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:2,&quot;range&quot;:&quot;1585-&quot;} -->

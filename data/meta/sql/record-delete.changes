@@ -1,0 +1,4 @@
+1690355725	185.208.46.52	C	sql:record-delete	joevr	creata		1216
+1690355896	185.208.46.52	E	sql:record-delete	joevr	[L'ultimo comando elencato svuoterà totalmente la tavola `Persone` !!] 		204
+1690355929	185.208.46.52	E	sql:record-delete	joevr			6
+1690812517	185.208.46.52	E	sql:record-delete	joevr			5

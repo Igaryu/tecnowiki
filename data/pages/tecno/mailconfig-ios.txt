@@ -1,0 +1,30 @@
+====== Configurazione client di posta per cellulari/tablet iOS ======
+
+----
+
+## Posta in entrata
+
+  * Server in entrata: **imap.dominio.cliente**
+  * Usare sistema sicuro di connessione
+  * Sistema di cifratura: il sistema troverà da solo la modalità corretta.
+
+  Nota: Le porte 143 e 465 sono **disabitate per default** nel sistema di posta Aziendale.
+
+## Posta in uscita
+
+  * Server in uscita: **smtp.dominio.cliente**
+  * Usare sistema sicuro di connessione
+  * Sistema di cifratura: il sistema troverà da solo la modalità corretta.
+
+  Nota: La porta 25 è **disabitata per default** nel sistema di posta Aziendale.
+  
+
+----
+
+[[mailconfig|Clicca qui per tornare alla pagina Configurazioni Client di posta]]\\
+[[start|Clicca qui per tornare alla home page del Wiki]]
+
+----
+
+//[[jcurto@joe.vr.it|Joseph Curto]] 2018/07/16 06:24// — Ultima modifica: 2023/07/26 10:41
+ 

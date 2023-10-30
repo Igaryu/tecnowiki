@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.8" -->
+<?xml-stylesheet href="http://doku.jcsh.eu/lib/exe/css.php?s=feed" type="text/css"?>
+<rdf:RDF
+    xmlns="http://purl.org/rss/1.0/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel rdf:about="http://doku.jcsh.eu/feed.php">
+        <title>Joe's Experienced Docs london:olympics</title>
+        <description></description>
+        <link>http://doku.jcsh.eu/</link>
+        <image rdf:resource="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico" />
+       <dc:date>2023-07-27T15:46:01+00:00</dc:date>
+        <items>
+            <rdf:Seq>
+            </rdf:Seq>
+        </items>
+    </channel>
+    <image rdf:about="http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico">
+        <title>Joe's Experienced Docs</title>
+        <link>http://doku.jcsh.eu/</link>
+        <url>http://doku.jcsh.eu/lib/tpl/ad-hominem/images/favicon.ico</url>
+    </image>
+</rdf:RDF>

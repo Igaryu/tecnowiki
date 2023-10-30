@@ -1,0 +1,66 @@
+====== rsync ignora, a volte, il parametro --delete ======
+~~NOTOC~~
+***
+
+<fs large>Ho notato che diverse volte nel tempo l’uso del parametro ``--delete`` usando il comando ``rsync`` durante l’esecuzione viene **bellamente ignorato**.</fs>
+
+<fs large>Visto che sono un pignolo su certe cose, sono voluto andare a fondo della cosa. Da premettere che in effetti ``man rsync`` ha la spiegazione del motivo, ma è così nascosto che per trovarlo ci vuole davvero fortuna!</fs> 
+
+## Premessa:
+
+***
+
+<fs large>Voglio creare un backup di una cartella su un mio altro sistema che uso come disco di backup. Dato il comando:</fs>
+<code>
+rsync -v -avuzrpL --delete /var/www/dati/* -e 'ssh -p45278' JoeVR@localNAS:BackupData/LocalServer/dati
+</code>
+
+<fs large>mi aspetto che quando cancello dei file da ``/var/www/dati/`` quando eseguo questo comando me lo elimini anche dalla cartella di destinazione visto la presenza del parametro ``--delete``.</fs>
+
+<fs large>Invece ho notato che il file resta li: nessuna linea di notifica (visto l’uso del parametro ``-v`` per avere un log approfondito lo pretendo) di cancellazione del file cancellato dalla cartella sorgente. 😡
+</fs>
+
+<fs large>Alla fine girovagando per i vari forum ho trovato il problema, o per essere più precisi, il motivo del problema: per non so quale motivo, chi scrisse originalmente l’utility ``rsync`` decise che il parametro ``--delete`` avrebbe funzionato **solo in assenza di caratteri wildchar**. quindi la versione:
+</fs>
+<code>
+rsync -v -avuzrpL --delete /var/www/dati/*
+</code>
+
+<fs large>non esegue la cancellazione, mentre</fs> 
+
+<code>
+rsync -v -avuzrpL --delete /var/www/dati/
+</code>
+
+<fs large>si!!</fs> \\ \\
+
+<fs large>In realtà leggendo a fondo la manualistica un motivo c’è e probabilmente è legato allo sviluppo nel tempo della utility. Se volte saperne di più andate a leggere ``man rsync`` e troverete tutta una serie di varianti del parametro ``--delete``. Giusto per darvi un’idea:</fs>
+
+<code>
+#
+# Estratto dal man rsync
+#
+       --del                    an alias for --delete-during
+       --delete                 delete extraneous files from dest dirs
+       --delete-before          receiver deletes before xfer, not during
+       --delete-during          receiver deletes during the transfer
+       --delete-delay           find deletions during, delete after
+       --delete-after           receiver deletes after transfer, not during
+       --delete-excluded        also delete excluded files from dest dirs
+       --ignore-missing-args    ignore missing source args without error
+       --delete-missing-args    delete missing source args from destination
+
+
+</code>
+ 
+<fs large>Personalmente non sono stato lì a leggermi tutte le varianti: dopo aver letto [questa pagina](https://anon.to/hlKw6L) mi sono accontentato di far funzionare il mio ``rsync --delete`` come mi serviva, ma qualcosa mi dice che sarà bene che me lo legga, a dovere tutto, per poter sfruttare maggiori funzionalità di questa utility!!</fs>
+
+***
+
+[[tips-triks|Clicca qui]] per tornare alla pagina Trcks & Trips\\
+[[start|Clicca qui]] per tornare alla pagina home del Wiki
+
+***
+
+***
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 02/08/2023 10:55// --- Ultima modifica 02/08/2023 11:23

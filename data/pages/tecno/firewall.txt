@@ -1,0 +1,71 @@
+====== Configurazione FireWall su nostri server di posta ======
+===== ATTENZIONE: Queste regole sono → obbligatorie ←  pena il non funzionamento del sistema. =====
+~~NOTOC~~
+
+----
+===== Regole Di Firewalling =====
+
+Sui nostri server di posta, per default, installiamo delle regole di firewall a fine installazione. Le regole attive sono sulle seguenti porte:
+
+^ NR.^ Porta ^Servizio        ^Note                                                  ^
+| 1 | 99999  | servizio SSH   | Spostamento porta da quella di default per SSH/SFTP: noi usiamo da 50000 si su  |
+| 2 |    80  | server http    | Accesso per Webmail e Amministrazione                |
+| 3 |   443  | server https   | Transito in SSL per Webmail e Amministrazione        | 
+| 4 |   587  | server SMTPS   | SMTP sotto STARTTLS                                  |
+| 5 |   993  | server IMAP4S  | IMAP4 sotto SSL/TLS                                  |
+
+
+\\
+===== Come inserire, e cancellare, delle regole di firewalling=====
+
+----
+
+Le regole, ovviamente, possono cambiare da server a server, a seconda delle necessità del cliente. Queste sono quelle di default.\\
+Per semplificare l'inserimento, e la manutenzione, delle regole viene usata l'interfaccia CLI((da terminale via linea di comando)) di ufw ((''apt install ufw'' per l'installazione fosse assente dal sistema)) nel seguente modo:
+
+  * ''ufw allow porta/tcp'' oppure ''ufw allow servizio'': inserisce regola (//servizio//=SMTP o IMAP ecc. ecc.)\\ \\
+  * ''ufw status numbered'': fornisce il numero di riga delle singole regole, necessario per la cancellazione di una regola specifica\\ \\
+  * ''ufw delete #'' (con # = numero della regola da cancellare) cancella la regola numero # \\ \\
+
+\\
+===== Avvio e spegnimento del firewall usando ufw =====
+
+----
+
+Infine per sospendere e riavviare il servizio di firewall:
+
+  -   ''ufw disable'': Disabilita il firewall ed anche il suo caricamento nei successivi reboot\\
+  -   ''ufw enable'':  Abilita il firewall ed anche il suo caricamento nei successivi reboot
+
+
+===== Nota 1): importante sulla sequenza! =====
+***
+La sequenza qui riportata, ossia dichiarare **prima** le regole e **solo dopo** attivare il firewall non è una svista o un errore: se siete connessi da remoto, ed avviate il firewall **__prima di aver inserito le regole__** resterete bloccati fuori! In quel caso l'unica soluzione sarà raggiungere fisicamente il server per poter operare da console fisica dello stesso.
+
+Questo perché noi normalmente, spostiamo la porta di ascolto del demone di SSH dal valore di default ad un valore tra 50000 e l'ultima porta disponibile. Se avvierete il firewall **prima** di aver inserito la regola dedicata ad **ssh**, nella tabella all'inizio di questa pagina la regola numero uno, verrete avvisati dal sistema operativo che se proseguirete con l'attivazione del firewall rischiate di restare *chiusi fuori* dal sistema: se confermerete la vostra decisione di attivare il firewall e **non avete ancora inserito la regola inerente la nuova porta di ssh** resterete tagliati fuori, **se siete connessi da remoto**. 
+
+Nemmeno un reboot eseguito da remoto sarebbe d'aiuto: l'avvio del firewall attraverso **ufw enable** oltre ad avviare il firewall, lo configura in modo tale da avviarsi automaticamente **ad ogni riavvio**.
+
+
+Quindi la sequenza riportata è corretta:
+
+  - **Prima si inserisce almeno** la regola che punta alla porta che abbiamo configurato per ''SSH'';
+  - **Poi si lanci**a, e conferma, l'attivazione del firewall.
+
+\\
+===== Nota 2): Per chi usa una installazione con ambiente grafico. =====
+Esiste anche un'interfaccia grafica per utilizzare ''ufw'' che si chiama ''gufw'' per installarla nel caso vi servisse: 
+<code>
+apt install gufw
+</code>
+
+\\ \\
+
+----
+
+[[configurazioni|Clicca qui]] per tornare alla pagina delle Configurazioni.\\
+[[start|Clicca qui]] per tornare alla home page del Wiki.
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 16/07/2018 08:56 – Ultimo aggiornamento 01/08/2023 11:40

@@ -1,0 +1,17 @@
+# GITS: Frammenti di codice vario.
+## Porzioni di codice per utility che mi servono spesso, in varie linguaggi.
+
+***
+
+  * Python - [[git-py-isSQLite3|È un file SQLite3]]?
+
+
+
+----
+
+[[tecno:start|Clicca qui per tornare alla pagina iniziale]]
+
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 11/08/2023 11:27 — Ultima Modifica: 12/08/2023 11:28 //

@@ -1,0 +1,77 @@
+====== Modificare destinazione istantanee da posizione di default. ======
+
+In ESX/ESXI dalla versione 3.x in poi, tutti i file componenti le istantanee sono creati nella cartella di lavoro della macchina virtuale. Di default, la cartella di lavoro è la stessa dove il file di configurazione della macchina virtuale (.vmx) è situato. Se il file del disco virtuale (//.vmdk//) è posizionato in un datastore diverso da quello della macchina virtuale i file del disco virtuale redolog (//-delta.vmdk// o //-sesparse.vmdk//) vengono creati insieme al file di configurazione (//.vmx//) della macchina virtuale anziché al file del disco virtuale (//.vmdk//).
+
+
+In ESXi 5.0 e versioni successive, i file del disco virtuale redolog (//-delta.vmdk//) per le istantanee, sono collocati nella stessa directory del file del disco virtuale padre (//.vmdk//).
+
+
+È possibile modificare la posizione (nuova directory sullo stesso datastore o su uno alternativo) in cui vengono creati i file di aggiornamento del disco virtuale (//-delta.vmdk//), per:
+
+  * Creare istantanee, ma non abbastanza spazio nel volume VMFS.
+  * Accensione di una macchina virtuale quando non ha spazio sufficiente per creare un file di scambio nel volume VMFS.
+  * In questo doku fornisco le istruzioni per modificare la posizione della directory di lavoro della macchina virtuale predefinita utilizzata per le istantanee su ESX / ESXi **3.x** e versioni successive.
+
+
+----
+
+===== VMWare ESX/ESXi 4.1 e precedenti. =====
+
+  * Spegnere la macchina virtuale interessata.
+  * Aprire con un editor di testo il file di configurazione //.vmx//. Per maggiori informazioni vedi [[https://kb.vmware.com/s/article/1714?r=1&CoveoV2.CoveoLightningApex.getInitializationData=1&other.KM_Utility.getAllTranslatedLanguages=1&other.KM_Utility.getArticleDetails=1&other.KM_Utility.getArticleMetadata=1&other.KM_Utility.getUrl=1&other.KM_Utility.getUser=1&ui-comm-runtime-components-aura-components-siteforce-qb.Quarterback.validateRoute=1&ui-force-components-controllers-hostConfig.HostConfig.getConfigData=1|consigli per editare un file .vmx (EN)]]
+  * Aggiungi una riga al file di configurazione .vmx della macchina virtuale, specificando un percorso completo alla directory su un datastore per l'opzione workingDir:
+
+<code>workingDir = "new_path_location"</code>
+
+Per esempio:
+
+<code>workingDir = "/vmfs/volumes/46f1225f-552b0069-e03b-00145e808070/vm-snapshots"</code>
+
+Ciò garantisce che le istantanee create successivamente alla modifica del file di configurazione //.vmx// causino la creazione di nuovi file redolog (//-delta.vmdk//) di dischi virtuali nella directory definita. In questo esempio, i file redolog vengono creati nella directory //**vm-snapshots**// del datastore **//46f1225f-552b0069-e03b-00145e808070//**.
+
+Quando una macchina virtuale viene accesa per la prima volta, viene creato un nuovo file di scambio (//swap//) nella directory di lavoro della macchina virtuale. Per impostazione predefinita, la macchina virtuale scrive il file di scambio nella stessa directory del file di configurazione .vmx. Se desideri modificare questa posizione, aggiungi la nuova posizione a questa riga nel file //.vmx//:
+
+  sched.swap.dir = "path_alla_mia_cartella_definita_per_lo_swapfile"
+
+
+Nota: questo passaggio è facoltativo. L'aggiunta del nuovo percorso del file garantisce che il file di swap venga creato nella directory di lavoro.
+
+A questo punto salvare le modifiche e chiudere il file di configurazione //.vmx// della macchina virtuale.
+
+Ricarica la configurazione della macchina virtuale annullando la registrazione e registrandola nuovamente nell'inventario.
+
+Riaccendi la macchina virtuale.
+
+
+----
+
+===== VMWare ESX/ESXi 5.0 e successive. =====
+
+  * Spegnere la macchina virtuale interessata.
+  * Aprire con un editor di testo il file di configurazione //.vmx//. Per maggiori informazioni vedi [[https://kb.vmware.com/s/article/1714?r=1&CoveoV2.CoveoLightningApex.getInitializationData=1&other.KM_Utility.getAllTranslatedLanguages=1&other.KM_Utility.getArticleDetails=1&other.KM_Utility.getArticleMetadata=1&other.KM_Utility.getUrl=1&other.KM_Utility.getUser=1&ui-comm-runtime-components-aura-components-siteforce-qb.Quarterback.validateRoute=1&ui-force-components-controllers-hostConfig.HostConfig.getConfigData=1|consigli per editare un file .vmx (EN)]]
+  * Aggiungi queste righe al file di configurazione .vmx della macchina virtuale, specificando un percorso completo alla directory su un datastore per l'opzione //workingDir//:
+
+  workingDir = "Nuovo percorso di destinazione"
+  snapshot.redoNotWithParent = "true"
+
+Per esempio:
+
+  workingDir = "/vmfs/volumes/46f1225f-552b0069-e03b-00145e808070/vm-snapshots"
+  snapshot.redoNotWithParent = "true"
+
+Ciò garantisce che le istantanee create successivamente causino la creazione di nuovi file redolog (//-delta.vmdk//) di dischi virtuali nella directory definita. In questo esempio, i file redolog vengono creati nella directory **//vm-snapshots//**.
+
+Nota: in ESXi **5.5**, se il disco virtuale è più grande di 2 TB, i file redolog saranno in formato //-**sesparse**.vmdk// piuttosto che //-**delta**.vmdk//.
+
+A questo punto salvare le modifiche e chiudere il file di configurazione //.vmx// della macchina virtuale.
+
+Ricarica la configurazione della macchina virtuale **annullando** la registrazione e **registrandola nuovamente** nell'inventario.
+
+Riaccendi la macchina virtuale.
+
+
+----
+[[vmware-trick|Torna a Trips & Triks in ambiente VMWare]]\\
+[[start|Torna alla home page del Wiki]]
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/09/08 09:38//

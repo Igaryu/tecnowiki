@@ -1,0 +1,563 @@
+2023-08-22 10:03:28		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:28		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:40 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:40 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:03:28		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:03:29		require(admin.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/admin.php:9 Autoloading should be used instead!
+2023-08-22 10:03:29		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:29		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:29		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:29		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:30		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:30		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:03:30		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:30		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:33		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:33		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:33		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:48		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:48		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:03:48		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:47		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:05:47		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:47		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:47		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:47		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:47		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:47		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:59		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:59		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:05:59		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:05:59		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:05:59		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:02		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:02		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:02		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:02		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:07		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:07		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:45 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:51 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:54 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:45 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:51 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:51 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:54 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:45 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:51 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:54 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:45 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:54 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:45 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:51 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:48 addCall should be used instead!
+2023-08-22 10:06:07		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_ulists::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/ulists.php:54 addCall should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:07		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:07		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:07		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:07		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:49		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:06:49		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:06:49		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:49		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:49		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:49		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:06:49		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:13		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:13		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:13		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:13		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:13		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:13		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:13		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:14		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:14		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:15		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:15		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:08:16		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:08:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:17		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:17		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:17		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:18		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:18		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:18		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:19		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:19		require(admin.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/admin.php:9 Autoloading should be used instead!
+2023-08-22 10:08:19		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:08:19		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:34		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:35		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:13:35		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:35		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:35		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:35		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:37		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:37		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:13:37		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:40		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:13:41		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:15:43		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:15:44		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:15		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:16		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:40 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:40 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:16		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:16		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:30		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:16:30		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:40 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:40 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:46 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:47 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:30		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_hr::handle() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/hr.php:39 addCall should be used instead!
+2023-08-22 10:16:30		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:09		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:09		require(admin.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/admin.php:9 Autoloading should be used instead!
+2023-08-22 10:17:09		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:17:09		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:09		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:09		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:09		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:14		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:14		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/anchorsinline.php:8 Autoloading should be used instead!
+2023-08-22 10:17:14		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:14		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:29		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:29		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:30		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:53		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:50 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:51 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:52 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:53 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actiondropdown() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:65 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:70 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:71 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_toolsevent() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/tpl_header.php:72 see devel:menus should be used instead!
+2023-08-22 10:17:53		require(syntax.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/markdowku/syntax/headeratx.php:8 Autoloading should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:80 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:81 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:82 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:83 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:84 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_action() is deprecated. It was called from include() in /var/www/dokuwiki/lib/tpl/adoradark/main.php:85 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_actionlink() is deprecated. It was called from tpl_action() in /var/www/dokuwiki/inc/template.php:643 see devel:menus should be used instead!
+2023-08-22 10:17:53		tpl_get_action() is deprecated. It was called from tpl_actionlink() in /var/www/dokuwiki/inc/template.php:528 see devel:menus should be used instead!
+2023-08-22 10:17:53		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:53		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!
+2023-08-22 10:17:53		require(action.php) is deprecated. It was called from require() in /var/www/dokuwiki/lib/plugins/loadskin/action.php:15 Autoloading should be used instead!

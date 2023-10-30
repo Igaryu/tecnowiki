@@ -1,0 +1,47 @@
+====== SQLite3  ======
+***
+===== Come avere più database aperti nella stessa sessione di SQLite3. =====
+***
+
+
+```
+bash-propt$ sqlite3  #senza alcun parametro
+
+sqlite> attach database "Primo-Database.db" as DB01;
+sqlite> attach database "Secondo-Database.db" as DB02;
+```
+
+<fs large>a questo punto si fa uso del solito sistema di puntamento in SQL:
+
+Per esempio due database sugli I-CHING con uno che contenga tutti e 64 gli esagrammi, e l'altro le relative linee e testi delle descrizioni: 
+</fs>
+```
+sqlite> attach database "IChing.db" as DB01;
+sqlite> attach database "Linnee.db" as DB02;
+
+sqlite> .databases
+main: "" r/w
+DB01: /Users/giuseppecurto/MEGA/Lavoro/Python/CreaEsagramma/IChing.db r/w
+DB02: /Users/giuseppecurto/MEGA/Lavoro/Python/CreaEsagramma/IChing.db01 r/w
+
+sqlite> select DB01.Esagrammi.Numero, DB01.Esagrammi.Nome, DB02.Esagrammi.line_seq from DB01.Esagrammi, DB02.Esagrammi where DB01.Esagrammi.Numero > 59;
+
+# Risultato della query:
+
+60|Jie - La Delimitazione|䷻|節|001101
+61|Zhong Fu - La Verità interiore|䷼|中孚|001100
+62|Xiao Guo - La Preponderanza del piccolo|䷽|小過|110011
+63|Ji Ji - Dopo il compimento|䷾|既濟|010101
+64|Wei Ji - Prima del compimento|䷿|未濟|101010
+sqlite>
+```
+
+
+
+----
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/24 15:28// — Ultima modifica: 2023/07/31 15:52 

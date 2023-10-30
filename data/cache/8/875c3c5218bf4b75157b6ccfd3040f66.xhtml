@@ -1,0 +1,89 @@
+
+<h1 class="sectionedit1" id="rsync_ignora_a_volte_il_parametro_--delete">rsync ignora, a volte, il parametro --delete</h1>
+<div class="level1">
+
+
+<hr />
+
+<p>
+<span style="font-size:large;">Ho notato che diverse volte nel tempo l’uso del parametro <code>--delete</code> usando il comando <code>rsync</code> durante l’esecuzione viene <strong>bellamente ignorato</strong>.</span>
+</p>
+
+<p>
+<span style="font-size:large;">Visto che sono un pignolo su certe cose, sono voluto andare a fondo della cosa. Da premettere che in effetti <code>man rsync</code> ha la spiegazione del motivo, ma è così nascosto che per trovarlo ci vuole davvero fortuna!</span>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;rsync ignora, a volte, il parametro --delete&quot;,&quot;hid&quot;:&quot;rsync_ignora_a_volte_il_parametro_--delete&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-478&quot;} -->
+<h2 class="sectionedit2" id="premessa">Premessa:</h2>
+<div class="level2">
+<hr />
+
+<p>
+<span style="font-size:large;">Voglio creare un backup di una cartella su un mio altro sistema che uso come disco di backup. Dato il comando:</span>
+</p>
+<pre class="code">rsync -v -avuzrpL --delete /var/www/dati/* -e &#039;ssh -p45278&#039; JoeVR@localNAS:BackupData/LocalServer/dati</pre>
+
+<p>
+<span style="font-size:large;">mi aspetto che quando cancello dei file da <code>/var/www/dati/</code> quando eseguo questo comando me lo elimini anche dalla cartella di destinazione visto la presenza del parametro <code>--delete</code>.</span>
+</p>
+
+<p>
+<span style="font-size:large;">Invece ho notato che il file resta li: nessuna linea di notifica (visto l’uso del parametro <code>-v</code> per avere un log approfondito lo pretendo) di cancellazione del file cancellato dalla cartella sorgente. 😡
+</span>
+</p>
+
+<p>
+<span style="font-size:large;">Alla fine girovagando per i vari forum ho trovato il problema, o per essere più precisi, il motivo del problema: per non so quale motivo, chi scrisse originalmente l’utility <code>rsync</code> decise che il parametro <code>--delete</code> avrebbe funzionato <strong>solo in assenza di caratteri wildchar</strong>. quindi la versione:
+</span>
+</p>
+<pre class="code">rsync -v -avuzrpL --delete /var/www/dati/*</pre>
+
+<p>
+<span style="font-size:large;">non esegue la cancellazione, mentre</span>
+</p>
+<pre class="code">rsync -v -avuzrpL --delete /var/www/dati/</pre>
+
+<p>
+<span style="font-size:large;">si!!</span> <br/>
+<br/>
+
+</p>
+
+<p>
+<span style="font-size:large;">In realtà leggendo a fondo la manualistica un motivo c’è e probabilmente è legato allo sviluppo nel tempo della utility. Se volte saperne di più andate a leggere <code>man rsync</code> e troverete tutta una serie di varianti del parametro <code>--delete</code>. Giusto per darvi un’idea:</span>
+</p>
+<pre class="code">#
+# Estratto dal man rsync
+#
+       --del                    an alias for --delete-during
+       --delete                 delete extraneous files from dest dirs
+       --delete-before          receiver deletes before xfer, not during
+       --delete-during          receiver deletes during the transfer
+       --delete-delay           find deletions during, delete after
+       --delete-after           receiver deletes after transfer, not during
+       --delete-excluded        also delete excluded files from dest dirs
+       --ignore-missing-args    ignore missing source args without error
+       --delete-missing-args    delete missing source args from destination
+
+</pre>
+
+<p>
+<span style="font-size:large;">Personalmente non sono stato lì a leggermi tutte le varianti: dopo aver letto <a href="https://anon.to/hlKw6L" class="urlextern" title="https://anon.to/hlKw6L" rel="ugc nofollow">questa pagina</a> mi sono accontentato di far funzionare il mio <code>rsync --delete</code> come mi serviva, ma qualcosa mi dice che sarà bene che me lo legga, a dovere tutto, per poter sfruttare maggiori funzionalità di questa utility!!</span>
+</p>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:tips-triks" class="wikilink1" title="tecno:tips-triks" data-wiki-id="tecno:tips-triks">Clicca qui</a> per tornare alla pagina Trcks &amp; Trips<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla pagina home del Wiki
+</p>
+<hr />
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 02/08/2023 10:55</em> — Ultima modifica 02/08/2023 11:23
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Premessa:&quot;,&quot;hid&quot;:&quot;premessa&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;479-&quot;} -->

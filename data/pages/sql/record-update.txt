@@ -1,0 +1,59 @@
+# Modifica record in database
+
+~~NOTOC~~
+
+----
+
+## Modello DB esempio: `TableName = Persone`
+
+| idPersone | Nome  | Cognome | Eta  | Residenza |
+| -- | ----- | ------- | ---- | --------- |
+| 1 | Mario | Rossi   | 21   | Verona    |
+
+
+## Modifica record selezionato da campo usato come chiave:
+```
+UPDATE Persone SET Nome = 'Marco' WHERE idPersone = 1;
+```
+
+## Oppure con selezione su valore reale di un campo:
+```
+UPDATE Persone SET Nome = 'Marco' WHERE Nome='Mario;
+```
+
+## Oppure selezione su valore reale di più campi:
+```
+UPDATE Persone SET Nome = 'Marco' WHERE Nome='Mario AND Cognome='Rossi';
+```
+
+### È possibile modificare più campi in un solo comando se le chiavi restano uguali.
+
+## Modifica multi campo usando un campo chiave:
+```
+UPDATE Persone SET Nome = 'Marco', Cognome='Bianchi' WHERE idPersone = 1;
+```
+
+## Oppure con selezione su valore reale di un campo:
+```
+UPDATE Persone SET Nome = 'Marco', Cognome='Bianchi' WHERE Nome='Mario;
+```
+
+## Oppure selezione su valore reale di più campi:
+```
+UPDATE Persone SET Nome = 'Marco', Eta = 25 WHERE Nome='Mario AND Cognome='Rossi';
+```
+
+\\
+\\
+
+----
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+
+
+----
+
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/24 16:18// — Ultima modifica: 2023/07/26 09:08
+

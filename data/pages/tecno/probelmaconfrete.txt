@@ -1,0 +1,14 @@
+====== Problema configurazione rete a cavallo delle versioni 17/18 di Ubuntu ======
+
+  - [[NotePreliminariConfRete|Note preliminari]]
+  - [[ipstatico-fino-a-versione-17|Configurazione rete su Ubuntu server sino alla versione 17 (ifupdown)]]
+  - [[ipstatico-dopo-la-versione-17|Configurazione rete su Ubuntu server dopo alla versione 17 (netplan.io)]]
+
+
+----
+
+[[configurazioni|Clicca qui]] per tornare alla pagina delle Configurazioni.\\
+[[tecno:start|Clicca qui]] per tornare alla home page del Wiki tecnico.
+
+----
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/07/20 10:27// — Ultima modifica: 2023/07/28 08:49

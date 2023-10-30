@@ -1,0 +1,54 @@
+# Cancella record(s) in database
+
+~~NOTOC~~
+
+----
+
+## Modello DB esempio:
+TableName=Persone
+
+^                     idPersone                     ^ Nome    ^ Cognome ^ Età  ^ Residenza |
+|                         1                         | Mario   | Rossi   | 21   | Verona    |
+|                         2                         | Franco  | Moroni  | 27   | Padova    |
+|                         3                         | Roberto | Seroni  | 21   | Vicenza   |
+
+
+## Cancellazione record selezionato da campo chiave:
+
+```
+DELETE  FROM Persone WHERE idPersone = 2;
+```
+
+## oppure con selezione su valore reale di un campo:
+```
+DELETE FROM Persone WHERE Nome='Franco';
+```
+
+## oppure selezione su valore reale di più campi:
+```
+DELETE FROM Persone WHERE Nome='Mario AND Cognome='Moroni';
+```
+
+## Cancellazione più record usando  un campo **con valore comune**:
+```
+DELETE FROM Persone WHERE DELETE  FROM Persone WHERE Eta = 21;
+```
+
+## ATTENZIONE!
+Usare il comando `DELETE` **SENZA una clausola `WHERE`** comporta la cancellazione di ***tutti i record della tabella menzionata***:
+
+```
+DELETE FROM Persone;
+```
+## L'ultimo comando elencato svuoterà totalmente la tavola `Persone` !!
+
+\\
+\\
+
+----
+  * [[sql:istruzioni_varie|Torna a radice docs di SQL]]\\
+  * [[tecno:start|Benvenuti nel sito di memoria tecnica di Joe]]\\
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2023/07/24 16:18// — Ultima modifica: 2023/07/26 09:18

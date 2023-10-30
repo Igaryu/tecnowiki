@@ -1,0 +1,75 @@
+
+<h1 class="sectionedit1" id="python_-_e_un_file_sqlite3">Python - È un file SQLite3?</h1>
+<div class="level1">
+<hr />
+
+<p>
+Ho avuto, ed ho spesso, bisogno di questa funzione, perché la funzione <code>connect</code> del modulo <code>sqlite3</code> di python non, <strong>e ripeto non</strong>, verifica che il file passato come parametro, sia davvero un file di database SQLite3!
+</p>
+
+<p>
+Se passi come parametro la ricetta della zuppa della nonna, contenuta in nel file Recipe.txt, la funzione <code>connect</code> <strong>non genererà un errore</strong>!
+</p>
+
+<p>
+L&#039;unico modo che ho trovato, per determinare in modo certo, se un file è, o meno, un file di database SQLite3, è il seguente metodo:
+</p>
+
+<p>
+SE i primi 16 byte corrispondono alla stringa <code>b&#039;SQLite format 3\x00&#039;</code> allora è un file database che SQLite3 ha generato!!
+</p>
+
+<p>
+In Python questa verifica la faccio con questa mia funzione:
+</p>
+<pre class="code">from os.path import isfile, getsize
+
+if not isfile(filename):
+   return False
+	
+if getsize(filename) &lt; 100: # SQLite database file header is 100 bytes long
+   return False
+
+with open(filename, &#039;rb&#039;) as fd:
+     header = fd.read(100)
+     
+     if (header[:16] == b&#039;SQLite format 3\x00&#039;):
+	return True
+     else:
+        return False
+        
+        </pre>
+
+<p>
+Non credo servano molte spiegazioni: le azioni che vengono eseguite in questa porzione di codice sono fondamentalmente dei test e ritorna di conseguenza:
+</p>
+<ol>
+<li class="level1"><div class="li">FALSO se il file non esiste;</div>
+</li>
+<li class="level0"><div class="li">FALSO se il file non è lungo almeno 100 byte</div>
+</li>
+<li class="level0"><div class="li">VERO se letti i primi 100 byte dal file i primi 16 byte corrispondano esattamente a <code>b&#039;SQLite format 3\x00&#039;</code></div>
+</li>
+<li class="level0"><div class="li">FALSO in tutti gli altri casi.
+  <br/>
+</div>
+</li>
+</ol>
+
+<p>
+Ovviamente andrà controllato che al passaggio alla versione successiva di sviluppo, quindi SQLite4, non cambi la stringa di intestazione del file da <code>b&#039;SQLite format 3\x00&#039;</code> a <code>b&#039;SQLite format 4\x00&#039;</code>
+</p>
+<hr />
+<ul>
+<li class="level1"><div class="li"><a href="/doku.php?id=gits" class="wikilink1" title="gits" data-wiki-id="gits">torna a Frammenti di codice vario.</a></div>
+</li>
+<li class="level1"><div class="li"><a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Torna alla home del wiki.</a></div>
+</li>
+</ul>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 10/08/2023 11:15</em> - Ultima modifica: 10/08/2023 11:38
+</p>
+
+</div>

@@ -1,0 +1,41 @@
+
+<h1 class="sectionedit1" id="creare_un_utente_ed_agganciargli_un_db">Creare un utente ed agganciargli un DB</h1>
+<div class="level1">
+<hr />
+
+</div>
+
+<h4 id="solo_di_un_solo_utente">1) Solo di un solo Utente:</h4>
+<div class="level4">
+<pre class="code">CREATE USER &#039;user01&#039;@localhost IDENTIFIED BY &#039;password&#039;;</pre>
+
+</div>
+
+<h4 id="assegnazione_tutti_i_privilegi_di_uno_specifico_db_ad_uno_specifico_utente">2) Assegnazione tutti i privilegi di uno specifico  DB ad uno specifico utente:</h4>
+<div class="level4">
+<pre class="code">GRANT ALL PRIVILEGES ON &#039;specificoDB&#039;.* TO &#039;user01&#039;@localhost;</pre>
+
+</div>
+
+<h4 id="creazione_di_uno_specifico_utente_ed_assegnazione_privilegi_a_tutti_i_db">3) Creazione di uno specifico utente ed assegnazione privilegi a tutti i DB</h4>
+<div class="level4">
+<pre class="code">GRANT ALL PRIVILEGES ON *.* TO &#039;user1&#039;@localhost IDENTIFIED BY &#039;password1&#039;;</pre>
+
+<p>
+A fine operazione di creazione, ricordarsi <strong>sempre</strong> di eseguire <code>FLUSH PRIVILEGES;</code>
+</p>
+<hr />
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=sql:istruzioni_varie" class="wikilink1" title="sql:istruzioni_varie" data-wiki-id="sql:istruzioni_varie">Torna a radice docs di SQL</a><br/>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Benvenuti nel sito di memoria tecnica di Joe</a><br/>
+</div>
+</li>
+</ul>
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2018/09/08 09:38</em>
+</p>
+
+</div>

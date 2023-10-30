@@ -1,0 +1,117 @@
+
+<h1 class="sectionedit1" id="todo_list_per_installare_un_server_di_posta">ToDo list per installare un server di posta.</h1>
+<div class="level1">
+
+<p>
+A seguire una ToDo list da usare come check per l’installazione di un server di posta aziendale. Consideriamo che iRedMail lavora meglio su un server appena installato con solo il basico necessario installato. Si può installarlo anche su macchine già operative, ma rischia di creare problemi con le installazione dei componenti se vanno in conflitto con pacchetti già installati. Quindi:
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Fatto  </th><th class="col1 leftalign"> Descrizione                                                                                                                                                                                                                                                                                                                      </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"> [ _ ] </td><td class="col1 leftalign"> Verificare lo stato dell&#039;IP che si utilizzerà: se risulta, come spesso, <em>sporco</em> perché listato in una o più blacklist, allora <strong>deve</strong> essere pulito<br/>
+richiedendo il delisting dai vari siti in cui compare. Senza questa operazione iniziale si rischia di fare il lavoro e poi trovarsi<br/>
+nell&#039;impossibilità di inviare posta.  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> [ _ ] </td><td class="col1 leftalign"> Scaricare una ISO di un linux della famiglia di Debian, quindi Ubuntu e derivate vanno bene. Io tendenzialmente non uso macchine<br/>
+con ambiente grafico, ma si può fare se ci si trova meglio.                                                                                                                                     </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"> [ _ ] </td><td class="col1 leftalign"> Installare la ISO su una macchina fisica o virtuale opportunamente configurata a livello HW                                                                                                                                                                                                                                      </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> [ _ ] </td><td class="col1"> Ad installazione terminata fare un aggiornamento immediatamente così da avere la machina pronta per l’installazione del server di posta.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> [ _ ] </td><td class="col1"> A questo punto prepararsi un documento in cui elencare i vati domini che si vorranno usare: di solito uno per la posta in entrata<br/>
+(imap.dominio.it) ed uno per la posta in uscita (smtp.dominio.it).</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> [ _ ] </td><td class="col1">Preparare lista degli utenti, con eventuali password da traghettare, anche se per sicurezza, andrebbero rigenerate tutte, spesso i titolari<br/>
+non lo permettono.</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> [ _ ] </td><td class="col1"> A questo punto scaricare l’ultima versione dello script iRedMail dal suo <a href="https://www.iredmail.org/download.html" class="urlextern" title="https://www.iredmail.org/download.html" rel="ugc nofollow">sito</a>. Per i serve in versione solo testuale il comando wget<br/>
+è sufficiente come programma per fare il download.</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"> [ _ ] </td><td class="col1">Decomprimere il file scaricato con <em>tar xjvf  iRedMail-X.X.X.tar.bz2</em> e spostarsi nella cartella appena creata ed avviare lo script.</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"> [ _ ] </td><td class="col1">Dopo aver eseguito l’installazione otterremo indirizzo da cui accedere all’area amministrativa del server di posta. Qui troveremo un<br/>
+documento in cui sono riportati tutti gli <abbr title="Uniform Resource Locator">URL</abbr> interessati all’installazione, compreso quello per l’accesso alla webmail che è integrata<br/>
+nel pacchetto.</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"> [ _ ] </td><td class="col1">Accediamo all’area amministrativa con l’account di gestione riportato (postmaster@nostrodominio.it) e crediamo i singoli utenti. Nel creare<br/>
+l’utente <strong>ricordarsi</strong> di assegnare la quota a zero ed a non rendere l’utente un amministratore: uno basta ed avanza!! Se necessario<br/>
+configurare anche la lingua di default in Italiano ed assegnare la password che ci è stata fornita, o impostarne una di nuova.</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"> [ _ ] </td><td class="col1">Terminata la creazione degli utenti, se è stato richiesto, dovremo trasferire la posta dal server vecchio a quello nuovo. Per questa attività,<br/>
+in ambiente linux, si usa un programma chiamato imapcopy. Ne discuterò in un altro documento.</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"> [ _ ] </td><td class="col1">Accedere all’area di gestione del dominio per l’inserimento dei record necessari. Questi sono la chiave SPF e la chiave DKIM. Questi due<br/>
+record sono <strong>fondamentali</strong>, per la reputazione in internet del nostro server di posta. Senza queste due chiavi collegate al dominio master,<br/>
+molti server di posta bloccherebbero la nostra posta in arrivo impedendo così al server di fare il suo mestiere:<br/>
+ossia mandare posta. Le due chiavi hanno una grammatica ben precisa: se non la si segue le chiavi saranno invalidate.</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> [ _ ] </td><td class="col1">Chiave <strong>SPF</strong>. Il record deve essere di tipo TXT. Il nome dominio <strong>deve essere nel formato</strong>: nomedominio.it e contenere:<br/>
+“v=spf1 a ip4:IP-del-server a:dominio-master-del-server a:dominio-alternativo-server ~all”<br/>
+Le virgolette di delimitazione devono fare parte della chiave stessa.</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"> [ _ ] </td><td class="col1">Chiave <strong>DKIM</strong>:  il record è sempre di tipo TXT. Il nome <strong>dominio deve essere nel formato</strong>: dkim._domainkey.nomedominio.it ed il<br/>
+contenuto uguale a: «v=DKIM1; - p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBJKrjDfgTqsUvxmQK02rz8dN0zwqklV6g4iP9cnG/Efc3t6Xx36rF6rGMa8SDoe<br/>
+SgxUiqoSKEHFhBWtJTGRc9N32Mc6rF2bPjgAQDPBS+Oq4pi6/4N1lYtTc9gDGNb5IZ4GmpcsFzIY/8lqZt4wsmD1SbwKpPrC65MmteAs4<br/>
+AQQIDAQAB“ - La chiave che segue la p= viene fornita nel documento riassuntivo dell’installazione e chiaramente va usata la propria.<br/>
+Le virgolette di delimitazione <strong>devono</strong> fare parte della chiave stessa.</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"> [ _ ] </td><td class="col1">Dobbiamo anche creare un record <strong>MX</strong> che risulta essere un indirizzo di backup nel caso il server non sia funzionante. Non avendo, di norma, un server di backup, punteremo il server di posta stesso. In questo modo se il server o la connettività vengono a mancare la posta resterà in sospeso sino al ripristino del server stesso.</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"> [ _ ] </td><td class="col1">Chiave MX:  il record sarà di tipo MX. Il nome dominio deve essere nel formato: 10:nome-dominio-server-di-posta.it - Per il significato della cifra 10 cercare su google MX Domain record per apprendere lo scopo e l’uso.</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;444-5700&quot;} --><hr />
+
+<p>
+Riassumendo avremo 6 chiavi nel registro del dominio:
+</p>
+<ul>
+<li class="level1"><div class="li">Dominio master: dominio.it</div>
+</li>
+<li class="level1"><div class="li">Dominio server in entrata: smtp.dominio.it</div>
+</li>
+<li class="level1"><div class="li">Dominio server in uscita: imap.dominio.it</div>
+</li>
+<li class="level1"><div class="li">Chiave SPF: dominio.it formato TXT</div>
+</li>
+<li class="level1"><div class="li">Chiave DKIM: dkim._domainkey.dominio.it formato TXT</div>
+</li>
+<li class="level1"><div class="li">Chiave MX, mx.dominio.it formato MX</div>
+</li>
+</ul>
+<hr />
+
+<p>
+<a href="/doku.php?id=tecno:prefazione" class="wikilink1" title="tecno:prefazione" data-wiki-id="tecno:prefazione">Clicca qui</a> per tornare all&#039;introduzione per l&#039;installazione di un server di posta.<br/>
+
+<a href="/doku.php?id=tecno:serverposta" class="wikilink1" title="tecno:serverposta" data-wiki-id="tecno:serverposta">Clicca qui</a> per tornare alla documentazione server di posta.<br/>
+
+<a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Clicca qui</a> per tornare alla pagina iniziale del Wiki.
+</p>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joeseph Curto</a> 2018/07/10 12:37</em>
+</p>
+
+</div>

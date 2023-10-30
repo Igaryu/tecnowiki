@@ -1,0 +1,93 @@
+
+<h1 class="sectionedit1" id="modifica_record_in_database">Modifica record in database</h1>
+<div class="level1">
+
+
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Modifica record in database&quot;,&quot;hid&quot;:&quot;modifica_record_in_database&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;0-47&quot;} -->
+<h2 class="sectionedit2" id="modello_db_esempiotablename_persone">Modello DB esempio: `TableName = Persone`</h2>
+<div class="level2">
+<div class="table sectionedit3"><table class="inline">
+	<tr class="row0">
+		<td class="col0"> idPersone </td><td class="col1 leftalign"> Nome  </td><td class="col2"> Cognome </td><td class="col3 leftalign"> Eta  </td><td class="col4"> Residenza </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> – </td><td class="col1"> —– </td><td class="col2"> ——- </td><td class="col3"> —- </td><td class="col4"> ——— </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> 1 </td><td class="col1"> Mario </td><td class="col2 leftalign"> Rossi   </td><td class="col3 leftalign"> 21   </td><td class="col4 leftalign"> Verona    </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;95-232&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Modello DB esempio: `TableName = Persone`&quot;,&quot;hid&quot;:&quot;modello_db_esempiotablename_persone&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;48-233&quot;} -->
+<h2 class="sectionedit4" id="modifica_record_selezionato_da_campo_usato_come_chiave">Modifica record selezionato da campo usato come chiave:</h2>
+<div class="level2">
+<pre class="code">
+UPDATE Persone SET Nome = &#039;Marco&#039; WHERE idPersone = 1;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Modifica record selezionato da campo usato come chiave:&quot;,&quot;hid&quot;:&quot;modifica_record_selezionato_da_campo_usato_come_chiave&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;234-356&quot;} -->
+<h2 class="sectionedit5" id="oppure_con_selezione_su_valore_reale_di_un_campo">Oppure con selezione su valore reale di un campo:</h2>
+<div class="level2">
+<pre class="code">
+UPDATE Persone SET Nome = &#039;Marco&#039; WHERE Nome=&#039;Mario;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Oppure con selezione su valore reale di un campo:&quot;,&quot;hid&quot;:&quot;oppure_con_selezione_su_valore_reale_di_un_campo&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;357-471&quot;} -->
+<h2 class="sectionedit6" id="oppure_selezione_su_valore_reale_di_piu_campi">Oppure selezione su valore reale di più campi:</h2>
+<div class="level2">
+<pre class="code">
+UPDATE Persone SET Nome = &#039;Marco&#039; WHERE Nome=&#039;Mario AND Cognome=&#039;Rossi&#039;;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Oppure selezione su valore reale di pi\u00f9 campi:&quot;,&quot;hid&quot;:&quot;oppure_selezione_su_valore_reale_di_piu_campi&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:6,&quot;range&quot;:&quot;472-604&quot;} -->
+<h3 class="sectionedit7" id="e_possibile_modificare_piu_campi_in_un_solo_comando_se_le_chiavi_restano_uguali">È possibile modificare più campi in un solo comando se le chiavi restano uguali.</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u00c8 possibile modificare pi\u00f9 campi in un solo comando se le chiavi restano uguali.&quot;,&quot;hid&quot;:&quot;e_possibile_modificare_piu_campi_in_un_solo_comando_se_le_chiavi_restano_uguali&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:7,&quot;range&quot;:&quot;605-692&quot;} -->
+<h2 class="sectionedit8" id="modifica_multi_campo_usando_un_campo_chiave">Modifica multi campo usando un campo chiave:</h2>
+<div class="level2">
+<pre class="code">
+UPDATE Persone SET Nome = &#039;Marco&#039;, Cognome=&#039;Bianchi&#039; WHERE idPersone = 1;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Modifica multi campo usando un campo chiave:&quot;,&quot;hid&quot;:&quot;modifica_multi_campo_usando_un_campo_chiave&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:8,&quot;range&quot;:&quot;693-823&quot;} -->
+<h2 class="sectionedit9" id="oppure_con_selezione_su_valore_reale_di_un_campo1">Oppure con selezione su valore reale di un campo:</h2>
+<div class="level2">
+<pre class="code">
+UPDATE Persone SET Nome = &#039;Marco&#039;, Cognome=&#039;Bianchi&#039; WHERE Nome=&#039;Mario;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Oppure con selezione su valore reale di un campo:&quot;,&quot;hid&quot;:&quot;oppure_con_selezione_su_valore_reale_di_un_campo1&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:9,&quot;range&quot;:&quot;824-957&quot;} -->
+<h2 class="sectionedit10" id="oppure_selezione_su_valore_reale_di_piu_campi1">Oppure selezione su valore reale di più campi:</h2>
+<div class="level2">
+<pre class="code">
+UPDATE Persone SET Nome = &#039;Marco&#039;, Eta = 25 WHERE Nome=&#039;Mario AND Cognome=&#039;Rossi&#039;;</pre>
+
+<p>
+<br/>
+
+<br/>
+
+</p>
+<hr />
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=sql:istruzioni_varie" class="wikilink1" title="sql:istruzioni_varie" data-wiki-id="sql:istruzioni_varie">Torna a radice docs di SQL</a><br/>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Benvenuti nel sito di memoria tecnica di Joe</a><br/>
+</div>
+</li>
+</ul>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2023/07/24 16:18</em> — Ultima modifica: 2023/07/26 09:08
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Oppure selezione su valore reale di pi\u00f9 campi:&quot;,&quot;hid&quot;:&quot;oppure_selezione_su_valore_reale_di_piu_campi1&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:10,&quot;range&quot;:&quot;958-&quot;} -->

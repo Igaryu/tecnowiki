@@ -1,0 +1,73 @@
+
+<h1 class="sectionedit1" id="inserimento_record_s_in_database">Inserimento record(s) in database</h1>
+<div class="level1">
+<hr />
+
+</div>
+
+<h4 id="modello_db_esempio">Modello DB esempio:</h4>
+<div class="level4">
+
+<p>
+<code>TableName=Persone</code>
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> idPersone  </th><th class="col1 leftalign"> Nome    </th><th class="col2 leftalign"> Cognome  </th><th class="col3 leftalign"> Età  </th><th class="col4"> Residenza </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 leftalign"> 1          </td><td class="col1 leftalign"> Mario   </td><td class="col2 leftalign"> Rossi    </td><td class="col3 leftalign"> 21   </td><td class="col4"> Verona </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> 2          </td><td class="col1 leftalign"> Franco  </td><td class="col2 leftalign"> Bianchi  </td><td class="col3 leftalign"> 27   </td><td class="col4"> Vicenza </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;104-264&quot;} -->
+</div>
+
+<h4 id="inserimento_record_variante_1">Inserimento record variante 1</h4>
+<div class="level4">
+<pre class="code">
+INSERT INTO Persone
+VALUES (&#039;Maria&#039;, &#039;Rossetti&#039;, 18, &#039;Milano&#039;)</pre>
+
+<p>
+In questo caso vanno inseriti tanti campi quanti quelli presenti nel record, pena il tentativo di inserire dati in campi sbagliati.
+</p>
+
+</div>
+
+<h4 id="inserimento_record_variante_2">Inserimento record variante 2</h4>
+<div class="level4">
+<pre class="code">
+INSERT INTO Persone (nome, cognome)
+VALUES (&#039;Maria&#039;, &#039;Rossetti&#039; )</pre>
+
+<p>
+In questo caso l&#039;inserimento è posizionale rispetto ai valori passati come parametro al nome tabella e lista campi da inserire: <code>Persone (Nome, Cognome)</code>
+</p>
+
+<p>
+La <strong>variante 1</strong> risulta, se si hanno tabelle con molte colonne, più verbosa perché vanno rappresentate <strong>tutte le colonne</strong> per ogni comando di inserimento.
+</p>
+
+<p>
+Se si devono inserire <strong>solo alcune colonne</strong> risulta più comoda la <strong>variante 2</strong>
+</p>
+<hr />
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=sql:istruzioni_varie" class="wikilink1" title="sql:istruzioni_varie" data-wiki-id="sql:istruzioni_varie">Torna a radice docs di SQL</a><br/>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Benvenuti nel sito di memoria tecnica di Joe</a><br/>
+</div>
+</li>
+</ul>
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2023/07/24 16:18</em>
+</p>
+
+</div>

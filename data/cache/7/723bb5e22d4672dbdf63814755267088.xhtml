@@ -1,0 +1,99 @@
+
+<h1 class="sectionedit1" id="cancella_record_s_in_database">Cancella record(s) in database</h1>
+<div class="level1">
+
+
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cancella record(s) in database&quot;,&quot;hid&quot;:&quot;cancella_record_s_in_database&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;0-50&quot;} -->
+<h2 class="sectionedit2" id="modello_db_esempio">Modello DB esempio:</h2>
+<div class="level2">
+
+<p>
+TableName=Persone
+</p>
+<div class="table sectionedit3"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign">                     idPersone                     </th><th class="col1 leftalign"> Nome    </th><th class="col2"> Cognome </th><th class="col3 leftalign"> Età  </th><th class="col4"> Residenza </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0 centeralign">                         1                         </td><td class="col1 leftalign"> Mario   </td><td class="col2 leftalign"> Rossi   </td><td class="col3 leftalign"> 21   </td><td class="col4 leftalign"> Verona    </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">                         2                         </td><td class="col1 leftalign"> Franco  </td><td class="col2 leftalign"> Moroni  </td><td class="col3 leftalign"> 27   </td><td class="col4 leftalign"> Padova    </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">                         3                         </td><td class="col1"> Roberto </td><td class="col2 leftalign"> Seroni  </td><td class="col3 leftalign"> 21   </td><td class="col4 leftalign"> Vicenza   </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:3,&quot;range&quot;:&quot;94-466&quot;} -->
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Modello DB esempio:&quot;,&quot;hid&quot;:&quot;modello_db_esempio&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;51-467&quot;} -->
+<h2 class="sectionedit4" id="cancellazione_record_selezionato_da_campo_chiave">Cancellazione record selezionato da campo chiave:</h2>
+<div class="level2">
+<pre class="code">
+DELETE  FROM Persone WHERE idPersone = 2;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cancellazione record selezionato da campo chiave:&quot;,&quot;hid&quot;:&quot;cancellazione_record_selezionato_da_campo_chiave&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;468-572&quot;} -->
+<h2 class="sectionedit5" id="oppure_con_selezione_su_valore_reale_di_un_campo">oppure con selezione su valore reale di un campo:</h2>
+<div class="level2">
+<pre class="code">
+DELETE FROM Persone WHERE Nome=&#039;Franco&#039;;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;oppure con selezione su valore reale di un campo:&quot;,&quot;hid&quot;:&quot;oppure_con_selezione_su_valore_reale_di_un_campo&quot;,&quot;codeblockOffset&quot;:1,&quot;secid&quot;:5,&quot;range&quot;:&quot;573-675&quot;} -->
+<h2 class="sectionedit6" id="oppure_selezione_su_valore_reale_di_piu_campi">oppure selezione su valore reale di più campi:</h2>
+<div class="level2">
+<pre class="code">
+DELETE FROM Persone WHERE Nome=&#039;Mario AND Cognome=&#039;Moroni&#039;;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;oppure selezione su valore reale di pi\u00f9 campi:&quot;,&quot;hid&quot;:&quot;oppure_selezione_su_valore_reale_di_piu_campi&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:6,&quot;range&quot;:&quot;676-795&quot;} -->
+<h2 class="sectionedit7" id="cancellazione_piu_record_usando_un_campo_con_valore_comune">Cancellazione più record usando  un campo **con valore comune**:</h2>
+<div class="level2">
+<pre class="code">
+DELETE FROM Persone WHERE DELETE  FROM Persone WHERE Eta = 21;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cancellazione pi\u00f9 record usando  un campo **con valore comune**:&quot;,&quot;hid&quot;:&quot;cancellazione_piu_record_usando_un_campo_con_valore_comune&quot;,&quot;codeblockOffset&quot;:3,&quot;secid&quot;:7,&quot;range&quot;:&quot;796-936&quot;} -->
+<h2 class="sectionedit8" id="attenzione">ATTENZIONE!</h2>
+<div class="level2">
+
+<p>
+Usare il comando <code>DELETE</code> <strong>SENZA una clausola <code>WHERE</code></strong> comporta la cancellazione di <strong><em>tutti i record della tabella menzionata</em></strong>:
+</p>
+<pre class="code">
+DELETE FROM Persone;</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;ATTENZIONE!&quot;,&quot;hid&quot;:&quot;attenzione&quot;,&quot;codeblockOffset&quot;:4,&quot;secid&quot;:8,&quot;range&quot;:&quot;937-1114&quot;} -->
+<h2 class="sectionedit9" id="l_ultimo_comando_elencato_svuotera_totalmente_la_tavola_persone">L&#039;ultimo comando elencato svuoterà totalmente la tavola `Persone` !!</h2>
+<div class="level2">
+
+<p>
+<br/>
+
+<br/>
+
+</p>
+<hr />
+<ul>
+<li class="level1"><div class="li"> <a href="/doku.php?id=sql:istruzioni_varie" class="wikilink1" title="sql:istruzioni_varie" data-wiki-id="sql:istruzioni_varie">Torna a radice docs di SQL</a><br/>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="/doku.php?id=tecno:start" class="wikilink1" title="tecno:start" data-wiki-id="tecno:start">Benvenuti nel sito di memoria tecnica di Joe</a><br/>
+</div>
+</li>
+</ul>
+<hr />
+
+<p>
+ — <em><a href="mailto:&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;" class="mail" title="&#106;&#99;&#117;&#114;&#116;&#111;&#64;&#106;&#111;&#101;&#46;&#118;&#114;&#46;&#105;&#116;">Joseph Curto</a> 2023/07/24 16:18</em> — Ultima modifica: 2023/07/26 09:18
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;L&#039;ultimo comando elencato svuoter\u00e0 totalmente la tavola `Persone` !!&quot;,&quot;hid&quot;:&quot;l_ultimo_comando_elencato_svuotera_totalmente_la_tavola_persone&quot;,&quot;codeblockOffset&quot;:5,&quot;secid&quot;:9,&quot;range&quot;:&quot;1115-&quot;} -->

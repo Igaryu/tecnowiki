@@ -1,0 +1,64 @@
+# Approfondimento dell'uso del comando rsync
+~~NOTOC~~
+***
+
+### rsync da disco verso rete:
+```
+rsync -avzpL /path/src -e 'ssh -p 60000' user@server-dest:path/dest
+```
+
+### rsync da disco verso rete con cancellazione:
+```
+rsync -avzpL --delete /path/src/ -e 'ssh -p 60000' user@server-dest:/path/dest
+```
+### rsync da rete verso disco locale
+```
+rsync -avzpL -e 'ssh -p 60000' user@server-dest:/path/src /path/dest 
+```
+### rsync da rete verso disco locale con cancellazione:
+```
+rsync -avzpL --delete -e 'ssh -p 60000' user@server-dest:/path/src /path/dest 
+```
+
+***
+## NOTE
+
+- <fs large>attenzione ai percorsi: se si usa il carattere jolly a fine percorso, per esempio `/path/src/*`, il parametro `--delete` **non** verrà applicato.</fs>
+- <fs large>per i percorsi remoti, dopo il due punti il tipo di percorso cambia: se inizia con il carattere `/` il percorso verrà inteso come **assoluto** sul filesystem. Se il percorso dopo il carattere due punti inizia con una lettera o un numero, verrà inteso come **relativo** all'utente con cui si accede; quindi:</fs> \\ \\
+  - <fs large>`user@server-dest:/mnt/cartella` punterà alla cartella **assoluta** `/mnt/cartella`</fs> \\
+  - <fs large>mentre `user@server-dest:mnt/cartella` punterà alla cartella `/home/user/mnt/cartella`</fs>
+
+
+<fs large>In certi casi quindi i percorsi possono essere indicati in due modi diversi per lo stesso percorso: per raggiungere la cartella `documenti/fatture` dell'utente `user` possiamo raggiungerlo sia con:</fs>
+
+- <fs large>`user@server-dest:documenti/fatture` che con</fs>
+- <fs large>`user@server-dest:/home/user/documenti/fatture`</fs>
+
+<fs large>Nel dubbio usare sempre percorsi assoluti se sono noti. \\ \\
+
+rsync accetta anche variabili di ambiente nei percorsi per cui è ammesso anche la forma `user@server-dest:$HOME/documenti/fatture` \\ \\
+
+il discorso vale anche al contrario, ossia: per raggiunger la cartella `/home` di un disco si può usare:</fs>
+
+- <fs large>`user@server-dest:/home` (percorso assoluto)</fs>
+- <fs large>`user@server-dest:../` (percorso relativo: la sequenza `../` indica la cartella appena sopra quella attuale)</fs> \\
+
+<fs large>Nel secondo caso, se si usa un utente che non sia `root` si devono avere anche i permessi per poter accedere alla cartella in questione, per esempio:</fs> \\
+
+```
+rsync pippo user@server:../ (che tenta di scrivere nella cartella /home ma come utente user fallirà)
+rsync: dest open "../pippo": Permission denied
+rsync: failed to upload file pippo to ../
+Motivo del fallimento: utente `user` non ha i permessi per scrivere in `/home` sulla macchina `server`
+```
+
+\\
+\\
+***
+
+<fs large>[[ tecno:tips-triks | Torna alla pagina precedente ]] </fs> \\
+<fs large>[[ start | Torna alla home page del wiki ]]</fs> \\
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 07/09/2023 10:19 - Ultima modifica: 07/09/2023 10:25// 
+
+***

@@ -1,0 +1,39 @@
+====== Configurazione client di posta per Desktop ======
+
+
+----
+
+Esempio di configurazioni per [[https://support.apple.com/it-it/mail|Mail: il programma di posta di default su MacoSX]] oppure [[https://www.mozillaitalia.org/home/download/#thunderbird|Thunderbird: client di posta open source multi piattaforma.]]
+
+ThunderBird di norma configura tutto in automatico. In occasionali situazioni va modificata la porta SMTP da 465 impostata di default sulle versioni più vecchie a 587.
+
+
+Per configurare un client di posta per desktop, utilizzare i seguenti dati:
+
+## Posta in entrata
+
+  * Server in entrata: **imap.dominio.utente**
+  * Porta in entrata **993**
+  * Sistema di cifratura **SSL/TLS**: ricordarsi **//di accettare// il certificato** la prima volta che si accede!!
+
+  Nota: Le porte 143 e 465 sono disabilitate per default nel sistema di posta Aziendale.  
+
+
+## Posta in uscita
+
+  * Server in uscita: **smtp.dominio.utente**
+  * Porta in uscita **587**
+  * Sistema di cifratura **STARTTLS**: ricordarsi **//di accettare// il certificato** la prima volta che si accede!!
+
+  Nota: La porta 25 è disabitata per default nel sistema di posta Aziendale.
+
+----
+
+[[mailconfig|Clicca qui per tornare alla pagina Configurazioni Client di posta]]\\
+[[start|Clicca qui per tornare alla home page del Wiki]]
+
+----
+
+ --- //[[jcurto@joe.vr.it|Joseph Curto]] 2018/07/16 06:33//
+  
+  
